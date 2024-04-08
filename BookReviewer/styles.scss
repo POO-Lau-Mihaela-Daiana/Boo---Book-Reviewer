@@ -1,1 +1,68 @@
-body { background-color: aqua;}
+body { background-image: url('../BookReviewer/pictures/hh.png');
+
+   object-fit:scale-down;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    height: 7%;
+    background-color: #3D284F;
+    position: fixed;
+    top:0;
+    left: 0;
+    z-index: 400;
+    justify-content: space-around;
+    justify-items: center;
+    background-color: rgba(61, 40, 79, 0.7);
+    padding-left: 22%;
+
+}
+
+.hover-text {
+    position:relative;
+    padding: 10px 20px;
+    font-size: 18px;
+    color: #000;
+    transition: background-color 0.3 ease;
+    align-self: center;
+
+}
+
+.button {
+    align-self: flex-end;
+    align-items: center;
+    margin-left: 90%;
+    z-index: 999;
+}
+
+
+.footer{
+    display: flex;
+    position: fixed;
+    width: 100%;  
+    padding: 20px;
+    background-color: #3D284F;
+    bottom: 0;
+    top: 738px;
+    left:0;
+    right: 0;
+}
+
+.buttons_footer{
+    left: 90%;
+    position:absolute;
+    bottom: 0;
+}
+
+.Writing{
+    margin-top: 500px;
+    padding-left: 20px;
+    
+}
+
+.Text{
+    font-size: 98px;
+    color: #E3CEDD;
+
+}
