@@ -1,10 +1,26 @@
-body { background-image: url('../BookReviewer/pictures/hh.png');
-
+.LandingPage {
+    z-index: 0;
+    margin: 0 auto;
    object-fit:scale-down;
+   background-color: #3D284F;
 }
+
+.LandingPage::after{
+    background: url('../BookReviewer/pictures/hh.png');
+    content:"";
+    opacity: 0.6;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: -1;
+}
+
 
 .container {
     display: flex;
+    align-items: center;
     width: 100%;
     height: 7%;
     background-color: #3D284F;
@@ -12,29 +28,37 @@ body { background-image: url('../BookReviewer/pictures/hh.png');
     top:0;
     left: 0;
     z-index: 400;
-    justify-content: space-around;
+    justify-content: space-evenly;
     justify-items: center;
     background-color: rgba(61, 40, 79, 0.7);
-    padding-left: 22%;
+    padding-left:20%;
 
 }
 
 .hover-text {
     position:relative;
+    align-self: center;
     padding: 10px 20px;
-    font-size: 18px;
-    color: #000;
+    font-size: 2rem;
+    color: #E3CEDD;
     transition: background-color 0.3 ease;
     align-self: center;
 
 }
 
-.button {
+.loginButton {
     align-self: flex-end;
-    align-items: center;
-    margin-left: 90%;
     z-index: 999;
-   background-color: #3D284F;
+    width: 105px;
+    height: 35px;
+
+    border-radius: 1rem;
+    padding: 0;
+    border: 0;
+    background: #B790C2;
+    color: #E3CEDD;
+    font-size: medium;
+    background-color: #714e7d;
 }
 
 
@@ -43,7 +67,6 @@ body { background-image: url('../BookReviewer/pictures/hh.png');
     position: fixed;
     width: 100%;  
     padding: 20px;
-    background-color: #3D284F;
     bottom: 0;
     top: 738px;
     left:0;
@@ -53,26 +76,56 @@ body { background-image: url('../BookReviewer/pictures/hh.png');
 .buttons_footer{
     text-align: center;
     margin: 4px 2px;
-    left: 90%;
+    left: 85%;
 
     position:absolute;
-    bottom: 10;
+    bottom: 20%;
 }
 
 .signupButton{
+    width: 105px;
+    height: 35px;
     background-color: #B790C2;
     color: #E3CEDD;
-    border-radius: 12px;
+    border-radius: 1rem;
+    padding: 0;
+    border: 0;
+    background: #B790C2;
+    font-size: medium;
 }
 
 .Writing{
-    margin-top: 500px;
-    padding-left: 20px;
+    margin-top: 400px;
+    padding-left: 60px;
     
 }
 
 .Text{
-    font-size: 98px;
+    font-size: 96px;
     color: #E3CEDD;
-
+    margin-bottom: 0;
 }
+
+.Text2{
+    font-size: 96px;
+    color: #E3CEDD;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.line{
+    margin: 0;
+    padding: 0;
+    color: #3D284F;
+}
+
+.SubText{
+    font-size: 60px;
+    color: #E3CEDD;
+    margin-top: 1rem;
+}
+
+
+
+
+

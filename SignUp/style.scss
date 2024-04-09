@@ -1,0 +1,29 @@
+.SignUp{
+    z-index: 0;
+    margin: 0 auto;
+   object-fit:scale-down;
+   background-color: #714E7D;
+
+}
+
+.SignUp::after{
+    background: url("/BookReviewer/pictures/SignUpPage.jpg");
+    content:"";
+    opacity: 0.7;
+    position: absolute;
+    
+    top:0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: -1;
+
+}
+
+.SignUpContainer{
+    z-index: 1;
+    display: flex;
+    align-self: center;
+    
+    padding: 10rem;
+}
