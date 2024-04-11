@@ -1,5 +1,52 @@
-@import '../BookReviewer/global/boilerplate';
+@import '../BookReviewer/global/index';
 
 .body{
-    background-color: black;
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
+
+.block_container{
+    position:fixed;
+    z-index:400;
+    display: block;
+    background-color: #714E7D;
+    margin: 0px;
+  
+    padding: 0px;
+    width: 100vw; 
+    height: 100vh;
+
+    
+.feed_container{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 450;
+    width: 100vw;
+    height: 100vh;
+    background-color:#B790C2;
+
+    .feed_container_side{
+        z-index: 460;
+        width: 30%;
+        height: 100vh;
+        margin-right: 10px;
+        margin-top: 20px;
+        background-color: #3D284F;
+    }
+
+   
+}
+.feed_container_main_feed{
+    z-index: 461;
+    width: 70%;
+    height: 100vh;
+    margin-top: 20px;
+    margin-right: 20px;
+    background-color: aqua;
+}
+
+}
+
+

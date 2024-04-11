@@ -35,14 +35,15 @@
     padding-block: 0;
     outline: turquoise;
 
+    .BigContainer >*{
+        flex:1
+    }
+
     .NameContainer{
         
         z-index: 1;
         color: #714E7D;
-        
-       
         text-align: center;
-       
         padding: 169px 40px;
         width: 50%;
         height: 100%;
@@ -75,7 +76,6 @@
 }
 
 .SignUpContainer{
-    border: 3px solid #714E7D;
     z-index: 1;
     color: #714E7D;
     border-radius: 45px;
