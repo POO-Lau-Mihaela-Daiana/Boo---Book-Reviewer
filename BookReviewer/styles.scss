@@ -17,57 +17,6 @@
 }
 }
 
-
-
-
-.container {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    height: 7%;
-    background-color: #3D284F;
-    position: fixed;
-    top:0;
-    left: 0;
-    z-index: 400;
-    justify-content: space-evenly;
-    justify-items: center;
-    background-color: rgba(61, 40, 79, 0.7);
-    padding-left:20%;
-
-    .hover-text {
-        position:relative;
-        align-self: center;
-        padding: 10px 20px;
-        font-size: 2rem;
-        color: #E3CEDD;
-        transition: background-color 0.3 ease;
-        align-self: center;
-    
-    }
-
-    .loginButton {
-        align-self: flex-end;
-        z-index: 999;
-        width: 105px;
-        height: 35px;
-    
-        border-radius: 1rem;
-        padding: 0;
-        border: 0;
-        background: #B790C2;
-        color: #E3CEDD;
-        font-size: medium;
-        background-color: #714e7d;
-    }
-
-}
-
-
-
-
-
-
 .footer{
     display: flex;
     position: fixed;
