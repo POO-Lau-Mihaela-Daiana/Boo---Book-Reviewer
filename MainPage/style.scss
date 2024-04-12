@@ -1,7 +1,7 @@
 @import '../BookReviewer/global/index';
 
 .body{
-    height: 100%;
+    width: auto;
     margin: 0;
     padding: 0;
 }
@@ -14,8 +14,9 @@
     margin: 0px;
   
     padding: 0px;
-    width: 100vw; 
-    height: 100vh;
+    max-width: auto;
+    margin-inline: auto; 
+    min-height: auto;
 
     
 .feed_container{
