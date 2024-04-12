@@ -1,14 +1,4 @@
-@import '../BookReviewer/global/index';
-
-
-.body{
-    width: auto;
-    margin: 0;
-    padding: 0;
-    
-}
-
-
+@import '../BookReviewer/global/boilerplate';
 
 .block_container{
     position:fixed;
@@ -45,7 +35,12 @@
 
         .profile{
             text-align: center;
+            overflow: auto;
             padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+         
 
             .profile__image {
                 max-width: calc(100% - 40px);
@@ -60,42 +55,26 @@
 
             }
 
-              .profile__buttons {
-                display: flex;
-                align-self: flex-end;
-                flex-direction: column;
-        
-                .profile__button {
-                  padding: 8px 16px;
-                  margin: 10px 5px;
-                  font-size: 14px;
-                  background-color: #B790C2;
-                  border: none;
-                  border-radius: 4px;
-                  cursor: pointer;
-                  color: white;
-                  text-decoration: none;
-                  transition: background-color 0.3s ease;
-        
-                  &:hover {
-                    background-color: #714E7D;
-                  }
-        
-                  &:focus {
-                    outline: none;
-                  }
-                }
-              }
-
-              @media screen and (max-width: 600px) {
-                .profile__button {
-                  padding: 6px 12px;
-                  font-size: 9px;
-                }
-              }
-
-
+            .group__list{
               
+                max-width: 300px;
+                overflow: auto;
+                padding-left: 0;
+                font-size: large;
+                font-weight: 400;
+                list-style-type: none;
+
+                .group__item{
+                    padding-bottom: 1rem;
+                    margin-bottom: 1rem;
+                    background-color: #e3cedd;
+
+                    .group__link{
+                        text-decoration: none;
+                    }
+
+                }
+            }
 
         }
     }
@@ -127,5 +106,3 @@
 }
 
 }
-
-
