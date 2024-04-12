@@ -1,16 +1,20 @@
 @import '../BookReviewer/global/index';
 
+
 .body{
     width: auto;
     margin: 0;
     padding: 0;
+    
 }
+
+
 
 .block_container{
     position:fixed;
     z-index:400;
     display: block;
-    background-color: #714E7D;
+    background-color: #fff;
     margin: 0px;
   
     padding: 0px;
@@ -26,26 +30,78 @@
     z-index: 450;
     width: 100vw;
     height: 100vh;
-    background-color:#B790C2;
+    background-color:#e3cedd;
 
     .feed_container_side{
         z-index: 460;
-        width: 30%;
-        height: 100vh;
+        width: 27%;
+        height: auto;
+        margin-left: 10px;
         margin-right: 10px;
         margin-top: 20px;
-        background-color: #3D284F;
+        margin-bottom: 70px;
+        padding-bottom: 0px;
+        background-color:#fff;
+
+        .profile{
+            text-align: center;
+            padding: 20px;
+
+            .profile__image {
+                max-width: calc(100% - 40px);
+                border-radius: 20px; 
+                margin-bottom: 20px;
+
+                @media screen and (max-width: 768px) {
+                    width: calc(100% - 20px); 
+                    max-width: calc(100% - 20px); 
+                    border-radius: 10px;
+              }
+
+            }
+
+              .profile__buttons {
+                display: flex;
+                align-self: flex-end;
+                flex-direction: column;
+        
+                .profile__button {
+                  padding: 8px 16px;
+                  margin: 10px 5px;
+                  font-size: 14px;
+                  background-color: #B790C2;
+                  border: none;
+                  border-radius: 4px;
+                  cursor: pointer;
+                  color: white;
+                  text-decoration: none;
+                  transition: background-color 0.3s ease;
+        
+                  &:hover {
+                    background-color: #714E7D;
+                  }
+        
+                  &:focus {
+                    outline: none;
+                  }
+                }
+              }
+
+              
+
+        }
     }
 
    
 }
 .feed_container_main_feed{
     z-index: 461;
-    width: 70%;
-    height: 100vh;
+    width: 73%;
+    height: 1auto;
     margin-top: 20px;
     margin-right: 20px;
-    background-color: aqua;
+    margin-bottom: 70px;
+    background-color: #fff;
 }
 
 }
