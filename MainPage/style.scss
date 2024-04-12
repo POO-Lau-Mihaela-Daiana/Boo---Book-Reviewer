@@ -49,13 +49,11 @@
 
             .profile__image {
                 max-width: calc(100% - 40px);
-                border-radius: 20px; 
                 margin-bottom: 20px;
 
                 @media screen and (max-width: 768px) {
                     width: calc(100% - 20px); 
                     max-width: calc(100% - 20px); 
-                    border-radius: 10px;
               }
 
             }
