@@ -1,1 +1,179 @@
-.container{display:flex;align-items:center;width:100%;height:7%;background-color:#3d284f;position:fixed;top:0;left:0;z-index:400;justify-content:space-evenly;justify-items:center;background-color:rgba(61,40,79,.7);padding-left:20%}.container .hover-text{position:relative;align-self:center;padding:10px 20px;font-size:2rem;color:#e3cedd;transition:background-color .3 ease;align-self:center}.container .loginButton{align-self:flex-end;z-index:999;width:105px;height:35px;border-radius:1rem;padding:0;border:0;background:#b790c2;color:#e3cedd;font-size:medium;background-color:#714e7d}.SignUp{z-index:0;margin:0 auto;-o-object-fit:scale-down;object-fit:scale-down;background-color:#b790c2}.SignUp::after{background:url("/BookReviewer/pictures/SignUpPage.jpg");content:"";opacity:.4;position:absolute;top:0;bottom:0;right:0;left:0;z-index:-1}.BigContainer{display:flex;width:60rem;margin-inline:auto;justify-content:center;align-items:center;margin-top:8rem;min-height:45vh;padding-block:0;outline:#40e0d0}.BigContainer .BigContainer>*{flex:1}.BigContainer .NameContainer{z-index:1;color:#714e7d;text-align:center;padding:169px 40px;width:50%;height:100%}.BigContainer .NameContainer .Name{font-display:center;font-size:30px;font-weight:600;width:100%;height:100%;position:center}.BigContainer .NameContainer .Saying{font-display:center;font-size:20px;font-weight:600;width:100%;height:100%;position:center}.SignUpContainer{z-index:1;color:#714e7d;border-radius:45px;background-color:#fff;padding:30px 40px;width:50%;height:100%}.SignUpContainer .SignupWriting{text-align:center}.SignUpContainer .input-box{position:relative;align-self:center;width:70%;height:40px;font-size:16px;margin:30 px 0;color:#fff;padding:20px 45px 20px 20px}.SignUpContainer .input-box input{position:center;align-self:center;width:100%;height:100%;background:rgba(0,0,0,0);outline:none;border:none;border:2px solid #b790c2;border-radius:30px}.SignUpContainer .input-box input::-moz-placeholder{padding-left:1rem;color:#714e7d}.SignUpContainer .input-box input::placeholder{padding-left:1rem;color:#714e7d}.SignUpContainer .remember{display:flex;font-size:14px;margin:-15px 0 15px}.SignUpContainer .remember .remember_button .input{accent-color:#714e7d;margin-right:px;padding-top:3rem}.SignUpContainer .signUpContainer_footer{display:flex;content:"";justify-content:space-around;padding-top:20px}.SignUpContainer .signUpContainer_footer .signup{width:100%;height:30px;border:none;outline:none;border-radius:40px;box-shadow:0 0 10px rgba(0,0,0,.1);cursor:pointer;font-size:16px;background-color:#714e7d;color:#fff;font-weight:500}.SignUpContainer .signUpContainer_footer .login-link{font-size:14px;text-align:left;font-weight:600}.SignUpContainer .signUpContainer_footer .login-link .login-link_text{text-decoration:none}.SignUpContainer .signUpContainer_footer .login-link .login-link_ref p{text-decoration:none;text-decoration:underline}/*# sourceMappingURL=style.css.map */
+.container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 7%;
+  background-color: #3D284F;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 400;
+  justify-content: space-evenly;
+  justify-items: center;
+  background-color: rgba(61, 40, 79, 0.7);
+  padding-left: 20%;
+}
+.container .hover-text {
+  position: relative;
+  align-self: center;
+  padding: 10px 20px;
+  font-size: 2rem;
+  color: #E3CEDD;
+  transition: background-color 0.3 ease;
+  align-self: center;
+}
+.container .loginButton {
+  align-self: flex-end;
+  z-index: 999;
+  width: 105px;
+  height: 35px;
+  border-radius: 1rem;
+  padding: 0;
+  border: 0;
+  background: #B790C2;
+  color: #E3CEDD;
+  font-size: medium;
+  background-color: #714e7d;
+}
+
+.SignUp {
+  z-index: 0;
+  margin: 0 auto;
+  -o-object-fit: scale-down;
+     object-fit: scale-down;
+  background-color: #B790C2;
+}
+
+.SignUp::after {
+  background: url("/BookReviewer/pictures/SignUpPage.jpg");
+  content: "";
+  opacity: 0.4;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.BigContainer {
+  display: flex;
+  width: 60rem;
+  margin-inline: auto;
+  justify-content: center;
+  align-items: center;
+  margin-top: 8rem;
+  min-height: 45vh;
+  padding-block: 0;
+  outline: turquoise;
+}
+.BigContainer .BigContainer > * {
+  flex: 1;
+}
+.BigContainer .NameContainer {
+  z-index: 1;
+  color: #714E7D;
+  text-align: center;
+  padding: 169px 40px;
+  width: 50%;
+  height: 100%;
+}
+.BigContainer .NameContainer .Name {
+  font-display: center;
+  font-size: 30px;
+  font-weight: 600;
+  width: 100%;
+  height: 100%;
+  position: center;
+}
+.BigContainer .NameContainer .Saying {
+  font-display: center;
+  font-size: 20px;
+  font-weight: 600;
+  width: 100%;
+  height: 100%;
+  position: center;
+}
+
+.SignUpContainer {
+  z-index: 1;
+  color: #714E7D;
+  border-radius: 45px;
+  background-color: #fff;
+  padding: 30px 40px;
+  width: 50%;
+  height: 100%;
+}
+.SignUpContainer .SignupWriting {
+  text-align: center;
+}
+.SignUpContainer .input-box {
+  position: relative;
+  align-self: center;
+  width: 70%;
+  height: 40px;
+  font-size: 16px;
+  margin: 30 px 0;
+  color: #fff;
+  padding: 20px 45px 20px 20px;
+}
+.SignUpContainer .input-box input {
+  position: center;
+  align-self: center;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  outline: none;
+  border: none;
+  border: 2px solid #b790c2;
+  border-radius: 30px;
+}
+.SignUpContainer .input-box input::-moz-placeholder {
+  padding-left: 1rem;
+  color: #714E7D;
+}
+.SignUpContainer .input-box input::placeholder {
+  padding-left: 1rem;
+  color: #714E7D;
+}
+.SignUpContainer .remember {
+  display: flex;
+  font-size: 14px;
+  margin: -15px 0 15px;
+}
+.SignUpContainer .remember .remember_button .input {
+  accent-color: #714E7D;
+  margin-right: px;
+  padding-top: 3rem;
+}
+.SignUpContainer .signUpContainer_footer {
+  display: flex;
+  content: "";
+  justify-content: space-around;
+  padding-top: 20px;
+}
+.SignUpContainer .signUpContainer_footer .signup {
+  width: 100%;
+  height: 30px;
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  font-size: 16px;
+  background-color: #714E7D;
+  color: #fff;
+  font-weight: 500;
+}
+.SignUpContainer .signUpContainer_footer .login-link {
+  font-size: 14px;
+  text-align: left;
+  font-weight: 600;
+}
+.SignUpContainer .signUpContainer_footer .login-link .login-link_text {
+  text-decoration: none;
+}
+.SignUpContainer .signUpContainer_footer .login-link .login-link_ref p {
+  text-decoration: none;
+  text-decoration: underline;
+}/*# sourceMappingURL=style.css.map */

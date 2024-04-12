@@ -1,0 +1,191 @@
+@import '../BookReviewer/global/boilerplate';
+
+.SignUp{
+   z-index: 0;
+   margin: 0 auto;
+   object-fit:scale-down;
+   background-color: #B790C2;
+
+   
+}
+
+.SignUp::after{
+    background: url("/BookReviewer/pictures/SignUpPage.jpg");
+    content:"";
+    opacity: 0.4;
+    position: absolute;
+
+    top:0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: -1;
+
+}
+
+
+.BigContainer{
+    display: flex;
+    width: 60rem;
+    margin-inline: auto;
+    justify-content: center;
+    align-items: center;
+    margin-top: 8rem;
+    min-height: 45vh;
+    padding-block: 0;
+    outline: turquoise;
+
+    .BigContainer >*{
+        flex:1
+    }
+
+    .NameContainer{
+        
+        z-index: 1;
+        color: #714E7D;
+        text-align: center;
+        padding: 169px 40px;
+        width: 50%;
+        height: 100%;
+    
+    
+    
+        .Name{
+          
+            font-display: center;
+            font-size: 30px;
+            font-weight: 600;
+            width: 100%;
+            height: 100%;
+            position: center;
+            
+        }
+
+        .Saying{
+            font-display: center;
+            font-size: 20px;
+            font-weight: 600;
+            width: 100%;
+            height: 100%;
+            position: center;
+        }
+
+       
+    }
+    
+}
+
+.SignUpContainer{
+    z-index: 1;
+    color: #714E7D;
+    border-radius: 45px;
+    
+    background-color: #fff;
+   padding: 30px 40px;
+    width: 50%;
+    height: 100%;
+
+    .SignupWriting{
+        text-align: center;
+    }
+    .input-box{
+        position: relative;
+        align-self: center;
+        width: 70%;
+        height: 40px;
+        font-size: 16px;
+        margin:30 px 0;
+    
+        color: #fff;
+        padding: 20px 45px 20px 20px;
+
+        input {
+            position: center;
+            align-self: center;
+            
+             width: 100%;
+             height: 100%;
+             background: transparent;
+             outline: none;
+             border: none;
+             border: 2px solid #b790c2;
+             border-radius: 30px;
+
+            
+        }
+        input::placeholder{
+            padding-left: 1rem;
+            color: #714E7D;
+         }
+
+    }
+
+    .remember{
+        display: flex;
+        font-size: 14px;
+        margin:-15px  0 15px;
+
+        .remember_button{
+            .input{
+                accent-color:#714E7D ;
+                margin-right:px;
+                padding-top: 3rem;
+            }
+
+        } 
+    }
+     
+    .signUpContainer_footer{
+        display: flex;
+        content:"";
+        justify-content: space-around;
+        padding-top: 20px;
+
+
+        .signup{
+          
+            width: 100%;
+            height: 30px;
+            border: none;
+            outline:none;
+            border-radius: 40px;
+            box-shadow: 0 0 10px rgba(0,0,0,.1);
+            cursor: pointer;
+            font-size:16px;
+            background-color: #714E7D;
+            color: #fff;
+            font-weight: 500;
+
+
+            
+
+        }
+        .login-link{
+           font-size: 14px;
+           text-align: left;
+           font-weight: 600;
+        .login-link_text{
+            text-decoration: none;
+
+        }
+        .login-link_ref p{
+            text-decoration: none;
+            text-decoration: underline;
+
+        }
+
+        }
+
+
+           
+    }
+
+
+
+   
+}
+
+
+
+
+
