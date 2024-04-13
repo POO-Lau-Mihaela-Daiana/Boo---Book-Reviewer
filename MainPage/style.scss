@@ -1,6 +1,12 @@
 @import '../BookReviewer/global/index';
 
 
+*{
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
 .body{
     width: auto;
     margin: 0;

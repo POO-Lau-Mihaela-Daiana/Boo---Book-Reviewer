@@ -1,4 +1,9 @@
 @import '../BookReviewer/global/boilerplate';
+*{
+    box-sizing: border-box;
+margin: 0px;
+padding: 0px;
+}
 
 .block_container{
     position:fixed;
@@ -48,9 +53,9 @@
                 margin-bottom: 20px;
                 border: 4px solid #714E7D;
 
-                @media screen and (max-width: 768px) {
-                    width: calc(100% - 20px); 
-                    max-width: calc(100% - 20px); 
+                @media screen and (max-width: 600px) {
+                    width: calc(100% - 2px); 
+                    max-width: calc(100% - 2px); 
               }
 
             }
@@ -66,17 +71,72 @@
 
                 .group__item{
                     padding-bottom: 1rem;
+                    padding: 0 1rem;
                     margin-bottom: 1rem;
                     background-color: #e3cedd;
+                    text-align: center;
+                    border-radius: 1rem;
 
                     .group__link{
                         text-decoration: none;
+                        color: #714E7D;
                     }
+
+                    @media screen and (max-width: 748px) {
+                       font-size: small;
+                       padding: 0px 15px;
+                       border-radius: 1rem;
+
+                  }
 
                 }
             }
 
+            .profile__p{
+                color: #714E7D;
+
+                @media screen and (max-width: 748px) {
+                    font-size: small;
+                    padding: 0px 15px;
+                    
+                }
+
+            }
+
+            .Join_Other_Groups{
+                font-size: larger;
+                color: #714E7D;
+                text-decoration: none;
+
+
+                @media screen and (max-width: 748px) {
+                    font-size: small;
+                    padding: 0px 15px;
+                    border-radius: 1rem;
+                
+                }
+            }
+
+            .Join_Other_Groups:hover{
+                background-color: #714E7D;
+                color: #e3cedd;
+                border-radius: 1rem;
+
+                @media screen and (max-width: 748px) {
+                    font-size: small;
+                    padding: 0px 15px;
+                    border-radius: 1rem;
+               
+                }
+
+            }
+
         }
+        @media screen and (max-width: 600px) {
+            min-height: auto;
+            max-width: 20%;
+      }
+
     }
 
    
