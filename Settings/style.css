@@ -182,14 +182,17 @@
 }
 .block_container .feed_container .feed_container_side {
   z-index: 460;
-  width: 27%;
+  width: 50%;
   height: auto;
-  margin-left: 10px;
+  margin-left: 25%;
   margin-right: 10px;
   margin-top: 20px;
-  margin-bottom: 70px;
+  margin-bottom: 20px;
   padding-bottom: 0px;
-  background-color: #fff;
+  background-color: #B790C2;
+  overflow-y: auto;
+  /* Adjust the text area height if needed */
+  /* Style the button if needed */
 }
 .block_container .feed_container .feed_container_side .profile {
   text-align: center;
@@ -236,22 +239,108 @@
     font-size: 9px;
   }
 }
-.block_container .feed_container_main_feed {
-  z-index: 461;
-  max-width: 73%;
-  height: auto;
-  margin-top: 20px;
-  margin-right: 20px;
-  margin-bottom: 70px;
-  border: 3px solid #714E7D;
-  background-color: #fff;
-  overflow-y: scroll;
+.block_container .feed_container .feed_container_side .account-details {
+  border: 1px solid black;
+  padding: 20px;
+  margin-bottom: 20px;
 }
-.block_container .feed_container_main_feed .main_feed__title {
-  color: #714E7D;
-  font-size: larger;
-  padding-left: 40px;
-  padding-bottom: 0px;
-  margin-bottom: 0px;
-  border-bottom: 3px solid #714E7D;
+.block_container .feed_container .feed_container_side .account-details__box {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.block_container .feed_container .feed_container_side .account-details .detail {
+  flex: 1;
+  margin-right: 10px;
+}
+.block_container .feed_container .feed_container_side .account-details label {
+  display: inline-block;
+  width: 100px; /* Adjust the width as needed */
+  margin-bottom: 5px;
+}
+.block_container .feed_container .feed_container_side .account-details input[type=text],
+.block_container .feed_container .feed_container_side .account-details input[type=tel],
+.block_container .feed_container .feed_container_side .account-details input[type=email],
+.block_container .feed_container .feed_container_side .account-details select {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+.block_container .feed_container .feed_container_side .account-details .dob {
+  display: flex;
+}
+.block_container .feed_container .feed_container_side .account-details .dob select {
+  flex: 1;
+  margin-right: 5px;
+}
+.block_container .feed_container .feed_container_side .about-you {
+  margin-top: 40px;
+}
+.block_container .feed_container .feed_container_side .about-you h3 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+.block_container .feed_container .feed_container_side .about-you h4 {
+  font-size: 20px;
+  color: #555;
+  margin-bottom: 15px;
+}
+.block_container .feed_container .feed_container_side .about-you .form-group {
+  margin-bottom: 20px;
+}
+.block_container .feed_container .feed_container_side .about-you textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+.block_container .feed_container .feed_container_side .about-you textarea {
+  min-height: 150px;
+}
+.block_container .feed_container .feed_container_side .about-you button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.block_container .feed_container .feed_container_side .about-you button:hover {
+  background-color: #0056b3;
+}
+.block_container .feed_container .feed_container_side .my-interests {
+  margin-bottom: 20px;
+  width: 95%; /* Adjust the width */
+  margin-left: auto; /* Center the box */
+  margin-right: auto; /* Center the box */
+}
+.block_container .feed_container .feed_container_side .book-preferences {
+  margin-bottom: 20px;
+  width: 95%; /* Adjust the width */
+  margin-left: auto; /* Center the box */
+  margin-right: auto; /* Center the box */
+}
+.block_container .feed_container .feed_container_side .about-me-part {
+  margin-bottom: 20px;
+  width: 95%; /* Adjust the width */
+  margin-left: auto; /* Center the box */
+  margin-right: auto; /* Center the box */
+}
+.block_container .feed_container .feed_container_side .button-group button {
+  margin-right: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #573f6a;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.block_container .feed_container .feed_container_side .button-group button:hover {
+  background-color: #452d4d; /* Darker color on hover */
 }/*# sourceMappingURL=style.css.map */
