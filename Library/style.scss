@@ -30,13 +30,13 @@
     z-index: 450;
     width: 100vw;
     height: 100vh;
-    background-color:#e3cedd;
+    background-image: url(../BookReviewer/pictures/SignUpPage.jpg);
 
     .feed_container_side{
         z-index: 460;
-        width: 50%;
-        height: auto;
-        margin-left: 10px;
+        width: 200%;
+        height: 21%;
+        margin-left: 20px;
         margin-right: 10px;
         margin-top: 20px;
         margin-bottom: 70px;
@@ -102,7 +102,8 @@
         .library-container {
             display: flex;
             flex-direction: column; 
-            justify-content: center;
+            //justify-content: center;
+            //width:50%;
             align-items: center;
             border: 1px solid #ccc;
             border-radius: 8px;
@@ -170,11 +171,12 @@
 
 .feed_container_main_feed {
     margin-top: 20px;
-    margin-left: 40%; /* Adjust the left margin as needed */
+    margin-left: 25%; /* Adjust the left margin as needed */
     transform: translateX(-50%);
     padding: 20px;
     border: 2px solid #ccc;
     border-radius: 5px;
+    overflow-y: auto; 
 }
 
 
@@ -190,7 +192,7 @@
 }
 
 .book__container__info {
-    flex: 0 0 48%;
+    flex: 0 0 95%;
     margin-bottom: 20px;
     padding: 10px;
     border: 1px solid #ccc;
