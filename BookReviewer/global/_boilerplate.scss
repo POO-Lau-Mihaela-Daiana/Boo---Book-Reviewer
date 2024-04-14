@@ -23,7 +23,6 @@
         padding: 10px 20px;
         font-size: 2rem;
         color: #E3CEDD;
-        transition: background-color 0.3 ease;
         align-self: center;
     
     }
@@ -118,7 +117,7 @@
                .nav_dropdown{
                 text-decoration: none;
                 display: block;
-                padding-left: 0;
+                padding-left: 0px;
                }
                     
 
@@ -141,7 +140,7 @@
                     position: absolute;
                     z-index: 999;
                     display: none;
-                    left:0;
+                    left:0px;
                     text-decoration: none;
                     font-size: 15px;
 
@@ -158,8 +157,8 @@
                        
                             white-space: nowrap;
                             overflow: hidden;
-                            text-align: ellipsis;
-                            padding: 10;
+                            text-align: left;
+                            padding: 10px;
                             
         
                         }
