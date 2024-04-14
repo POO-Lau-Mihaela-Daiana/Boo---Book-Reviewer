@@ -5,12 +5,17 @@
    margin: 0 auto;
    object-fit:scale-down;
    background-color: #B790C2;
+  
 
    
 }
 
 .SignUp::after{
     background: url("/BookReviewer/pictures/SignUpPage.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment:fixed;
+    background-position: center;
     content:"";
     opacity: 0.4;
     position: absolute;

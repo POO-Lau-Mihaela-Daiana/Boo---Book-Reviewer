@@ -77,24 +77,22 @@
     .container__main{
         
         display: flex;
-        
         width: 70%;
         flex-direction: column;
         z-index: 461;
         height: auto;
-      
         background-color: #fff;
         margin-top: 0px;
+        margin-right: 5%;
         padding-top: 0px;
-        .main__books::-webkit-scrollbar-track{ height: 0;
-            width:0;
-        }
+        border: 3px solid #714E7D;
+        
          .main__books{
          
             border: 3px solid #e3cedd;
             background-color: #e3cedd;
             
-
+           
             .books__container{  
                 display: flex;
                 overflow-x: auto;
@@ -142,12 +140,18 @@
         }
 
     }
-
+.main__friends::-webkit-scrollbar{
+width: 0px;
+}
     .main__friends{
         margin-top: 1rem;
+        margin-right: 1rem;
         margin-left: 2rem;
-        flex:2;
-
+        flex:1;
+        border: 3px solid #e3cedd;
+        overflow-y: scroll;
+        
+        
         .friend_list_name{
             color: #714E7D;
             font-size: large;
@@ -180,5 +184,32 @@
 
        }
        
+    }
+
+    .about__me__section{
+        color: #714E7D;
+        flex: 1;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        border-bottom: 1rem;
+      
+        .section{
+            height: 20px;
+            flex:1;
+            overflow-x: scroll;
+            font-size: 14px;
+            margin-bottom: 20px;
+
+            .section__type{
+        font-size: 16px;
+            }
+        }
+      
+        @media screen and (max-width: 768px) {
+            margin-bottom: 30px;
+      
+        }
+        
     }
 }

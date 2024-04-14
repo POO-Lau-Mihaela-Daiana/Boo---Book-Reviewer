@@ -21,7 +21,12 @@
 
       <div class="search">
         <input type="text" class="search__input" placeholder="Book Name" />
-        <button class="search__button">Search Book</button>
+        <button
+          class="search__button"
+          onclick="window.location.href='../SearchPage/searchPage.html';"
+        >
+          Search Book
+        </button>
       </div>
 
       <nav class="nav">
@@ -40,6 +45,11 @@
               >Settings</a
             >
           </li>
+          <li>
+            <a href="../AboutPage/aboutpage.html" class="nav__link_menu"
+              >About</a
+            >
+          </li>
         </ul>
         <div class="nav__item_special">
           <p>Menu</p>
@@ -48,18 +58,19 @@
               <a href="../Library/index.html" class="nav__link">Library</a>
             </li>
             <li>
-              <a href="../LookForGroupPage/lookFor.html" class="nav__link_menu"
+              <a href="../GroupPage/groupPage.html" class="nav__link_menu"
                 >Groups</a
               >
             </li>
-            <li>
-              <a href="../AccountPage/account.html" class="nav__link_menu"
-                >Account</a
-              >
-            </li>
+            <li><a href="#" class="nav__link_menu">Account</a></li>
             <li>
               <a href="../Settings/settings.html" class="nav__link_menu"
                 >Settings</a
+              >
+            </li>
+            <li>
+              <a href="../AboutPage/aboutpage.html" class="nav__link_menu"
+                >About</a
               >
             </li>
           </ul>
@@ -243,8 +254,18 @@
                 </div>
               </div>
               <div class="button-group">
-                <button class="btn btn-primary">Save</button>
-                <button class="btn btn-secondary">Discard</button>
+                <button
+                  class="btn btn-primary"
+                  onclick="window.location.href='../AccountPage/account.html';"
+                >
+                  Save
+                </button>
+                <button
+                  class="btn btn-secondary"
+                  onclick="window.location.href='../AccountPage/account.html';"
+                >
+                  Discard
+                </button>
               </div>
             </div>
           </div>
