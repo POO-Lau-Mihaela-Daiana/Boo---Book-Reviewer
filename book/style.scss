@@ -1,14 +1,14 @@
 @import '../BookReviewer/global/boilerplate';
 
 
-/* Reset styles */
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-/* Body styles */
+
 body {
     font-family: Arial, sans-serif;
     background-image: url(../BookReviewer/pictures/904d534af9db5e0219dab903b15aa0ba.jpg);
@@ -24,18 +24,20 @@ body, html {
     margin: 0;
 }
 
-/* Container styles */
+
 .body_container {
     max-width: 800px;
      margin: 0 auto;
     padding: 20px;
+    border: 2px solid #000;
+   
         
 }
 
-/* Book header styles */
+
 .book-header {
     text-align: center;
-    margin-bottom: 20px; /* Add some space between header and main content */
+    margin-bottom: 20px; 
 }
 
 .book-header h1 {
@@ -52,7 +54,7 @@ body, html {
     color: #f90;
 }
 
-/* Main content styles */
+
 .main-content {
     display: flex;
     justify-content: space-between;
@@ -61,7 +63,7 @@ body, html {
 
 .book-details {
     display: flex;
-    margin-top: 50px; /* Adjust margin-top as needed */
+    margin-top: 50px; 
 }
 
 .book-cover img {
@@ -96,8 +98,8 @@ body, html {
 
 .reviews {
     margin-top: 20px;
-    overflow-y: auto; /* Enable vertical scrolling */
-    max-height: 300px; /* Set a maximum height for the reviews section */
+    overflow-y: auto; 
+    max-height: 300px; 
     
   }
   .reviews::-webkit-scrollbar{
@@ -107,8 +109,8 @@ body, html {
   .comment {
     display: flex;
     margin-bottom: 20px;
-    border: 2px solid black; /* Add black border */
-  padding: 10px; /* Add padding for spacing */
+    border: 2px solid black; 
+  padding: 10px; 
   }
   
   .account {
@@ -118,11 +120,11 @@ body, html {
   .account-picture {
     width: 50px;
     height: 50px;
-    border-radius: 50%; /* Make the account picture round */
+    border-radius: 50%; 
   }
   
   .comment-text {
-    flex: 1; /* Take up remaining space */
+    flex: 1; 
   }
   
 
@@ -139,7 +141,7 @@ body, html {
     margin-bottom: 10px;
 }
 
-/* Media query for smaller screens */
+
 @media screen and (max-width: 768px) {
     .body_container {
         padding: 0 20px;
@@ -159,6 +161,6 @@ body, html {
         background-attachment: fixed;
     }
     .comment {
-        flex-direction: column; /* Change layout to vertical on smaller screens */
+        flex-direction: column; 
       }
 }

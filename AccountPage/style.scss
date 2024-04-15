@@ -59,17 +59,20 @@
             color: #714E7D;
             margin-top: 0px;
             margin-bottom: 3rem;
+            font-size:x-large;
         }
 
         .side__date{
             color: #714E7D;
             margin-top:0;
             margin-bottom: 0;
+            font-size:x-large;
         }
 
         .side__books{
             color: #714E7D;
             margin-top: 1rem;
+            font-size:x-large;
         }
 
     }
@@ -212,4 +215,15 @@ width: 0px;
         }
         
     }
+}
+.main__settings__button{
+    text-decoration: none;
+    color: #714E7D;
+    padding-bottom: 1rem;
+    padding: 0 2rem;
+    margin-bottom: 1rem;
+    background-color: #e3cedd;
+    text-align: center;
+    border-radius: 2rem;
+    font-size: larger;
 }

@@ -121,7 +121,7 @@
         
         .account-details label {
             display: inline-block;
-            width: 100px; /* Adjust the width as needed */
+            width: 100px; 
             min-width: 150px; 
             margin-bottom: 5px;
         }
@@ -175,12 +175,12 @@
             resize: vertical;
         }
         
-        /* Adjust the text area height if needed */
+        
         .about-you textarea {
             min-height: 100px;
         }
         
-        /* Style the button if needed */
+        
         .about-you button {
             background-color: #007bff;
             color: #fff;
@@ -195,21 +195,21 @@
         }
         .my-interests {
             margin-bottom: 20px;
-            width: 95%; /* Adjust the width */
-            margin-left: auto; /* Center the box */
-            margin-right: auto; /* Center the box */
+            width: 95%; 
+            margin-left: auto; 
+            margin-right: auto; 
         }
         .book-preferences {
             margin-bottom: 20px;
-            width: 95%; /* Adjust the width */
-            margin-left: auto; /* Center the box */
-            margin-right: auto; /* Center the box */
+            width: 95%; 
+            margin-left: auto;
+            margin-right: auto;
         }
         .about-me-part {
             margin-bottom: 20px;
-            width: 95%; /* Adjust the width */
-            margin-left: auto; /* Center the box */
-            margin-right: auto; /* Center the box */
+            width: 95%; 
+            margin-left: auto; 
+            margin-right: auto; 
         }
         .button-group button {
             margin-right: 10px;
@@ -223,7 +223,7 @@
         }
         
         .button-group button:hover {
-            background-color: #452d4d; /* Darker color on hover */
+            background-color: #452d4d; 
         }
         
         
