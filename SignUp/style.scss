@@ -1,17 +1,16 @@
 @import '../BookReviewer/global/boilerplate';
 
-/* Header styles */
 .header {
     background-color: #D0B9D4;
     padding: 10px 0;
-    margin: 0; /* Ensure there's no margin */
+    margin: 0; 
 }
 .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
-    margin: 0; /* Ensure there's no margin */
+    margin: 0; 
 }
 .logo {
     max-width: 100px;
@@ -40,7 +39,7 @@ body.SignUp{
     background: url("/BookReviewer/pictures/SignUpPage.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: top center; /* Adjusted background position */
+    background-position: top center;
     content: "";
     opacity: 0.4;
     position: absolute;
@@ -51,7 +50,7 @@ body.SignUp{
     z-index: -1;
 }
 
-/* Main container styles */
+
 .BigContainer {
     display: flex;
     justify-content: center;
@@ -60,7 +59,7 @@ body.SignUp{
     margin-top: 8rem;
 }
 
-/* Name container styles */
+
 .NameContainer {
     text-align: center;
     color: #714E7D;

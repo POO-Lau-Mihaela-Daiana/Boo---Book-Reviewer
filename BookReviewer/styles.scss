@@ -1,5 +1,6 @@
 @use  '../BookReviewer/global/typography';
-@import 'global';
+@import '../BookReviewer/global/boilerplate';
+
 
 
 *{
@@ -12,10 +13,9 @@ padding: 0px;
 
 .LandingPage {
     display: flex;
-
    z-index: 0;
    margin: 0 0;
-   object-fit:scale-down;
+ 
    background-color: #3D284F;
   
 
