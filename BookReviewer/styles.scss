@@ -1,13 +1,32 @@
+@use  '../BookReviewer/global/typography';
+@import 'global';
+
+
+*{
+font-family: typography.$global-font-family;
+box-sizing: border-box;
+margin: 0px;
+padding: 0px;
+}
+
 .LandingPage {
-z-index: 0;
-   margin: 0 auto;
+    display: flex;
+
+   z-index: 0;
+   margin: 0 0;
    object-fit:scale-down;
    background-color: #3D284F;
+  
 
   
 }
 .LandingPage::after{
-    background: url('../BookReviewer/pictures/hh.png');
+    background-image: url('../BookReviewer/pictures/hh.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment:fixed;
+    background-position: center  ;
+
     content:"";
     opacity: 0.6;
     position: absolute;
@@ -17,57 +36,21 @@ z-index: 0;
     left: 0;
     z-index: -1;
 }
-.container{
+
+
+
+
+
+
+.footer{
     display:flex;
-    align-items:center;
-    width:100%;
-    height:7%;
-    background-color:#3d284f;
-    position:fixed;
-    top:0;
-    left:0;
-    z-index:400;
-    justify-content:space-evenly;
-    justify-items:center;
-    background-color:rgba(61,40,79,.7);
-    padding-left:20%;
-
-    .hover-text{
-        position:relative;
-        align-self:center;
-        padding:10px 20px;
-        font-size:2rem;
-        color:#e3cedd;
-        transition:background-color .3 ease;
-        align-self:center;
-    }
-    .loginButton{
-        align-self:flex-end;
-        z-index:999;
-        width:105px;
-        height:35px;
-        border-radius:1rem;
-        padding:0;
-        border:0;
-        background:#b790c2;
-        color:#e3cedd;
-        font-size:medium;
-        background-color:#714e7d}
-
-
-}
-
-
-
-
-
-.footer{display:flex;
     position:fixed;
     width:100%;
     padding:20px;
     bottom:0;
     top:738px;
-    left:0;
+    left:50%;
+    transform: translateX(-50%);
     right:0;
 
     .buttons_footer{
@@ -85,6 +68,7 @@ z-index: 0;
             border-radius:1rem;
             padding:0;
             border:0;
+            margin-right: 1rem;
             background:#b790c2;
             font-size:medium;
            
@@ -93,8 +77,21 @@ z-index: 0;
 
         }
 
-        
-    
+    }
+
+    @media (max-width: 768px) {
+        .footer {
+            padding: 10px;
+        }
+
+        .buttons_footer {
+            bottom: 10px;
+        }
+
+        .signupButton {
+            width: 90px;
+            height: 30px;
+        }
     }
 
 
@@ -104,6 +101,7 @@ z-index: 0;
 
 
 .Writing{
+    align-self: flex-end;
     margin-top:400px;
     padding-left:60px;
 
@@ -128,6 +126,21 @@ z-index: 0;
         color:#e3cedd;
         margin-top:1rem;}
 
+        @media (max-width: 768px) {
+            padding-left: 20px;
+    
+            .Text,
+            .Text2 {
+                font-size: 60px;
+            }
+    
+            .SubText {
+                font-size: 40px;
+            }
+    
+            margin-top: 200px;
+        }
+        
 }
 
 

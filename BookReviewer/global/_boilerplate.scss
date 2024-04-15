@@ -1,6 +1,8 @@
 
+
 .container {
     display: flex;
+    overflow: hidden;
     align-items: center;
     width: 100%;
     height: 7%;
@@ -9,10 +11,9 @@
     top:0;
     left: 0;
     z-index: 400;
-    justify-content: space-evenly;
-    justify-items: center;
+    justify-content: space-between;
     background-color: rgba(61, 40, 79, 0.7);
-    padding-left:20%;
+  
     
    
 
@@ -21,26 +22,45 @@
         position:relative;
         align-self: center;
         padding: 10px 20px;
-        font-size: 2rem;
-        color: #E3CEDD;
-        align-self: center;
+        width: 6.5rem;
+        background-color: #E3CEDD;
+        text-align: center;
+        margin-right: auto;
+
+        
     
     }
 
+    
     .loginButton {
-        align-self: flex-end;
-        z-index: 999;
+        
+      
         width: 105px;
         height: 35px;
-    
         border-radius: 1rem;
         padding: 0;
-        border: 0;
+        border: 1rem;
         background: #B790C2;
         color: #E3CEDD;
         font-size: medium;
         background-color: #714e7d;
     }
+
+    .loginButton:hover{
+      background-color: #3D284F;
+      color: #B790C2;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+          padding: 0 10px;
+
+          .hover-text{
+            padding: 10px 10px;
+          }
+          
+      }
+  }
 
 }
 
