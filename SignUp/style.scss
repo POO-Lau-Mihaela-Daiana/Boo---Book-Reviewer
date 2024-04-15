@@ -1,196 +1,181 @@
 @import '../BookReviewer/global/boilerplate';
 
-.SignUp{
-   z-index: 0;
-   margin: 0 auto;
-   object-fit:scale-down;
-   background-color: #B790C2;
-  
-
-   
+/* Header styles */
+.header {
+    background-color: #D0B9D4;
+    padding: 10px 0;
+    margin: 0; /* Ensure there's no margin */
+}
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    margin: 0; /* Ensure there's no margin */
+}
+.logo {
+    max-width: 100px;
+    height: auto;
 }
 
-.SignUp::after{
+.login-button {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Body styles */
+body.SignUp{
+    z-index: 0;
+    margin: 0 auto;
+    object-fit:scale-down;
+    background-color: #B790C2;
+    height: 100vh;
+   
+    
+ }
+ .SignUp::after {
     background: url("/BookReviewer/pictures/SignUpPage.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    background-attachment:fixed;
-    background-position: center;
-    content:"";
+    background-position: top center; /* Adjusted background position */
+    content: "";
     opacity: 0.4;
     position: absolute;
-
-    top:0;
+    top: 0;
     bottom: 0;
     right: 0;
     left: 0;
     z-index: -1;
-
 }
 
-
-.BigContainer{
+/* Main container styles */
+.BigContainer {
     display: flex;
-    width: 60rem;
-    margin-inline: auto;
     justify-content: center;
     align-items: center;
+    flex-direction: row;
     margin-top: 8rem;
-    min-height: 45vh;
-    padding-block: 0;
-    outline: turquoise;
-
-    .BigContainer >*{
-        flex:1
-    }
-
-    .NameContainer{
-        
-        z-index: 1;
-        color: #714E7D;
-        text-align: center;
-        padding: 169px 40px;
-        width: 50%;
-        height: 100%;
-    
-    
-    
-        .Name{
-          
-            text-align: center;
-            font-size: 30px;
-            font-weight: 600;
-            width: 100%;
-            height: 100%;
-            
-            
-        }
-
-        .Saying{
-            text-align: center;
-            font-size: 20px;
-            font-weight: 600;
-            width: 100%;
-            height: 100%;
-            
-        }
-
-       
-    }
-    
 }
 
-.SignUpContainer{
-    z-index: 1;
+/* Name container styles */
+.NameContainer {
+    text-align: center;
     color: #714E7D;
-    border-radius: 45px;
-    
-    background-color: #fff;
-   padding: 30px 40px;
-    width: 50%;
-    height: 100%;
-
-    .SignupWriting{
-        text-align: center;
-    }
-    .input-box{
-        position: relative;
-        align-self: center;
-        width: 70%;
-        height: 40px;
-        font-size: 16px;
-        margin:30px 0px;
-    
-        color: #fff;
-        padding: 20px 45px 20px 20px;
-
-        input {
-           
-            align-self: center;
-            
-             width: 100%;
-             height: 100%;
-             background: transparent;
-             outline: none;
-             border: none;
-             border: 2px solid #b790c2;
-             border-radius: 30px;
-
-            
-        }
-        input::placeholder{
-            padding-left: 1rem;
-            color: #714E7D;
-         }
-
-    }
-
-    .remember{
-        display: flex;
-        font-size: 14px;
-        margin:-15px  0 15px;
-
-        .remember_button{
-            .input{
-                accent-color:#714E7D ;
-                margin-right:3px;
-                padding-top: 3rem;
-            }
-
-        } 
-    }
-     
-    .signUpContainer_footer{
-        display: flex;
-        content:"";
-        justify-content: space-around;
-        padding-top: 20px;
-
-
-        .signup{
-          
-            width: 100%;
-            height: 30px;
-            border: none;
-            outline:none;
-            border-radius: 40px;
-            box-shadow: 0 0 10px rgba(0,0,0,.1);
-            cursor: pointer;
-            font-size:16px;
-            background-color: #714E7D;
-            color: #fff;
-            font-weight: 500;
-
-
-            
-
-        }
-        .login-link{
-           font-size: 14px;
-           text-align: left;
-           font-weight: 600;
-        .login-link_text{
-            text-decoration: none;
-
-        }
-        .login-link_ref p{
-            text-decoration: none;
-            text-decoration: underline;
-
-        }
-
-        }
-
-
-           
-    }
-
-
-
-   
+    margin-bottom: 50px;
+    margin-top: 0;
+    margin-right: 10%;
 }
 
+.Name {
+    font-size: 30px;
+    font-weight: 600;
+}
 
+.Saying {
+    font-size: 20px;
+    font-weight: 600;
+}
 
+/* SignUp container styles */
+.SignUpContainer {
+    background-color: #fff;
+    border-radius: 45px;
+    padding: 30px 40px;
+    width: 30%;
+    margin-top: 0;
+}
 
+.SignupWriting {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #714E7D;
+}
 
+.input-box {
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #B790C2;
+    border-radius: 30px;
+    outline: none;
+}
+
+input::placeholder {
+    color: #714E7D;
+    padding-left: 10px;
+}
+
+.remember {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.remember-button {
+    font-size: 14px;
+}
+
+.signup-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.signup-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 40px;
+    background-color: #714E7D;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.login-link {
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+
+.login-link-text {
+    margin-right: 10px;
+}
+
+.login-link-ref {
+    text-decoration: underline;
+    color: #714E7D;
+    cursor: pointer;
+}
+
+h3{
+    color: #714E7D;
+}
+
+@media screen and (max-width: 768px) {
+    .NameContainer {
+        margin-bottom: 20px; 
+    }
+
+    .SignUpContainer {
+        width: 80%; 
+    }
+
+    .BigContainer {
+        flex-direction: column; 
+        align-items: center;
+    }
+
+    .login-link {
+        margin-top: 10px; 
+    }
+}

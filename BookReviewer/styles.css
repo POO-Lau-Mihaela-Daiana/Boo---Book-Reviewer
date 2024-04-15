@@ -204,52 +204,29 @@
   z-index: -1;
 }
 
-.footer {
-  display: flex;
-  position: fixed;
-  width: 100%;
-  padding: 20px;
-  bottom: 0;
-  top: 738px;
-  left: 50%;
-  transform: translateX(-50%);
-  right: 0;
+.signupButton, .loginButton {
+  width: 300px;
+  height: 80px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  margin: 0 10px;
 }
-.footer .buttons_footer {
-  text-align: center;
-  margin: 4px 2px;
-  left: 85%;
-  position: absolute;
-  bottom: 20%;
+
+.signupButton {
+  background-color: #3d284f;
 }
-.footer .buttons_footer .signupButton {
-  width: 105px;
-  height: 35px;
-  background-color: #b790c2;
-  color: #e3cedd;
-  border-radius: 1rem;
-  padding: 0;
-  border: 0;
-  margin-right: 1rem;
-  background: #b790c2;
-  font-size: medium;
-}
-@media (max-width: 768px) {
-  .footer .footer {
-    padding: 10px;
-  }
-  .footer .buttons_footer {
-    bottom: 10px;
-  }
-  .footer .signupButton {
-    width: 90px;
-    height: 30px;
-  }
+
+.loginButton {
+  background-color: #3d284f;
 }
 
 .Writing {
   align-self: flex-end;
-  margin-top: 400px;
+  margin-top: 300px;
   padding-left: 60px;
 }
 .Writing .Text {
@@ -285,4 +262,8 @@
   .Writing .SubText {
     font-size: 40px;
   }
+}
+
+h1 {
+  color: #fff;
 }/*# sourceMappingURL=styles.css.map */

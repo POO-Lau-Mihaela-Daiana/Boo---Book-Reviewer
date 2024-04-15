@@ -4,46 +4,48 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../LogIn/style.css" />
-    <title>Login</title>
+    <title>LogIn</title>
   </head>
   <body class="SignUp">
-    <div class="container">
-      <img
-        src="../BookReviewer/pictures/Boo-Logo.png"
-        alt="Logo"
-        class="hover-text"
-      />
-      <a href="../LogIn/login.html"> </a>
-    </div>
+    <header class="header">
+      <div class="container">
+        <img
+          src="../BookReviewer/pictures/Boo-Logo.png"
+          alt="Logo"
+          class="logo"
+        />
+      </div>
+    </header>
     <div class="BigContainer">
       <div class="NameContainer">
         <p class="Name">BOO</p>
         <p class="Saying">Create your new story, with us</p>
-        <div class="Logo"></div>
       </div>
       <div class="SignUpContainer">
-        <h1 class="SignupWriting">Log in</h1>
-        <h2>Your username:</h2>
-        <div class="input-box"><input placeholder="user" /></div>
-        <h2>Your password:</h2>
-        <div class="input-box"><input placeholder="password" /></div>
-
-        <div class="remember">
-          <label class="remember_button"
-            ><input type="checkbox" />Remember my account?</label
-          >
+        <h1 class="SignupWriting">Log In</h1>
+        <div class="input-box">
+          <h3>Type your username (or email):</h3>
+          <input type="text" placeholder="Your username" />
         </div>
-
-        <div class="signUpContainer_footer">
+        <div class="input-box">
+          <h3>Type your password:</h3>
+          <input type="password" placeholder="Your password" />
+        </div>
+        <div class="remember">
+          <label class="remember-button">
+            <input type="checkbox" />Remember my account?
+          </label>
+        </div>
+        <div class="signup-footer">
           <button
             type="submit"
-            class="signup"
+            class="signup-button"
             onclick="window.location.href='../MainPage/landingpage.html';"
           >
-            Log in
+            Log In
           </button>
           <div class="login-link">
-            <p class="login-link_text">Don't have an account?</p>
+            <h3 class="login-link-text">Don't have an account?</h3>
             <a class="login-link-ref" href="../SignUp/signup.html">Sign up</a>
           </div>
         </div>
