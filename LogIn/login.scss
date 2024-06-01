@@ -1,4 +1,9 @@
+@use  '../BookReviewer/global/typography';
 @import '../BookReviewer/global/boilerplate';
+
+*{
+    font-family: typography.$global-font-family;
+}
 
 
 .header {

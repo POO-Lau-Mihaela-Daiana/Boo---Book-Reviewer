@@ -1,6 +1,10 @@
+@use  '../BookReviewer/global/typography';
 @import '../BookReviewer/global/index';
+@import '../BookReviewer/global/boilerplate';
 
-
+*{
+    font-family: typography.$global-font-family;
+}
 .body{
     width: auto;
     margin: 0;

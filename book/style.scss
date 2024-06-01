@@ -1,8 +1,11 @@
+@use  '../BookReviewer/global/typography';
 @import '../BookReviewer/global/boilerplate';
 
 
 
+
 * {
+    font-family: typography.$global-font-family;
     box-sizing: border-box;
     margin: 0;
     padding: 0;

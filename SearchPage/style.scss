@@ -40,7 +40,7 @@ padding: 0px;
             width: 20%;
             height: 100%;
             background-color: #fff;
-          
+           
             margin-left: 2%;
             margin-right: 3%;
             margin-top: 2%;
@@ -75,7 +75,8 @@ padding: 0px;
              display: flex;
              border: 2px solid #714E7D;
              flex-direction: column;
-             height: 100%;
+             max-height: 100%;
+             margin-right: 3vw;
              //background-color: #fff;
              background-image: url(../BookReviewer/pictures/401be19115aefd10f7c7f9c51036e94c.jpg);
            .book__container::-webkit-scrollbar{

@@ -1,3 +1,10 @@
+@use  '../BookReviewer/global/typography';
+@import '../BookReviewer/global/boilerplate';
+
+*{
+  font-family: typography.$global-font-family;
+}
+
 .container {
   display: flex;
   align-items: center;
@@ -35,7 +42,7 @@
   background-color: #714e7d;
 }
 
-.header_BOO {
+/* .header_BOO {
   display: flex;
   position: relative;
   justify-content: space-between;
@@ -124,41 +131,17 @@
   overflow: hidden;
   text-align: left;
   padding: 10px;
-}
-@media screen and (max-width: 748px) {
+} */
+
+/* @media screen and (max-width: 748px) {
   .header_BOO .search {
     flex-direction: column;
   }
   .header_BOO .search .search__input {
     margin-bottom: 5px;
     width: auto;
-  }
-}
-
-.friend__container .friend__container__profile {
-  display: flex;
-  align-items: center;
-  padding: 30px;
-  border-bottom: 1px solid #B790C2;
-}
-.friend__container .friend__container__profile .friend__profile__image {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  margin-right: 10px;
-}
-.friend__container .friend__container__profile .profile__container {
-  flex: 1;
-  font-size: 16px;
-}
-.friend__container .friend__container__profile .profile__container .profile__name {
-  display: flex;
-  font-weight: bold;
-  margin-bottom: 2px;
-}
-.friend__container .friend__container__profile .profile__container .profile__name .name {
-  padding-right: 5px;
-}
+  } 
+}*/
 
 .body {
   width: auto;
@@ -179,6 +162,7 @@
 }
 .block_container .feed_container {
   display: flex;
+  
   margin-left: auto;
   margin-right: auto;
   z-index: 450;
@@ -297,7 +281,7 @@
 }
 .block_container .feed_container_main_feed {
   margin-top: 20px;
-  margin-left: 25%; 
+  margin-left: 30%; 
   transform: translateX(-50%);
   padding: 20px;
   border: 2px solid #ccc;

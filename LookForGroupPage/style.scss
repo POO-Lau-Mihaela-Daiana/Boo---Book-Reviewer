@@ -1,7 +1,9 @@
+@use  '../BookReviewer/global/typography';
 @import '../BookReviewer/global/boilerplate';
 @import '../GroupPage/style.scss';
 
 *{
+    font-family: typography.$global-font-family;
     box-sizing: border-box;
 margin: 0px;
 padding: 0px;
