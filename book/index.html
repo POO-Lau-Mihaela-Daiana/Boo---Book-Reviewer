@@ -17,7 +17,9 @@
   </head>
   <body>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="../MainPage/scrip.js"></script>
+    <script src="../book/book_javax.js"></script>
     <header class="header_BOO">
       <div class="logo header__logo">
         <img
@@ -112,32 +114,28 @@
             </div>
           </div>
           <div class="book-info">
-            <h1>The red palace</h1>
+            <h1 id="book-title">Book Title</h1>
             <h2>Description</h2>
-            <p>
-              Rowan and Citra take opposite stances on the morality of the
-              Scythedom, putting them at odds, in the chilling sequel to the
-              Printz Honor Book Scythe from New York Times bestseller Neal
-              Shusterman, author of the Unwind dystology.
+            <p id="book-description">
+              Book description will be displayed here.
             </p>
             <h2>Details</h2>
-            <ul>
-              <li><strong>Pages:</strong> 448 pages</li>
+            <ul id="book-details">
+              <li><strong>Pages:</strong> <span id="book-pages"></span></li>
               <li>
-                <strong>Publisher:</strong> Simon & Schuster Books for Young
-                Readers
+                <strong>Publisher:</strong> <span id="book-publisher"></span>
               </li>
-              <li><strong>Publication Date:</strong> January 9th, 2018</li>
               <li>
-                <strong>Genre:</strong> Young Adult, Science Fiction, Dystopian
+                <strong>Publication Date:</strong>
+                <span id="book-publication-date"></span>
               </li>
             </ul>
           </div>
         </div>
       </div>
       <h2>Reviews</h2>
-      <div class="reviews">
-        <div class="comment">
+      <div class="reviews" id="reviews">
+        <!-- <div class="comment">
           <div class="account">
             <img
               src="../BookReviewer/pictures/Boo-Logo.png"
@@ -220,7 +218,7 @@
               Highly recommend this book to anyone who loves dystopian fiction.
             </p>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </body>

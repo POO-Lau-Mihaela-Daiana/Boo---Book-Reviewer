@@ -16,6 +16,11 @@
     <link rel="stylesheet" href="../AdminPage/styles.css" />
   </head>
   <body>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../AdminPage/book_add_ajax.js"></script>
+    <script src="../AdminPage/book_delete_ajax.js"></script>
+
     <div class="block_container">
       <div class="main_container">
         <button class="toggle_button" onclick="toggleForm('addBookForm')">
@@ -23,7 +28,7 @@
         </button>
         <div class="form_container" id="addBookForm">
           <h2>Add Book</h2>
-          <form>
+          <form id="addBookFormElement" method="POST" action="book_add.php">
             <label for="bookPhoto">Photo URL:</label>
             <input type="text" id="bookPhoto" name="bookPhoto" required /><br />
             <label for="bookName">Name:</label>
@@ -63,8 +68,7 @@
               name="bookPublicationDate"
               required
             /><br />
-            <label for="bookGenre">Genre:</label>
-            <input type="text" id="bookGenre" name="bookGenre" required /><br />
+          
             <button type="submit">Add Book</button>
           </form>
         </div>
@@ -98,7 +102,7 @@
         </button>
         <div class="form_container" id="deleteBookForm">
           <h2>Delete Book</h2>
-          <form>
+          <form  id="deleteBookFormElement" method="DELETE" action="book_delete.php">
             <label for="bookId">Book ID:</label>
             <input type="text" id="bookId" name="bookId" required /><br />
             <button type="submit">Delete Book</button>
