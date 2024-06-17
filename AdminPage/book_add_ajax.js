@@ -20,15 +20,14 @@ function addBook() {
         success: function(response) {
             console.log(response); 
             if (response.success) {
-                $('#addBookMessage').html(response.message);
+               alert("Book added");
                 form.reset();
             } else {
-                $('#addBookMessage').html('Error: ' + response.message);
+                alert('Error:' +response.error);
             }
         },
         error: function(xhr, status, error) {
-            $('#addBookMessage').html('Error: ' + status + ' ' + error);
-        }
+          console.error('Ajax error:'+status+' '+error);}
     });
 
 }

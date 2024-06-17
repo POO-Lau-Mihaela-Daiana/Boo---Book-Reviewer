@@ -8,27 +8,29 @@ function toggleForm(formId) {
 }
 
 function deleteBook() {
-    const form = document.getElementById('deleteBookFormElement');
+    const form = document.getElementById('bookId').value;
     const formData = new FormData(form);
-
+ if(bookId){
     $.ajax({
         url: 'book_delete.php',
-        method: 'DELETE',
-        data: formData,
-        processData: false,
-        contentType: false,
+        method: 'POST',
+        data: {bookId:bookId},
         success: function(response) {
             console.log(response); 
             if (response.success) {
-                $('#deleteBookMessage').html(response.message);
+               alert('Book deleted from data base');
                 form.reset();
             } else {
-                $('#deleteBookMessage').html('Error: ' + response.message);
+                alert('Error:' +response.error);
             }
         },
         error: function(xhr, status, error) {
-            $('#deleteBookMessage').html('Error: ' + status + ' ' + error);
+          console.error('Ajax error:'+status+' '+error);
         }
     });
 
+ } else {
+        alert('Please enter a book ID.');
+    }
+   
 }

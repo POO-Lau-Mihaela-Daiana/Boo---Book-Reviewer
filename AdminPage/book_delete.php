@@ -16,27 +16,46 @@ if ($conn->connect_error) {
 }
 
 
-if ($_SERVER['REQUEST_METHOD'] == 'DELETE') {
-    $bookID = $_DELETE['bookID'];
-
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $bookId = $_POST['bookId'];
    
-    $stmt = $conn->prepare("DELETE FROM book WHERE book_id=? ");
-    if ($stmt === false) {
-        die(json_encode(array('success' => false, 'message' => 'Prepare statement failed: ' . $conn->error)));
+    $mysqli->begin_transaction();
+
+    try {
+
+        $stmt = $mysqli->prepare("DELETE FROM book_comment WHERE book_id = ?");
+        $stmt->bind_param("i", $bookId);
+        $stmt->execute();
+        $stmt->close();
+
+     
+        $stmt = $mysqli->prepare("DELETE FROM comments WHERE comment_id IN (SELECT comment_id FROM book_comment WHERE book_id = ?)");
+        $stmt->bind_param("i", $bookId);
+        $stmt->execute();
+        $stmt->close();
+
+        
+    
+        $stmt = $mysqli->prepare("DELETE FROM books WHERE book_id = ?");
+        $stmt->bind_param("i", $bookId);
+        $stmt->execute();
+        $stmt->close();
+
+      
+        $mysqli->commit();
+
+       
+        echo json_encode(['success' => true]);
+    } catch (Exception $e) {
+      
+        $mysqli->rollback();
+      
+        echo json_encode(['success' => false, 'error' => $e->getMessage()]);
     }
 
-    $stmt->bind_param("ssssiss", $bookPhoto, $bookName, $bookAuthor, $bookDescription, $bookPages, $bookPublisher, $bookPublicationDate);
 
-    if ($stmt->execute()) {
-        echo json_encode(array('success' => true, 'message' => 'Book added successfully'));
-    } else {
-        echo json_encode(array('success' => false, 'message' => 'Execute failed: ' . $stmt->error));
-    }
-
-    $stmt->close();
+    $mysqli->close();
 } else {
-    echo json_encode(array('success' => false, 'message' => 'Invalid request method'));
+    echo json_encode(['success' => false, 'error' => 'Book ID not provided']);
 }
-
-$conn->close();
 ?>
