@@ -36,7 +36,7 @@ $(document).ready(function() {
             <li><strong>Pages:</strong> ${book.book_pages}</li>
             <li><strong>Publisher:</strong> ${book.book_publisher}</li>
             <li><strong>Publication Date:</strong> ${book.book_publication}</li>
-            <li><strong>Genre:</strong> ${book.book_genre}</li>
+            <li><strong>Genres:</strong> ${book.genres}</li>
         `);
         $('.book-cover img').attr('src', book.book_photo_url);
     }

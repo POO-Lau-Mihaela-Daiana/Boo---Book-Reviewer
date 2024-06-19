@@ -94,131 +94,62 @@
         </div>
       </nav>
     </header>
-    <div class="body_container">
-      <div class="main-content">
-        <div class="book-details">
-          <div class="book-cover">
-            <img
-              src="../BookReviewer/pictures/book_cover.jpeg"
-              alt="Book Cover"
-            />
-            <p></p>
-            <br />
-            <button class="want-to-read-btn">Want to Read</button>
-            <div class="rating-stars">
-              <span class="star">&#9733;</span>
-              <span class="star">&#9733;</span>
-              <span class="star">&#9733;</span>
-              <span class="star">&#9733;</span>
-              <span class="star">&#9733;</span>
+    <div class="body_containers">
+      <div class="body_container">
+        <div class="main-content">
+          <div class="book-details">
+            <div class="book-cover">
+              <img
+                src="../BookReviewer/pictures/book_cover.jpeg"
+                alt="Book Cover"
+              />
+              <p></p>
+              <br />
+              <button class="want-to-read-btn">Want to Read</button>
+              <div class="rating-stars">
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+              </div>
+            </div>
+            <div class="book-info">
+              <h1 id="book-title">Book Title</h1>
+              <h2>Description</h2>
+              <p id="book-description">
+                Book description will be displayed here.
+              </p>
+              <h2>Details</h2>
+              <ul id="book-details">
+                <li><strong>Pages:</strong> <span id="book-pages"></span></li>
+                <li>
+                  <strong>Publisher:</strong> <span id="book-publisher"></span>
+                </li>
+                <li>
+                  <strong>Publication Date:</strong>
+                  <span id="book-publication-date"></span>
+                </li>
+              </ul>
             </div>
           </div>
-          <div class="book-info">
-            <h1 id="book-title">Book Title</h1>
-            <h2>Description</h2>
-            <p id="book-description">
-              Book description will be displayed here.
-            </p>
-            <h2>Details</h2>
-            <ul id="book-details">
-              <li><strong>Pages:</strong> <span id="book-pages"></span></li>
-              <li>
-                <strong>Publisher:</strong> <span id="book-publisher"></span>
-              </li>
-              <li>
-                <strong>Publication Date:</strong>
-                <span id="book-publication-date"></span>
-              </li>
-            </ul>
-          </div>
         </div>
+        <h2>Reviews</h2>
+        <div class="reviews" id="reviews"></div>
       </div>
-      <h2>Reviews</h2>
-      <div class="reviews" id="reviews">
-        <!-- <div class="comment">
-          <div class="account">
-            <img
-              src="../BookReviewer/pictures/Boo-Logo.png"
-              alt="Account Picture"
-              class="account-picture"
-            />
-          </div>
-          <div class="comment-text">
-            <p>This book was amazing! I couldn't put it down!</p>
-          </div>
+      <div class="side-bar">
+        <h2>Leave a Comment</h2>
+        <div class="comment-form">
+          <form id="commentForm">
+            <textarea
+              id="commentText"
+              rows="4"
+              placeholder="Write your comment here..."
+              required
+            ></textarea>
+            <button type="submit" class="submit-comment-btn">Submit</button>
+          </form>
         </div>
-        <div class="comment">
-          <div class="account">
-            <img
-              src="../BookReviewer/pictures/book_cover.jpeg"
-              alt="Account Picture"
-              class="account-picture"
-            />
-          </div>
-          <div class="comment-text">
-            <p>
-              Highly recommend this book to anyone who loves dystopian fiction.
-            </p>
-          </div>
-        </div>
-        <div class="comment">
-          <div class="account">
-            <img
-              src="../BookReviewer/pictures/Boo-Logo.png"
-              alt="Account Picture"
-              class="account-picture"
-            />
-          </div>
-          <div class="comment-text">
-            <p>
-              The characters were so well-developed. I felt like I knew them
-              personally.
-            </p>
-          </div>
-        </div>
-        <div class="comment">
-          <div class="account">
-            <img
-              src="../BookReviewer/pictures/Boo-Logo.png"
-              alt="Account Picture"
-              class="account-picture"
-            />
-          </div>
-          <div class="comment-text">
-            <p>
-              The characters were so well-developed. I felt like I knew them
-              personally.
-            </p>
-          </div>
-        </div>
-        <div class="comment">
-          <div class="account">
-            <img
-              src="../BookReviewer/pictures/book_cover.jpeg"
-              alt="Account Picture"
-              class="account-picture"
-            />
-          </div>
-          <div class="comment-text">
-            <p>
-              Highly recommend this book to anyone who loves dystopian fiction.
-            </p>
-          </div>
-        </div>
-        <div class="comment">
-          <div class="account">
-            <img
-              src="../BookReviewer/pictures/book_cover.jpeg"
-              alt="Account Picture"
-              class="account-picture"
-            />
-          </div>
-          <div class="comment-text">
-            <p>
-              Highly recommend this book to anyone who loves dystopian fiction.
-            </p>
-          </div>
-        </div> -->
       </div>
     </div>
   </body>

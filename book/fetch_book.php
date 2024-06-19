@@ -18,16 +18,21 @@ if (isset($_GET['book_id'])) {
     $book_id = intval($_GET['book_id']); 
 
   
-    $sql_book = "SELECT 
-                    book_title, 
-                    book_author, 
-                    book_description, 
-                    book_pages, 
-                    book_publisher, 
-                    book_publication, 
-                    book_photo_url
+    $sql_book ="SELECT 
+                    book.book_title, 
+                    book.book_author, 
+                    book.book_description, 
+                    book.book_pages, 
+                    book.book_publisher, 
+                    book.book_publication, 
+                    book.book_photo_url,
+                    GROUP_CONCAT(genre.genre_name SEPARATOR ', ') AS genres
                  FROM book 
-                 WHERE book_id = ?";
+                 JOIN book_genre ON book.book_id = book_genre.book_id
+                 JOIN genre ON book_genre.genre_id = genre.genre_id 
+                 WHERE book.book_id = ?
+                 GROUP BY book.book_id";
+
     $stmt_book = $conn->prepare($sql_book);
     if ($stmt_book === false) {
         die(json_encode(array('success' => false, 'error' => 'Prepare statement failed: ' . $conn->error)));
@@ -61,8 +66,7 @@ if (isset($_GET['book_id'])) {
                      WHERE 
                         book_comment.book_id = ?
                      ORDER BY 
-                        comment.comment_id DESC 
-                     LIMIT 10";
+                        comment.comment_id DESC ";
     $stmt_comments = $conn->prepare($sql_comments);
     if ($stmt_comments === false) {
         die(json_encode(array('success' => false, 'error' => 'Prepare statement failed: ' . $conn->error)));
