@@ -32,32 +32,38 @@
       </div>
       <div class="SignUpContainer">
         <h1 class="SignupWriting">Log In</h1>
-        <div class="input-box">
-          <h3>Type your username (or email):</h3>
-          <input type="text" placeholder="Your username" />
-        </div>
-        <div class="input-box">
-          <h3>Type your password:</h3>
-          <input type="password" placeholder="Your password" />
-        </div>
-        <div class="remember">
-          <label class="remember-button">
-            <input type="checkbox" />Remember my account?
-          </label>
-        </div>
-        <div class="signup-footer">
-          <button
-            type="submit"
-            class="signup-button"
-            onclick="window.location.href='../MainPage/landingpage.html';"
-          >
-            Log In
-          </button>
-          <div class="login-link">
-            <h3 class="login-link-text">Don't have an account?</h3>
-            <a class="login-link-ref" href="../SignUp/signup.html">Sign up</a>
+        <form action="login.php" method="post">
+          <div class="input-box">
+            <h3>Type your username (or email):</h3>
+            <input
+              type="text"
+              name="username_or_email"
+              placeholder="Your username"
+              required
+            />
           </div>
-        </div>
+          <div class="input-box">
+            <h3>Type your password:</h3>
+            <input
+              type="password"
+              name="password"
+              placeholder="Your password"
+              required
+            />
+          </div>
+          <div class="remember">
+            <label class="remember-button">
+              <input type="checkbox" />Remember my account?
+            </label>
+          </div>
+          <div class="signup-footer">
+            <button type="submit" class="signup-button">Log In</button>
+            <div class="login-link">
+              <h3 class="login-link-text">Don't have an account?</h3>
+              <a class="login-link-ref" href="../SignUp/signup.html">Sign up</a>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
   </body>
