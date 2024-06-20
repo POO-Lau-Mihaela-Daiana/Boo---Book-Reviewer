@@ -1,3 +1,16 @@
+<?php
+session_start();
+
+
+if (!isset($_SESSION['user_id'])) {
+    header("Location: ../login.php");
+    exit;
+}
+
+$user_id = $_SESSION['user_id'];
+$book_id = $_GET['book_id']; //HOW ELSE CAN I DO THIS WTF
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -140,7 +153,7 @@
       <div class="side-bar">
         <h2>Leave a Comment</h2>
         <div class="comment-form">
-          <form id="commentForm">
+          <form method ='POST' Action='add_comment.php' id="commentForm">
             <textarea
               id="commentText"
               rows="4"

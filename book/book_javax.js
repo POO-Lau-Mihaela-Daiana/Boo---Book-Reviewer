@@ -1,6 +1,9 @@
 $(document).ready(function() {
     var bookId = getBookIdFromUrl();
     fetchBookDetailsAndComments(bookId);
+    var commentText = $('#commentText').val();
+  
+    var user_id = $('#user_id').val();
 
     function getBookIdFromUrl() {
         var urlParams = new URLSearchParams(window.location.search);
@@ -61,4 +64,28 @@ $(document).ready(function() {
             reviewsContainer.append(commentHtml);
         });
     }
+    
+
+    $('#commentForm').submit(function(event) {
+        event.preventDefault(); 
+    
+        var commentText = $('#commentText').val();
+    
+        $.ajax({
+            type: 'POST',
+            url: 'add_comment.php',
+            data: {
+                book_id: bookId,
+                user_id: user_id,
+                comment: commentText
+            },
+            success: function(response) {
+                fetchBookDetailsAndComments(bookId);
+                $('#commentText').val(''); 
+            },
+            error: function(xhr, status, error) {
+                console.error('AJAX Error: ' + status + ' ' + error);
+            }
+        });
+    });
 });

@@ -67,6 +67,7 @@ if (isset($_GET['book_id'])) {
                         book_comment.book_id = ?
                      ORDER BY 
                         comment.comment_id DESC ";
+                        
     $stmt_comments = $conn->prepare($sql_comments);
     if ($stmt_comments === false) {
         die(json_encode(array('success' => false, 'error' => 'Prepare statement failed: ' . $conn->error)));

@@ -40,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     if ($conn->query($sql) === TRUE) {
         echo "New record created successfully. Password hash: $hashed_password"; // Debug output
-        header("Location: ../MainPage/landingpage.html");
+        header("Location: ../MainPage/landingpage.php");
         exit;
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;

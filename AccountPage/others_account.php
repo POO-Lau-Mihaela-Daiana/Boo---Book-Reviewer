@@ -1,8 +1,21 @@
+<?php
+session_start();
+
+
+if (!isset($_SESSION['user_id'])) {
+    header("Location: ../login.php");
+    exit;
+}
+
+$user_id = $_SESSION['user_id'];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BOO</title>
     <link
       rel="icon"
       type="image/png"
@@ -12,12 +25,13 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
     />
-    <title>BOO</title>
     <link rel="stylesheet" href="../AccountPage/style.css" />
   </head>
   <body>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="../MainPage/scrip.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../AccountPage/fetch_info_for_others.js"></script>
 
     <header class="header_BOO">
       <div class="logo header__logo">
@@ -25,7 +39,7 @@
           src="../BookReviewer/pictures/Boo-Logo.png"
           alt="Logo"
           class="logo__image"
-          onclick="window.location.href='../MainPage/landingpage.html';"
+          onclick="window.location.href='../MainPage/landingpage.php?user_id=<?php echo $user_id; ?>';"
         />
       </div>
 
@@ -50,7 +64,7 @@
             >
           </li>
           <li class="nav__item">
-            <a href="../AccountPage/account.html" class="nav__link">Account</a>
+            <a href="../AccountPage/account.php?user_id=<?php echo $user_id; ?>" class="nav__link">Account</a>
           </li>
           <li class="nav__item">
             <a href="../Settings/settings.html" class="nav__link_menu"
@@ -75,7 +89,7 @@
               >
             </li>
             <li class="nav__item">
-              <a href="../AccountPage/account.html" class="nav__link_menu"
+              <a href="../AccountPage/account.php?user_id=<?php echo $user_id; ?>" class="nav__link_menu"
                 >Account</a
               >
             </li>
@@ -103,21 +117,9 @@
             class="side__photo"
           />
 
-          <div class="side__name">Name : Ana</div>
-          <div class="side__date">Member since: 22-30-2024</div>
+          <div class="side__name">Name : <p id="username"> EXAMPLE OF NAME</p></div>
+          <div class="side__date">Member since: <p id="user_date_of_creation">EXAMPLE OF DATE</p></div>
           <div class="side__books">Nr of books : 24</div>
-          <br />
-          <br />
-          <div class="side__books">Want to change the details</div>
-          <div class="side__books">for your account?</div>
-          <div class="main__settings">
-            <button
-              class="main__settings__button"
-              onclick="window.location.href='../Settings/settings.html';"
-            >
-              Settings
-            </button>
-          </div>
         </div>
 
         <div class="container__main">

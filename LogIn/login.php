@@ -26,7 +26,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
         
-        // Debugging statements
         echo "Fetched password hash from database: " . $row['user_password'] . "<br>";
         echo "Password entered by user: " . $password . "<br>";
 
@@ -34,9 +33,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "Password verified successfully.<br>";
             $_SESSION['user_id'] = $row['user_id'];
             if($row['username'] == 'admin')
-            header("Location: ../AdminPage/admin_page.html");
+            header("Location: ../AdminPage/admin_page.php?user_id=" . $row['user_id']);
         else
-            header("Location: ../MainPage/landingpage.html");
+        header("Location: ../MainPage/landingpage.php?user_id=" . $row['user_id']);
             exit;
         } else {
             echo "Incorrect password.";
