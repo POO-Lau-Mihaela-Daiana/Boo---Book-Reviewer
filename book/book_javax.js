@@ -1,6 +1,7 @@
 $(document).ready(function() {
     var bookId = getBookIdFromUrl();
     fetchBookDetailsAndComments(bookId);
+    // fetchBookRatings(bookId);
     var commentText = $('#commentText').val();
   
     var user_id = $('#user_id').val();
@@ -22,6 +23,8 @@ $(document).ready(function() {
                 if (response.success) {
                     displayBookDetails(response.book);
                     displayComments(response.comments);
+                    // displayBookRatings(response.ratings);
+
                 } else {
                     console.error('Fetch error: ' + response.error);
                 }
@@ -31,6 +34,27 @@ $(document).ready(function() {
             }
         });
     }
+
+    // function fetchBookRatings(bookId) {
+    //     $.ajax({
+    //         url: 'fetch_reviews.php',
+    //         method: 'GET',
+    //         data: { book_id: bookId },
+    //         dataType: 'json',
+    //         success: function(response) {
+    //             if (response.success) {
+    //                 displayBookRatings(response.ratings);
+    //             } else {
+    //                 console.error('Fetch error: ' + response.error);
+    //             }
+    //         },
+    //         error: function(xhr, status, error) {
+    //             console.error('AJAX Error: ' + status + ' ' + error);
+    //         }
+    //     });
+    // }
+
+
 
     function displayBookDetails(book) {
         $('#book-title').text(book.book_title);
@@ -64,6 +88,19 @@ $(document).ready(function() {
             reviewsContainer.append(commentHtml);
         });
     }
+
+    function displayBookRatings(ratings) {
+        $('#average-rating').text(ratings.average_rating.toFixed(1));
+        $('#total-reviews').text(ratings.total_reviews);
+        $('#five-star-count').text(ratings.five_star);
+        $('#four-star-count').text(ratings.four_star);
+        $('#three-star-count').text(ratings.three_star);
+        $('#two-star-count').text(ratings.two_star);
+        $('#one-star-count').text(ratings.one_star);
+    }
+
+
+
     
 
     $('#commentForm').submit(function(event) {
@@ -88,4 +125,6 @@ $(document).ready(function() {
             }
         });
     });
+
+
 });

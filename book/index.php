@@ -150,10 +150,65 @@ $book_id = $_GET['book_id']; //HOW ELSE CAN I DO THIS WTF
         <h2>Reviews</h2>
         <div class="reviews" id="reviews"></div>
       </div>
+
+      <div class="side_reviews">
+        <div class="rating">
+          <div class="rating__average">
+            <h1 id="average-rating">4.5</h1>
+            <div class="star_outer">
+              <div class="star_inner">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            </div>
+            <p id="total-reviews">234</p>
+          </div>
+
+          <div class="rating__progress">
+            <div class="rating__progress-value">
+              <p>5<span class="star">&#9733;</span></p>
+              <div class="progress">
+                <div class="bar" id="five-star-bar"></div>
+              </div>
+              <p id="five-star-count">456</p>
+            </div>
+
+            <div class="rating__progress-value">
+              <p>4<span class="star">&#9733;</span></p>
+              <div class="progress">
+                <div class="bar" id="four-star-bar"></div>
+              </div>
+              <p id="four-star-count">456</p>
+            </div>
+
+            <div class="rating__progress-value">
+              <p>3<span class="star">&#9733;</span></p>
+              <div class="progress">
+                <div class="bar" id="three-star-bar"></div>
+              </div>
+              <p id="three-star-count">456</p>
+            </div>
+
+            <div class="rating__progress-value">
+              <p>2<span class="star">&#9733;</span></p>
+              <div class="progress">
+                <div class="bar" id="two-star-bar"></div>
+              </div>
+              <p id="two-star-count">456</p>
+            </div>
+
+            <div class="rating__progress-value">
+              <p>1<span class="star">&#9733;</span></p>
+              <div class="progress">
+                <div class="bar" id="one-star-bar"></div>
+              </div>
+              <p id="one-star-count">456</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="side-bar">
         <h2>Leave a Comment</h2>
         <div class="comment-form">
-          <form method ='POST' Action='add_comment.php' id="commentForm">
+          <form method="POST" action="add_comment.php" id="commentForm">
             <textarea
               id="commentText"
               rows="4"
