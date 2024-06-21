@@ -1,7 +1,10 @@
 $(document).ready(function() {
     var bookId = getBookIdFromUrl();
     fetchBookDetailsAndComments(bookId);
+    // fetchBookRatings(bookId);
     var commentText = $('#commentText').val();
+
+    
   
     var user_id = $('#user_id').val();
 
@@ -22,6 +25,8 @@ $(document).ready(function() {
                 if (response.success) {
                     displayBookDetails(response.book);
                     displayComments(response.comments);
+                    displayBookRatings(response.ratings);
+
                 } else {
                     console.error('Fetch error: ' + response.error);
                 }
@@ -64,6 +69,40 @@ $(document).ready(function() {
             reviewsContainer.append(commentHtml);
         });
     }
+
+   function displayBookRatings(ratings) {
+ 
+    if (!ratings || typeof ratings !== 'object') {
+        console.error('Invalid ratings object:', ratings);
+        return;
+    }
+
+    const averageRating = typeof ratings.average_rating === 'number' ? parseFloat(ratings.average_rating.toFixed(1)) : 0.0;
+    const totalReviews = typeof ratings.total_reviews === 'number' ? parseInt(ratings.total_reviews) : 0;
+    const fiveStar = typeof ratings.five_star === 'number' ? parseInt(ratings.five_star) : 0;
+    const fourStar = typeof ratings.four_star === 'number' ? parseInt(ratings.four_star) : 0;
+    const threeStar = typeof ratings.three_star === 'number' ? parseInt(ratings.three_star) : 0;
+    const twoStar = typeof ratings.two_star === 'number' ? parseInt(ratings.two_star) : 0;
+    const oneStar = typeof ratings.one_star === 'number' ? parseInt(ratings.one_star) : 0;
+
+  
+    $('#average-rating').text(averageRating.toFixed(1));
+    $('#total-reviews').text(totalReviews);
+    $('#five-star-count').text(fiveStar);
+    $('#four-star-count').text(fourStar);
+    $('#three-star-count').text(threeStar);
+    $('#two-star-count').text(twoStar);
+    $('#one-star-count').text(oneStar);
+
+   
+    $('#five-star-bar').css('width', (totalReviews > 0 ? (fiveStar / totalReviews * 100) : 0) + '%');
+    $('#four-star-bar').css('width', (totalReviews > 0 ? (fourStar / totalReviews * 100) : 0) + '%');
+    $('#three-star-bar').css('width', (totalReviews > 0 ? (threeStar / totalReviews * 100) : 0) + '%');
+    $('#two-star-bar').css('width', (totalReviews > 0 ? (twoStar / totalReviews * 100) : 0) + '%');
+    $('#one-star-bar').css('width', (totalReviews > 0 ? (oneStar / totalReviews * 100) : 0) + '%');
+}
+
+
     
 
     $('#commentForm').submit(function(event) {
@@ -88,4 +127,79 @@ $(document).ready(function() {
             }
         });
     });
+    
+
+    $('#reviewForm').submit(function(event) {
+        event.preventDefault(); 
+    
+        var ratingText = parseInt($('#ratingText').val(), 10);
+      
+        if (ratingText < 1 || ratingText > 5) {
+            alert('Rating must be between 1 and 5.');
+            return;
+        }
+
+        $.ajax({
+            type: 'POST',
+            url: 'add_review.php',
+            data: {
+                book_id: bookId,
+                user_id: user_id,
+                rating: ratingText
+            },
+            success: function(response) {
+                response = JSON.parse(response); 
+                fetchBookDetailsAndComments(bookId);
+                $('#rating').val(''); 
+            },
+            error: function(xhr, status, error) {
+                console.error('AJAX Error: ' + status + ' ' + error);
+            }
+        });
 });
+     // Add event listeners to the buttons
+     $('.want-to-read-btn').on('click', function() {
+        var status = $(this).data('status');
+        console.log("Button clicked:", status); // Debugging log
+        updateBookStatus(status);
+    });
+
+    function updateBookStatus(status) {
+        var listNumber;
+        switch (status) {
+            case 'want_to_read':
+                listNumber = 1;
+                break;
+            case 'currently_reading':
+                listNumber = 2;
+                break;
+            case 'read':
+                listNumber = 3;
+                break;
+            default:
+                return;
+        }
+
+        $.ajax({
+            type: 'POST',
+            url: 'update_book_status.php',
+            data: {
+                book_id: bookId,
+                list_number: listNumber
+            },
+            success: function(response) {
+                response = JSON.parse(response);
+                if (response.success) {
+                    console.log('Book status updated');
+                } else {
+                    console.error('Error updating book status: ' + response.error);
+                }
+            },
+            error: function(xhr, status, error) {
+                console.error('AJAX Error: ' + status + ' ' + error);
+            }
+        });
+    }
+
+});
+

@@ -1,4 +1,6 @@
 <?php
+header('Content-Type: application/json');
+
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
@@ -53,6 +55,9 @@ if ($result->num_rows > 0) {
 
 $conn->close();
 
-header('Content-Type: application/json');
-echo json_encode($books);
+if (count($books) === 1) {
+    echo json_encode($books[0]);
+} else {
+    echo json_encode($books);
+}
 ?>
