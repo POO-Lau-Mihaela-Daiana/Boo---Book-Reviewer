@@ -202,7 +202,7 @@ $book_id = $_GET['book_id']; //HOW ELSE CAN I DO THIS WTF
       </div>
 
       <div class="side_rating">
-    <div class="comment-form">
+    <div class="review-form">
         <form method="POST" action="add_review.php" id="reviewForm">
             <textarea id="ratingText" name="rating" placeholder="Write your rating!" required></textarea>
             <button type="submit" class="submit-comment-btn">Submit</button>

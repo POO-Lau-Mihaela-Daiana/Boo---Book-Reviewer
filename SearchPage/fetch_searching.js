@@ -1,7 +1,7 @@
 $(document).ready(function() {
     $('#searchButton').click(function() {
         var searchQuery = $('.search__input').val().trim();
-        // window.location.href = '../SearchPage/searchPage.php?search=' + encodeURIComponent(searchQuery);
+        window.location.href = '../SearchPage/searchPage.php?search=' + encodeURIComponent(searchQuery);
     });
 
     function fetchSearches() {

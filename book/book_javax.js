@@ -3,6 +3,8 @@ $(document).ready(function() {
     fetchBookDetailsAndComments(bookId);
     // fetchBookRatings(bookId);
     var commentText = $('#commentText').val();
+
+    
   
     var user_id = $('#user_id').val();
 
@@ -68,32 +70,37 @@ $(document).ready(function() {
         });
     }
 
-    function displayBookRatings(ratings) {
-
-        const averageRating = ratings.average_rating ? parseFloat(ratings.average_rating) : 0.0;
-        const totalReviews = ratings.total_reviews ? parseInt(ratings.total_reviews) : 0;
-        const fiveStar = ratings.five_star ? parseInt(ratings.five_star) : 0;
-        const fourStar = ratings.four_star ? parseInt(ratings.four_star) : 0;
-        const threeStar = ratings.three_star ? parseInt(ratings.three_star) : 0;
-        const twoStar = ratings.two_star ? parseInt(ratings.two_star) : 0;
-        const oneStar = ratings.one_star ? parseInt(ratings.one_star) : 0;
-        
-        console.log(ratings);
-        $('#average-rating').text(ratings.average_rating.toFixed(1));
-        $('#total-reviews').text(ratings.total_reviews);
-        $('#five-star-count').text(ratings.five_star);
-        $('#four-star-count').text(ratings.four_star);
-        $('#three-star-count').text(ratings.three_star);
-        $('#two-star-count').text(ratings.two_star);
-        $('#one-star-count').text(ratings.one_star);
-
-        $('#five-star-bar').css('width', (totalReviews > 0 ? (fiveStar /totalReviews * 100) : 0) + '%');
-        $('#four-star-bar').css('width', (totalReviews > 0 ? (fourStar / totalReviews * 100) : 0) + '%');
-        $('#three-star-bar').css('width', (totalReviews > 0 ? (threeStar / totalReviews * 100) : 0) + '%');
-        $('#two-star-bar').css('width', (totalReviews > 0 ? (twoStar / totalReviews * 100) : 0) + '%');
-        $('#one-star-bar').css('width', (totalReviews > 0 ? (oneStar / totalReviews * 100) : 0) + '%');
+   function displayBookRatings(ratings) {
+ 
+    if (!ratings || typeof ratings !== 'object') {
+        console.error('Invalid ratings object:', ratings);
+        return;
     }
 
+    const averageRating = typeof ratings.average_rating === 'number' ? parseFloat(ratings.average_rating.toFixed(1)) : 0.0;
+    const totalReviews = typeof ratings.total_reviews === 'number' ? parseInt(ratings.total_reviews) : 0;
+    const fiveStar = typeof ratings.five_star === 'number' ? parseInt(ratings.five_star) : 0;
+    const fourStar = typeof ratings.four_star === 'number' ? parseInt(ratings.four_star) : 0;
+    const threeStar = typeof ratings.three_star === 'number' ? parseInt(ratings.three_star) : 0;
+    const twoStar = typeof ratings.two_star === 'number' ? parseInt(ratings.two_star) : 0;
+    const oneStar = typeof ratings.one_star === 'number' ? parseInt(ratings.one_star) : 0;
+
+  
+    $('#average-rating').text(averageRating.toFixed(1));
+    $('#total-reviews').text(totalReviews);
+    $('#five-star-count').text(fiveStar);
+    $('#four-star-count').text(fourStar);
+    $('#three-star-count').text(threeStar);
+    $('#two-star-count').text(twoStar);
+    $('#one-star-count').text(oneStar);
+
+   
+    $('#five-star-bar').css('width', (totalReviews > 0 ? (fiveStar / totalReviews * 100) : 0) + '%');
+    $('#four-star-bar').css('width', (totalReviews > 0 ? (fourStar / totalReviews * 100) : 0) + '%');
+    $('#three-star-bar').css('width', (totalReviews > 0 ? (threeStar / totalReviews * 100) : 0) + '%');
+    $('#two-star-bar').css('width', (totalReviews > 0 ? (twoStar / totalReviews * 100) : 0) + '%');
+    $('#one-star-bar').css('width', (totalReviews > 0 ? (oneStar / totalReviews * 100) : 0) + '%');
+}
 
 
     
@@ -125,10 +132,9 @@ $(document).ready(function() {
     $('#reviewForm').submit(function(event) {
         event.preventDefault(); 
     
-        var rating = $('#rating').val();
-        var userId = $('#user_id').val();
-
-        if (rating < 1 || rating > 5) {
+        var ratingText = parseInt($('#ratingText').val(), 10);
+      
+        if (ratingText < 1 || ratingText > 5) {
             alert('Rating must be between 1 and 5.');
             return;
         }
@@ -138,13 +144,14 @@ $(document).ready(function() {
             url: 'add_review.php',
             data: {
                 book_id: bookId,
-                user_id: userId,
-                rating: rating
+                user_id: user_id,
+                rating: ratingText
             },
             success: function(response) {
-                response = JSON.parse(response); 
+                // response = JSON.parse(response); 
+              
                 displayBookRatings(bookId);
-                $('#rating').val(''); 
+              
             },
             error: function(xhr, status, error) {
                 console.error('AJAX Error: ' + status + ' ' + error);
