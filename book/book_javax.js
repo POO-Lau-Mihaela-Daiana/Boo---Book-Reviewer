@@ -148,10 +148,9 @@ $(document).ready(function() {
                 rating: ratingText
             },
             success: function(response) {
-                // response = JSON.parse(response); 
-              
-                displayBookRatings(bookId);
-              
+                response = JSON.parse(response); 
+                fetchBookDetailsAndComments(bookId);
+                $('#rating').val(''); 
             },
             error: function(xhr, status, error) {
                 console.error('AJAX Error: ' + status + ' ' + error);
