@@ -26,10 +26,7 @@ $user_id = $_SESSION['user_id'];
     <title>BOO</title>
   </head>
   <body>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="../MainPage/scrip.js"></script>
-    <script src="../MainPage/comment_javax.js"></script>
+   
 
     <header class="header_BOO">
       <div class="logo header__logo">
@@ -42,14 +39,13 @@ $user_id = $_SESSION['user_id'];
       </div>
 
       <div class="search">
-        <input type="text" class="search__input" placeholder="Book Name" />
-        <button
-          class="search__button"
-          onclick="window.location.href='../SearchPage/searchPage.html';"
-        >
-          Search Book Here
-        </button>
-      </div>
+        <form action="../SearchPage/searchPage.php" method="POST" id="searchForm">
+            <input type="text" class="search__input" name="search" placeholder="Book Name" />
+            <button type="submit" class="search__button">
+                Search Book Here
+            </button>
+        </form>
+    </div>
 
       <nav class="nav">
         <ul class="nav__list">
@@ -160,5 +156,10 @@ $user_id = $_SESSION['user_id'];
         </div>
       </div>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../MainPage/scrip.js"></script>
+    <script src="../MainPage/comment_javax.js"></script>
   </body>
 </html>

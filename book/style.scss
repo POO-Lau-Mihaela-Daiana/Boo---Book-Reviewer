@@ -210,4 +210,39 @@ body, html {
     border-radius: 5px;
   }
 
-  
+.rating{
+    border: 2px solid black;
+    margin-top: 10vh;
+    width: 20vw;
+    margin-left: 10vh;
+    padding: 0px;
+    
+}
+
+.rating__progress {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.rating__progress-value {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.progress {
+    width: 80%;
+    height: 20px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    margin-left: 10px;
+    position: relative;
+}
+
+.bar {
+    height: 100%;
+    background-color: #f0a500;
+    border-radius: 10px;
+}
+
+

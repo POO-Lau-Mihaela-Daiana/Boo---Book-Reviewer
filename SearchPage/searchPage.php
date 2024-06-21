@@ -27,27 +27,24 @@ $user_id = $_SESSION['user_id'];
     <title>Boo</title>
   </head>
   <body>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="../MainPage/scrip.js"></script>
     <header class="header_BOO">
       <div class="logo header__logo">
-        <img
+      <img
           src="../BookReviewer/pictures/Boo-Logo.png"
           alt="Logo"
           class="logo__image"
-          onclick="window.location.href='../MainPage/landingpage.html';"
+          onclick="window.location.href='../MainPage/landingpage.php?user_id=<?php echo $user_id; ?>';"
         />
       </div>
 
       <div class="search">
-        <input type="text" class="search__input" placeholder="Book Name" />
-        <button
-          class="search__button"
-          onclick="window.location.href='../SearchPage/searchPage.html';"
-        >
-          Search Book
-        </button>
-      </div>
+        <form action="../SearchPage/searchPage.php" method="POST" id="searchForm">
+            <input type="text" class="search__input" name="search" placeholder="Book Name" />
+            <button type="submit" class="search__button">
+                Search Book Here
+            </button>
+        </form>
+    </div>
 
       <nav class="nav">
         <ul class="nav__list">
@@ -60,7 +57,9 @@ $user_id = $_SESSION['user_id'];
             >
           </li>
           <li class="nav__item">
-            <a href="../AccountPage/account.html" class="nav__link">Account</a>
+          <a href="../AccountPage/account.php?user_id=<?php echo $user_id; ?>" class="nav__link_menu"
+              >Account</a
+            >
           </li>
           <li class="nav__item">
             <a href="../Settings/settings.html" class="nav__link_menu"
@@ -85,9 +84,7 @@ $user_id = $_SESSION['user_id'];
               >
             </li>
             <li class="nav__item">
-              <a href="../AccountPage/account.html" class="nav__link_menu"
-                >Account</a
-              >
+            <a href="../AccountPage/account.php?user_id=<?php echo $user_id; ?>" class="nav__link_menu">Account</a>
             </li>
             <li class="nav__item">
               <a href="../Settings/settings.html" class="nav__link_menu"
@@ -156,182 +153,13 @@ $user_id = $_SESSION['user_id'];
           <div class="main_feed__title">Books found:</div>
           <div class="book__container">
             <div class="book__container__profile">
-              <img
-                src="../BookReviewer/pictures/book_cover.jpeg"
-                alt="Friend Profile Picture"
-                class="book__profile__image"
-              />
-              <div class="book__info__container">
-                <div class="Book__name">
-                  <a href="../book/index.html" class="Book__link"
-                    ><p class="book__name">Name</p></a
-                  >
-                  <p>by Author</p>
-                </div>
-                <div class="description">
-                  To enter the palace means to walk a path stained in blood...
-                  Joseon (Korea), 1758. There are few options available to
-                  illegitimate daughters in the capital city, but through hard
-                  work and study, eighteen-year-old Hyeon has earned a position
-                  as a palace nurse. All she wants is to keep her head down, do
-                  a good job, and perhaps finally win her estranged father's
-                  approval. But Hyeon is suddenly thrust into the dark and
-                  dangerous world of court politics when someone murders four
-                  women in a single night, and the prime suspect is Hyeon's
-                  closest friend and mentor. Determined to prove her beloved
-                  teacher's innocence, Hyeon launches her own secret
-                  investigation. In her hunt for the truth, she encounters
-                  Eojin, a young police inspector also searching for the killer.
-                  When evidence begins to point to the Crown Prince himself as
-                  the murderer, Hyeon and Eojin must work together to search the
-                  darkest corners of the palace to uncover the deadly secrets
-                  behind the bloodshed.
-                </div>
-              </div>
-            </div>
-
-            <div class="book__container__profile">
-              <img
-                src="../BookReviewer/pictures/book_cover.jpeg"
-                alt="Friend Profile Picture"
-                class="book__profile__image"
-              />
-              <div class="book__info__container">
-                <div class="Book__name">
-                  <a href="../book/index.html" class="Book__link"
-                    ><p class="book__name">Name</p></a
-                  >
-                  <p>by Author</p>
-                </div>
-                <div class="description">
-                  To enter the palace means to walk a path stained in blood...
-                  Joseon (Korea), 1758. There are few options available to
-                  illegitimate daughters in the capital city, but through hard
-                  work and study, eighteen-year-old Hyeon has earned a position
-                  as a palace nurse. All she wants is to keep her head down, do
-                  a good job, and perhaps finally win her estranged father's
-                  approval. But Hyeon is suddenly thrust into the dark and
-                  dangerous world of court politics when someone murders four
-                  women in a single night, and the prime suspect is Hyeon's
-                  closest friend and mentor. Determined to prove her beloved
-                  teacher's innocence, Hyeon launches her own secret
-                  investigation. In her hunt for the truth, she encounters
-                  Eojin, a young police inspector also searching for the killer.
-                  When evidence begins to point to the Crown Prince himself as
-                  the murderer, Hyeon and Eojin must work together to search the
-                  darkest corners of the palace to uncover the deadly secrets
-                  behind the bloodshed.
-                </div>
-              </div>
-            </div>
-
-            <div class="book__container__profile">
-              <img
-                src="../BookReviewer/pictures/book_cover.jpeg"
-                alt="Friend Profile Picture"
-                class="book__profile__image"
-              />
-              <div class="book__info__container">
-                <div class="Book__name">
-                  <a href="../book/index.html" class="Book__link"
-                    ><p class="book__name">Name</p></a
-                  >
-                  <p>by Author</p>
-                </div>
-                <div class="description">
-                  To enter the palace means to walk a path stained in blood...
-                  Joseon (Korea), 1758. There are few options available to
-                  illegitimate daughters in the capital city, but through hard
-                  work and study, eighteen-year-old Hyeon has earned a position
-                  as a palace nurse. All she wants is to keep her head down, do
-                  a good job, and perhaps finally win her estranged father's
-                  approval. But Hyeon is suddenly thrust into the dark and
-                  dangerous world of court politics when someone murders four
-                  women in a single night, and the prime suspect is Hyeon's
-                  closest friend and mentor. Determined to prove her beloved
-                  teacher's innocence, Hyeon launches her own secret
-                  investigation. In her hunt for the truth, she encounters
-                  Eojin, a young police inspector also searching for the killer.
-                  When evidence begins to point to the Crown Prince himself as
-                  the murderer, Hyeon and Eojin must work together to search the
-                  darkest corners of the palace to uncover the deadly secrets
-                  behind the bloodshed.
-                </div>
-              </div>
-            </div>
-
-            <div class="book__container__profile">
-              <img
-                src="../BookReviewer/pictures/book_cover.jpeg"
-                alt="Friend Profile Picture"
-                class="book__profile__image"
-              />
-              <div class="book__info__container">
-                <div class="Book__name">
-                  <a href="../book/index.html" class="Book__link"
-                    ><p class="book__name">Name</p></a
-                  >
-                  <p>by Author</p>
-                </div>
-                <div class="description">
-                  To enter the palace means to walk a path stained in blood...
-                  Joseon (Korea), 1758. There are few options available to
-                  illegitimate daughters in the capital city, but through hard
-                  work and study, eighteen-year-old Hyeon has earned a position
-                  as a palace nurse. All she wants is to keep her head down, do
-                  a good job, and perhaps finally win her estranged father's
-                  approval. But Hyeon is suddenly thrust into the dark and
-                  dangerous world of court politics when someone murders four
-                  women in a single night, and the prime suspect is Hyeon's
-                  closest friend and mentor. Determined to prove her beloved
-                  teacher's innocence, Hyeon launches her own secret
-                  investigation. In her hunt for the truth, she encounters
-                  Eojin, a young police inspector also searching for the killer.
-                  When evidence begins to point to the Crown Prince himself as
-                  the murderer, Hyeon and Eojin must work together to search the
-                  darkest corners of the palace to uncover the deadly secrets
-                  behind the bloodshed.
-                </div>
-              </div>
-            </div>
-
-            <div class="book__container__profile">
-              <img
-                src="../BookReviewer/pictures/book_cover.jpeg"
-                alt="Friend Profile Picture"
-                class="book__profile__image"
-              />
-              <div class="book__info__container">
-                <div class="Book__name">
-                  <a href="../book/index.html" class="Book__link"
-                    ><p class="book__name">Name</p></a
-                  >
-                  <p>by Author</p>
-                </div>
-                <div class="description">
-                  To enter the palace means to walk a path stained in blood...
-                  Joseon (Korea), 1758. There are few options available to
-                  illegitimate daughters in the capital city, but through hard
-                  work and study, eighteen-year-old Hyeon has earned a position
-                  as a palace nurse. All she wants is to keep her head down, do
-                  a good job, and perhaps finally win her estranged father's
-                  approval. But Hyeon is suddenly thrust into the dark and
-                  dangerous world of court politics when someone murders four
-                  women in a single night, and the prime suspect is Hyeon's
-                  closest friend and mentor. Determined to prove her beloved
-                  teacher's innocence, Hyeon launches her own secret
-                  investigation. In her hunt for the truth, she encounters
-                  Eojin, a young police inspector also searching for the killer.
-                  When evidence begins to point to the Crown Prince himself as
-                  the murderer, Hyeon and Eojin must work together to search the
-                  darkest corners of the palace to uncover the deadly secrets
-                  behind the bloodshed.
-                </div>
-              </div>
-            </div>
-          </div>
+          
         </div>
       </div>
     </div>
+ 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../MainPage/scrip.js"></script>
+    <script src="fetch_searching.js"></script>
   </body>
 </html>

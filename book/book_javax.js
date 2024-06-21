@@ -23,7 +23,7 @@ $(document).ready(function() {
                 if (response.success) {
                     displayBookDetails(response.book);
                     displayComments(response.comments);
-                    // displayBookRatings(response.ratings);
+                    displayBookRatings(response.ratings);
 
                 } else {
                     console.error('Fetch error: ' + response.error);
@@ -34,27 +34,6 @@ $(document).ready(function() {
             }
         });
     }
-
-    // function fetchBookRatings(bookId) {
-    //     $.ajax({
-    //         url: 'fetch_reviews.php',
-    //         method: 'GET',
-    //         data: { book_id: bookId },
-    //         dataType: 'json',
-    //         success: function(response) {
-    //             if (response.success) {
-    //                 displayBookRatings(response.ratings);
-    //             } else {
-    //                 console.error('Fetch error: ' + response.error);
-    //             }
-    //         },
-    //         error: function(xhr, status, error) {
-    //             console.error('AJAX Error: ' + status + ' ' + error);
-    //         }
-    //     });
-    // }
-
-
 
     function displayBookDetails(book) {
         $('#book-title').text(book.book_title);
@@ -90,6 +69,16 @@ $(document).ready(function() {
     }
 
     function displayBookRatings(ratings) {
+
+        const averageRating = ratings.average_rating ? parseFloat(ratings.average_rating) : 0.0;
+        const totalReviews = ratings.total_reviews ? parseInt(ratings.total_reviews) : 0;
+        const fiveStar = ratings.five_star ? parseInt(ratings.five_star) : 0;
+        const fourStar = ratings.four_star ? parseInt(ratings.four_star) : 0;
+        const threeStar = ratings.three_star ? parseInt(ratings.three_star) : 0;
+        const twoStar = ratings.two_star ? parseInt(ratings.two_star) : 0;
+        const oneStar = ratings.one_star ? parseInt(ratings.one_star) : 0;
+        
+        console.log(ratings);
         $('#average-rating').text(ratings.average_rating.toFixed(1));
         $('#total-reviews').text(ratings.total_reviews);
         $('#five-star-count').text(ratings.five_star);
@@ -97,6 +86,12 @@ $(document).ready(function() {
         $('#three-star-count').text(ratings.three_star);
         $('#two-star-count').text(ratings.two_star);
         $('#one-star-count').text(ratings.one_star);
+
+        $('#five-star-bar').css('width', (totalReviews > 0 ? (fiveStar /totalReviews * 100) : 0) + '%');
+        $('#four-star-bar').css('width', (totalReviews > 0 ? (fourStar / totalReviews * 100) : 0) + '%');
+        $('#three-star-bar').css('width', (totalReviews > 0 ? (threeStar / totalReviews * 100) : 0) + '%');
+        $('#two-star-bar').css('width', (totalReviews > 0 ? (twoStar / totalReviews * 100) : 0) + '%');
+        $('#one-star-bar').css('width', (totalReviews > 0 ? (oneStar / totalReviews * 100) : 0) + '%');
     }
 
 
@@ -125,6 +120,36 @@ $(document).ready(function() {
             }
         });
     });
+    
 
+    $('#reviewForm').submit(function(event) {
+        event.preventDefault(); 
+    
+        var rating = $('#rating').val();
+        var userId = $('#user_id').val();
 
+        if (rating < 1 || rating > 5) {
+            alert('Rating must be between 1 and 5.');
+            return;
+        }
+
+        $.ajax({
+            type: 'POST',
+            url: 'add_review.php',
+            data: {
+                book_id: bookId,
+                user_id: userId,
+                rating: rating
+            },
+            success: function(response) {
+                response = JSON.parse(response); 
+                displayBookRatings(bookId);
+                $('#rating').val(''); 
+            },
+            error: function(xhr, status, error) {
+                console.error('AJAX Error: ' + status + ' ' + error);
+            }
+        });
 });
+});
+

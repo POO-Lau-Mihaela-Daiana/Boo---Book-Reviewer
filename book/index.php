@@ -29,29 +29,25 @@ $book_id = $_GET['book_id']; //HOW ELSE CAN I DO THIS WTF
     <title>BOO</title>
   </head>
   <body>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="../MainPage/scrip.js"></script>
-    <script src="../book/book_javax.js"></script>
+   
     <header class="header_BOO">
       <div class="logo header__logo">
-        <img
+      <img
           src="../BookReviewer/pictures/Boo-Logo.png"
           alt="Logo"
           class="logo__image"
-          onclick="window.location.href='../MainPage/landingpage.html';"
+          onclick="window.location.href='../MainPage/landingpage.php?user_id=<?php echo $user_id; ?>';"
         />
       </div>
 
       <div class="search">
-        <input type="text" class="search__input" placeholder="Book Name" />
-        <button
-          class="search__button"
-          onclick="window.location.href='../SearchPage/searchPage.html';"
-        >
-          Search Book
-        </button>
-      </div>
+        <form action="../SearchPage/searchPage.php" method="POST" id="searchForm">
+            <input type="text" class="search__input" name="search" placeholder="Book Name" />
+            <button type="submit" class="search__button">
+                Search Book Here
+            </button>
+        </form>
+    </div>
 
       <nav class="nav">
         <ul class="nav__list">
@@ -64,7 +60,9 @@ $book_id = $_GET['book_id']; //HOW ELSE CAN I DO THIS WTF
             >
           </li>
           <li class="nav__item">
-            <a href="../AccountPage/account.html" class="nav__link">Account</a>
+          <a href="../AccountPage/account.php?user_id=<?php echo $user_id; ?>" class="nav__link_menu"
+              >Account</a
+            >
           </li>
           <li class="nav__item">
             <a href="../Settings/settings.html" class="nav__link_menu"
@@ -89,9 +87,7 @@ $book_id = $_GET['book_id']; //HOW ELSE CAN I DO THIS WTF
               >
             </li>
             <li class="nav__item">
-              <a href="../AccountPage/account.html" class="nav__link_menu"
-                >Account</a
-              >
+            <a href="../AccountPage/account.php?user_id=<?php echo $user_id; ?>" class="nav__link_menu">Account</a>
             </li>
             <li class="nav__item">
               <a href="../Settings/settings.html" class="nav__link_menu"
@@ -165,7 +161,7 @@ $book_id = $_GET['book_id']; //HOW ELSE CAN I DO THIS WTF
             <div class="rating__progress-value">
               <p>5<span class="star">&#9733;</span></p>
               <div class="progress">
-                <div class="bar" id="five-star-bar"></div>
+                <div class="bar" id="five-star-bar" style="width: 0;"></div>
               </div>
               <p id="five-star-count">456</p>
             </div>
@@ -173,7 +169,7 @@ $book_id = $_GET['book_id']; //HOW ELSE CAN I DO THIS WTF
             <div class="rating__progress-value">
               <p>4<span class="star">&#9733;</span></p>
               <div class="progress">
-                <div class="bar" id="four-star-bar"></div>
+                <div class="bar" id="four-star-bar" style="width: 0;"></div>
               </div>
               <p id="four-star-count">456</p>
             </div>
@@ -181,7 +177,7 @@ $book_id = $_GET['book_id']; //HOW ELSE CAN I DO THIS WTF
             <div class="rating__progress-value">
               <p>3<span class="star">&#9733;</span></p>
               <div class="progress">
-                <div class="bar" id="three-star-bar"></div>
+                <div class="bar" id="three-star-bar" style="width: 0;"></div>
               </div>
               <p id="three-star-count">456</p>
             </div>
@@ -189,7 +185,7 @@ $book_id = $_GET['book_id']; //HOW ELSE CAN I DO THIS WTF
             <div class="rating__progress-value">
               <p>2<span class="star">&#9733;</span></p>
               <div class="progress">
-                <div class="bar" id="two-star-bar"></div>
+                <div class="bar" id="two-star-bar" style="width: 0;"></div>
               </div>
               <p id="two-star-count">456</p>
             </div>
@@ -197,13 +193,22 @@ $book_id = $_GET['book_id']; //HOW ELSE CAN I DO THIS WTF
             <div class="rating__progress-value">
               <p>1<span class="star">&#9733;</span></p>
               <div class="progress">
-                <div class="bar" id="one-star-bar"></div>
+                <div class="bar" id="one-star-bar" style="width: 0;"></div>
               </div>
               <p id="one-star-count">456</p>
             </div>
           </div>
         </div>
       </div>
+
+      <div class="side_rating">
+    <div class="comment-form">
+        <form method="POST" action="add_review.php" id="reviewForm">
+            <textarea id="ratingText" name="rating" placeholder="Write your rating!" required></textarea>
+            <button type="submit" class="submit-comment-btn">Submit</button>
+        </form>
+    </div>
+</div>
 
       <div class="side-bar">
         <h2>Leave a Comment</h2>
@@ -220,5 +225,10 @@ $book_id = $_GET['book_id']; //HOW ELSE CAN I DO THIS WTF
         </div>
       </div>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../MainPage/scrip.js"></script>
+    <script src="../book/book_javax.js"></script>
   </body>
 </html>
