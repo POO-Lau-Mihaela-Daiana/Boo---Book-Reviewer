@@ -105,49 +105,12 @@ $user_id = $_SESSION['user_id'];
         <div class="side__container">
           <p class="side__container__text">Want a certain genre?</p>
           <div class="genre__total__list">
-            <label class="genre_list"><input type="checkbox" />Romance</label>
-            <label class="genre_list"><input type="checkbox" />Thriller</label>
-            <label class="genre_list"><input type="checkbox" />Horror</label>
-            <label class="genre_list"><input type="checkbox" />Fantasy</label>
-            <label class="genre_list"
-              ><input type="checkbox" />Science Fiction</label
-            >
-            <label class="genre_list"><input type="checkbox" />Mystery</label>
-            <label class="genre_list"
-              ><input type="checkbox" />Historical Fiction</label
-            >
-            <label class="genre_list"><input type="checkbox" />Adventure</label>
-            <label class="genre_list"><input type="checkbox" />Dystopian</label>
-            <label class="genre_list"><input type="checkbox" />Comedy</label>
-            <label class="genre_list"
-              ><input type="checkbox" />Young Adult</label
-            >
-            <label class="genre_list"
-              ><input type="checkbox" />Non-fiction</label
-            >
-            <label class="genre_list"><input type="checkbox" />Crime</label>
-            <label class="genre_list"
-              ><input type="checkbox" />Paranormal</label
-            >
-            <label class="genre_list"
-              ><input type="checkbox" />Literary Fiction</label
-            >
-            <label class="genre_list"
-              ><input type="checkbox" />Supernatural</label
-            >
-            <label class="genre_list"><input type="checkbox" />Action</label>
-            <label class="genre_list"
-              ><input type="checkbox" />Contemporary</label
-            >
-            <label class="genre_list"><input type="checkbox" />Poetry</label>
-            <label class="genre_list"><input type="checkbox" />Satire</label>
-            <label class="genre_list"><input type="checkbox" />Humor</label>
-            <label class="genre_list"><input type="checkbox" />Drama</label>
-            <label class="genre_list"><input type="checkbox" />Romance</label>
-            <label class="genre_list"
-              ><input type="checkbox" />Psychological thriller</label
-            >
+          <form id="genreForm">
+            
+            </form>
+          
           </div>
+          <button class="button_form" type="submit">Check!</button>
         </div>
         <div class="main_container">
           <div class="main_feed__title">Books found:</div>
@@ -162,5 +125,6 @@ $user_id = $_SESSION['user_id'];
     <script src="../MainPage/scrip.js"></script>
     <script src="fetch_searching.js"></script>
     <script src="../SearchPage/add_to_search.js"></script>
+    <script src="fetch_genres.js"></script>
   </body>
 </html>

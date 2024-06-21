@@ -51,6 +51,7 @@ if (isset($_GET['book_id'])) {
     $book = $result_book->fetch_assoc();
     $stmt_book->close();
 
+
     $sql_comments = "SELECT 
                         user.username, 
                         comment.comment_text, 
