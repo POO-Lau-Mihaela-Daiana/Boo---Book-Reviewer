@@ -143,7 +143,7 @@ $user_id = $_SESSION['user_id'];
 
                 <button
                   class="profile__button"
-                  onclick="window.location.href='../Library/index.html';"
+                  onclick="window.location.href='../Library/index.php?user_id=<?php echo $user_id; ?>';"
                 >
                   Library
                 </button>
