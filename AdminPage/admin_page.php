@@ -1,9 +1,19 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['user_id'])) {
+    header("Location: ../login.php"); // Redirect to login page if not logged in
+    exit;
+}
+$user_id = $_SESSION['user_id'];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Boo Admind</title>
+    <title>Boo Admin</title>
     <link
       rel="icon"
       type="image/png"
@@ -16,10 +26,7 @@
     <link rel="stylesheet" href="../AdminPage/styles.css" />
   </head>
   <body>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="../AdminPage/book_add_ajax.js"></script>
-    <script src="../AdminPage/book_delete_ajax.js"></script>
+   
 
     <div class="block_container">
       <div class="main_container">
@@ -54,6 +61,8 @@
               name="bookPages"
               required
             /><br />
+            <label for="bookGenres">Genres (use commas to separate them):</label>
+             <input type="text" id="bookGenres" name="bookGenres" required /><br />
             <label for="bookPublisher">Publisher:</label>
             <input
               type="text"
@@ -90,9 +99,9 @@
         </button>
         <div class="form_container" id="deleteUserForm">
           <h2>Delete User</h2>
-          <form>
-            <label for="userId">User ID:</label>
-            <input type="text" id="userId" name="userId" required /><br />
+          <form id="deleteUserFormElement" method="POST" action="delete_user.php">
+            <label for="user_id">User ID:</label>
+            <input type="text" id="user_id" name="user_id" required /><br />
             <button type="submit">Delete User</button>
           </form>
         </div>
@@ -101,13 +110,13 @@
           Delete Book
         </button>
         <div class="form_container" id="deleteBookForm">
-          <h2>Delete Book</h2>
-          <form id="deleteBookFormElement" method="POST" action="book_delete.php"></form>
-            <label for="bookId">Book ID:</label>
-            <input type="text" id="bookId" name="bookId" required /><br />
-            <button type="submit">Delete Book</button>
-          </form>
-        </div>
+    <h2>Delete Book</h2>
+    <form id="deleteBookFormElement" method="POST" action="book_delete.php">
+        <label for="book_id">Book ID:</label>
+        <input type="text" id="book_id" name="book_id" required /><br />
+        <button type="submit">Delete Book</button>
+    </form>
+</div>
       </div>
       <div
         class="sign-out"
@@ -119,6 +128,12 @@
           >Sign out</div>
     </div>
   </body>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="book_add_ajax.js"></script>
+    <script src="book_delete_ajax.js"></script>
+    <script src="user_delete_ajax.js"></script>
+
   <script>
     function toggleForm(formId) {
       const form = document.getElementById(formId);
