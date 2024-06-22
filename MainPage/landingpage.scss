@@ -15,7 +15,36 @@
     
 }
 
+.space_export{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+}
 
+.text_part{
+margin-left: 20px;
+  color: #714E7D;
+  justify-self: center;
+}
+
+.export_buttons{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.cvs_button{
+  padding: 8px 16px;
+  margin: 10px 5px;
+  font-size: 14px;
+  background-color: #B790C2;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
 
 .block_container{
     position:fixed;

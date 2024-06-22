@@ -146,6 +146,15 @@ $user_id = $_SESSION['user_id'];
               </div>
             </div>
           </div>
+          <div class="space_export">
+            <p class="text_part">Wanna know the top 5 books? Export the statistics!</p>
+            <div class="export_buttons">
+            <button class="cvs_button" id="minimal_exp" type="submit">Minimal</button>
+            <button class="cvs_button" id="csv_exp">CVS</button>
+            <button class="cvs_button" id="docbook_exp">DocBook</button>
+            </div>
+          </div>
+
         </div>
         <div class="feed_container_main_feed">
           <div class="main_feed__title">News</div>
@@ -161,6 +170,8 @@ $user_id = $_SESSION['user_id'];
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="../MainPage/scrip.js"></script>
     <script src="../MainPage/comment_javax.js"></script>
+    <script src="../MainPage/export_ajax.js"></script>
     <script src="../SearchPage/add_to_search.js"></script>
+
   </body>
 </html>
