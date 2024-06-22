@@ -8,12 +8,12 @@ function toggleForm(formId) {
 }
 
 function deleteBook() {
-    const form = document.getElementById('deleteBookFormElement').value;
+    const form = document.getElementById('deleteUserFormElement').value;
     const formData = new FormData(form);
    
  if(formData){
     $.ajax({
-        url: 'book_delete.php',
+        url: 'delete_user.php',
         method: 'POST',
         data: formData,
         processData: false,
@@ -21,7 +21,7 @@ function deleteBook() {
         success: function(response) {
             console.log(response); 
             if (response.success) {
-               alert('Book deleted from data base');
+               alert('User deleted from data base');
                 form.reset();
             } else {
                 alert('Error:' +response.error);
@@ -33,7 +33,7 @@ function deleteBook() {
     });
 
  } else {
-        alert('Please enter a book ID.');
+        alert('Please enter an user ID.');
     }
    
 }

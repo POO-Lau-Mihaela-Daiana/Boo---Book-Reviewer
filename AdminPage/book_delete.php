@@ -17,44 +17,60 @@ if ($conn->connect_error) {
 
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $bookId = $_POST['bookId'];
+    $book_id = $_POST['book_id'];
    
-    $mysqli->begin_transaction();
+    $conn->begin_transaction();
 
     try {
 
-        $stmt = $mysqli->prepare("DELETE FROM book_comment WHERE book_id = ?");
-        $stmt->bind_param("i", $bookId);
+        $stmt = $conn ->prepare("DELETE FROM book_rating WHERE book_id = ?");
+        $stmt->bind_param("i", $book_id);
+        $stmt->execute();
+        $stmt->close();
+
+        $stmt = $conn ->prepare("DELETE FROM book_genre WHERE book_id = ?");
+        $stmt->bind_param("i", $book_id);
+        $stmt->execute();
+        $stmt->close();
+
+
+        $stmt = $conn ->prepare("DELETE FROM book_comment WHERE book_id = ?");
+        $stmt->bind_param("i", $book_id);
         $stmt->execute();
         $stmt->close();
 
      
-        $stmt = $mysqli->prepare("DELETE FROM comments WHERE comment_id IN (SELECT comment_id FROM book_comment WHERE book_id = ?)");
-        $stmt->bind_param("i", $bookId);
+        $stmt = $conn ->prepare("DELETE FROM comment WHERE comment_id IN (SELECT comment_id FROM book_comment WHERE book_id = ?)");
+        $stmt->bind_param("i", $book_id);
+        $stmt->execute();
+        $stmt->close();
+
+        $stmt = $conn ->prepare("DELETE FROM book_rating WHERE book_id = ?");
+        $stmt->bind_param("i", $book_id);
+        $stmt->execute();
+        $stmt->close();
+
+        $stmt = $conn->prepare("DELETE FROM book_genre WHERE book_id = ?");
+        $stmt->bind_param("i", $book_id);
         $stmt->execute();
         $stmt->close();
 
         
-    
-        $stmt = $mysqli->prepare("DELETE FROM books WHERE book_id = ?");
-        $stmt->bind_param("i", $bookId);
+        $stmt = $conn ->prepare("DELETE FROM book WHERE book_id = ?");
+        $stmt->bind_param("i", $book_id);
         $stmt->execute();
         $stmt->close();
 
       
-        $mysqli->commit();
+        $conn ->commit();
 
        
         echo json_encode(['success' => true]);
     } catch (Exception $e) {
-      
-        $mysqli->rollback();
-      
+        $conn ->rollback();
         echo json_encode(['success' => false, 'error' => $e->getMessage()]);
     }
-
-
-    $mysqli->close();
+    $conn ->close();
 } else {
     echo json_encode(['success' => false, 'error' => 'Book ID not provided']);
 }
