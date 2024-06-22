@@ -106,11 +106,10 @@ $user_id = $_SESSION['user_id'];
           <p class="side__container__text">Want a certain genre?</p>
           <div class="genre__total__list">
           <form id="genreForm">
-            
             </form>
           
           </div>
-          <button class="button_form" type="submit">Check!</button>
+          <button class="button_form" type="submit" form="genreForm">Check!</button>
         </div>
         <div class="main_container">
           <div class="main_feed__title">Books found:</div>
@@ -123,8 +122,9 @@ $user_id = $_SESSION['user_id'];
  
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="../MainPage/scrip.js"></script>
+    <scrip src="../SearchPage/fetch_with_genre_search.js"></script>
     <script src="fetch_searching.js"></script>
     <script src="../SearchPage/add_to_search.js"></script>
-    <script src="fetch_genres.js"></script>
+
   </body>
 </html>

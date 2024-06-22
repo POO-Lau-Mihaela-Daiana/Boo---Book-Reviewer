@@ -1,18 +1,38 @@
 $(document).ready(function() {
+    var searchQuery = '';
+
     $('#searchButton').click(function() {
-        var searchQuery = $('.search__input').val().trim();
+        searchQuery = $('.search__input').val().trim();
         window.location.href = '../SearchPage/searchPage.php?search=' + encodeURIComponent(searchQuery);
     });
 
+    $('.button_form').click(function(event) {
+        event.preventDefault(); 
+
+        var selectedGenre = $('input[name="genre"]:checked').val(); 
+       
+        if (!selectedGenre) {
+            alert('Please select a genre.');
+            return; 
+        }
+
+        var encodedSearchQuery = encodeURIComponent(searchQuery); 
+        var redirectUrl = `../SearchPage/searchPage.php?search=${encodedSearchQuery}&genre=${selectedGenre}`;
+        window.location.href = redirectUrl;
+    });
+    
     function fetchSearches() {
         var searchParams = new URLSearchParams(window.location.search);
         var searchQuery = searchParams.get('search');
+        var genre = searchParams.get('genre');
 
         $.ajax({
             url: 'searching.php',
             method: 'POST',
             dataType: 'json',
-            data: { search: searchQuery },
+            data: { search: searchQuery,
+                genre: genre
+             },
             success: function(response) {
                 console.log(response); 
                 if (response.success) {
@@ -49,4 +69,43 @@ $(document).ready(function() {
             bookContainer.append(bookHtml);
         });
     }
+
+    fetchGenres();
+
+    function fetchGenres() {
+        $.ajax({
+            url: 'genres.php',
+            method: 'GET',
+            dataType: 'json',
+            success: function(response) {
+                console.log(response); 
+                
+                if (response.success) {
+                    displayGenres(response.genre);
+                } else {
+                    console.error('Fetch comments error: ' + response.error);
+                }
+            },
+            error: function(xhr, status, error) {
+                console.error('AJAX Error: ' + status + ' ' + error);
+            }
+        });
+    }
+
+    function displayGenres(genre) {
+        var genreContainer = document.querySelector('.genre__total__list');
+        genreContainer.innerHTML = '';
+
+        genre.forEach(function(genre) {
+            var genreHtml = `
+                <label class="genre_list">
+                    <input type="radio" name="genre" value="${genre.genre_id}" required />
+                    ${genre.genre_name}
+                </label>
+            `;
+            genreContainer.insertAdjacentHTML('beforeend', genreHtml);
+            
+        });
+    }
+
 });
