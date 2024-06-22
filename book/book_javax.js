@@ -157,5 +157,49 @@ $(document).ready(function() {
             }
         });
 });
+     // Add event listeners to the buttons
+     $('.want-to-read-btn').on('click', function() {
+        var status = $(this).data('status');
+        console.log("Button clicked:", status); // Debugging log
+        updateBookStatus(status);
+    });
+
+    function updateBookStatus(status) {
+        var listNumber;
+        switch (status) {
+            case 'want_to_read':
+                listNumber = 1;
+                break;
+            case 'currently_reading':
+                listNumber = 2;
+                break;
+            case 'read':
+                listNumber = 3;
+                break;
+            default:
+                return;
+        }
+
+        $.ajax({
+            type: 'POST',
+            url: 'update_book_status.php',
+            data: {
+                book_id: bookId,
+                list_number: listNumber
+            },
+            success: function(response) {
+                response = JSON.parse(response);
+                if (response.success) {
+                    console.log('Book status updated');
+                } else {
+                    console.error('Error updating book status: ' + response.error);
+                }
+            },
+            error: function(xhr, status, error) {
+                console.error('AJAX Error: ' + status + ' ' + error);
+            }
+        });
+    }
+
 });
 
