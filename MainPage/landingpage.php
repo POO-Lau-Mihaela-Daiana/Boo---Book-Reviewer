@@ -119,6 +119,8 @@ $user_id = $_SESSION['user_id'];
           </div>
         </div>
 
+        <button id="rssButton">View RSS Feed</button>
+    <!-- <div id="rssFeed"></div> -->
       </div>
       <div class="feed_container_main_feed">
         <div class="main_feed__title">News</div>
@@ -135,7 +137,9 @@ $user_id = $_SESSION['user_id'];
   <script src="../MainPage/scrip.js"></script>
   <script src="../MainPage/comment_javax.js"></script>
   <script src="../MainPage/export_ajax.js"></script>
+  <script src="../MainPage/fetch_rss.js"></script>
   <script src="../SearchPage/add_to_search.js"></script>
+
 
 </body>
 
