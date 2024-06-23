@@ -28,7 +28,7 @@ $(document).ready(function() {
         comment.forEach(function(comment) {
             var commentHtml = `
                 <div class="friend__container__profile">
-                    <img src="../BookReviewer/pictures/pfp.jpg" alt="Friend Profile Picture" class="friend__profile__image" />
+                    <img src=${comment.user_url} alt="Friend Profile Picture" class="friend__profile__image" />
                     <div class="profile__container">
                         <div class="profile__name">
                             <a href="../AccountPage/others_account.php?user_id=${comment.user_id}" class="profile__link"><p class="name">${comment.username}</p></a>

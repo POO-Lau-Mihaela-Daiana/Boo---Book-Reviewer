@@ -113,10 +113,12 @@ $book_id = $_GET['book_id']; //HOW ELSE CAN I DO THIS WTF
           </div>
         </div>
       </div>
+
       <h2>Reviews</h2>
       <div class="reviews" id="reviews"></div>
     </div>
 
+    <div class="side_part">
     <div class="side_reviews">
       <div class="rating">
         <div class="rating__average">
@@ -189,6 +191,8 @@ $book_id = $_GET['book_id']; //HOW ELSE CAN I DO THIS WTF
         </form>
       </div>
     </div>
+    </div>
+    
   </div>
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

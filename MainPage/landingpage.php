@@ -42,10 +42,10 @@ $user_id = $_SESSION['user_id'];
     <nav class="nav">
       <ul class="nav__list">
         <li class="nav__item">
-          <a href="../Library/index.html" class="nav__link">Librarys</a>
+          <a href="../Library/index.php?user_id=<?php echo $user_id; ?>" class="nav__link">Librarys</a>
         </li>
         <li class="nav__item">
-          <a href="../LookForGroupPage/lookFor.html" class="nav__link_menu">Groups</a>
+          <a href="../LookForGroupPage/lookFor.php?user_id=<?php echo $user_id; ?>" class="nav__link_menu">Groups</a>
         </li>
         <li class="nav__item">
           <a href="../AccountPage/account.php?user_id=<?php echo $user_id; ?>" class="nav__link_menu">Account</a>
@@ -64,10 +64,10 @@ $user_id = $_SESSION['user_id'];
         <p>Menu</p>
         <ul class="nav_dropdown">
           <li class="nav__item">
-            <a href="../Library/index.html" class="nav__link">Library</a>
+            <a href="../Library/index.php?user_id=<?php echo $user_id; ?>" class="nav__link">Library</a>
           </li>
           <li class="nav__item">
-            <a href="../LookForGroupPage/lookFor.html" class="nav__link_menu">Groups</a>
+            <a href="../LookForGroupPage/lookFor.php?user_id=<?php echo $user_id; ?>" class="nav__link_menu">Groups</a>
           </li>
           <li class="nav__item">
             <a href="../AccountPage/account.php?user_id=<?php echo $user_id; ?>" class="nav__link_menu">Account</a>

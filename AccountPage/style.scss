@@ -143,32 +143,35 @@
         }
 
     }
-.main__friends::-webkit-scrollbar{
+.main__groups::-webkit-scrollbar{
 width: 0px;
 }
-    .main__friends{
+    .main__groups{
         margin-top: 1rem;
         margin-right: 1rem;
         margin-left: 2rem;
         flex:1;
-        border: 3px solid #e3cedd;
+        max-height: 10vw;
+        border:3px solid #be9cb4;
         overflow-y: scroll;
         
         
-        .friend_list_name{
+        .group_list_name{
             color: #714E7D;
-            font-size: large;
+              font-size: 25px;
+            border-bottom:3px solid #be9cb4;
+            color: #714E7D;
             font-weight: 400;
             
         }
 
-       .friend__list{
+       .group__list{
         margin-top: 1rem;
-        .friend__item{
+        .group__item{
             margin-bottom: 10px;
             margin-left: 10px;
             list-style-type: none;
-            .friend__link{
+            .group__link{
                 padding-top: 2px;
                 padding-left: 2px;
                 padding-right: 2px;
@@ -178,7 +181,7 @@ width: 0px;
                
             }
 
-            .friend__link:hover{
+            .group__link:hover{
                 background-color: #714E7D;
                 color:#e3cedd;
                 border-radius: 10px;
@@ -189,13 +192,21 @@ width: 0px;
        
     }
 
+    .section::-webkit-scrollbar{
+        width: 0px;
+    }
     .about__me__section{
-        color: #714E7D;
+        border-left: 3px solid #be9cb4;
+        border-right: 3px solid #be9cb4;
+        border-bottom: 3px solid #be9cb4;
         flex: 1;
         overflow: hidden;
         display: flex;
         flex-direction: column;
         border-bottom: 1rem;
+        margin-left: 2rem;
+        margin-right: 1rem;
+ 
       
         .section{
             height: 20px;
@@ -205,7 +216,19 @@ width: 0px;
             margin-bottom: 20px;
 
             .section__type{
-        font-size: 16px;
+             color: #714E7D;
+              font-size: 25px;
+              background-color: #e3cedd;
+              border-bottom: 3px solid #be9cb4;
+              
+
+            }
+
+            .info{
+                color: #714E7D;
+                margin-top: 15px;
+                margin-left: 10px;
+                font-size: 25px;
             }
         }
       

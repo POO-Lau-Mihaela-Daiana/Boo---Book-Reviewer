@@ -54,6 +54,7 @@ if (isset($_GET['book_id'])) {
 
     $sql_comments = "SELECT 
                         user.username, 
+                        user.user_url,
                         comment.comment_text, 
                         comment.comment_posted_date, 
                         comment.comment_posted_hour
@@ -91,7 +92,8 @@ if (isset($_GET['book_id'])) {
             'username' => $row['username'],
             'comment_text' => $row['comment_text'],
             'comment_posted_date' => $row['comment_posted_date'],
-            'comment_posted_hour' => $row['comment_posted_hour']
+            'comment_posted_hour' => $row['comment_posted_hour'],
+            'user_url' => $row['user_url']
         );
     }
     $stmt_comments->close();

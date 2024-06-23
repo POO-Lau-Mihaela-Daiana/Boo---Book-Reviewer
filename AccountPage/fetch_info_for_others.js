@@ -34,6 +34,7 @@ $(document).ready(function() {
 
     function displayUserAccountDetails(user) {
         $('#username').text(user.username);
+        $('#user_url').attr('src', user.user_url);
         $('#user_date_of_creation').text(user.user_date_of_creation);
         $('#user_description').text(user.user_description);
         $('#user_tips').text(user.user_tips);

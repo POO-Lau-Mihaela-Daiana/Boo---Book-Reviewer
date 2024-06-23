@@ -117,7 +117,7 @@ body, html {
   .comment {
     display: flex;
     margin-bottom: 20px;
-    border: 2px solid black; 
+    border: 2px solid #B790C2;
   padding: 10px; 
   }
   
@@ -173,18 +173,24 @@ body, html {
       }
 }
 
-.side-container{
-    display: flex;
-    align-items: left;
-    align-self: center;
-    flex-direction: column;
-    padding: 0px;
-    margin-right: 20px;
-    border: solid 2px black;
+
+.side_rating{
+ margin-left: 3vw;
+ margin-top: 2.5vh;
 }
 
+.review-form textarea {
+    resize: none;
+    width: 30%;
+    height: 50%;
+    padding: 0px;
+    margin-bottom: 10px;
+    border: 3px solid #B790C2;
+    border-radius: 5px;
+  }
+
 .side-bar{
-    margin-top: 60vh;
+    margin-top: 15vh;
     margin-right: 10vw;
 }
 .comment-form {
@@ -212,12 +218,15 @@ body, html {
   }
 
 .rating{
-    border: 2px solid black;
+    border: 2px solid #2f1736;
     margin-top: 10vh;
     width: 20vw;
-    margin-left: 10vh;
     padding: 0px;
     
+}
+
+.rating__average{
+    margin-left: 5px;
 }
 
 .rating__progress {

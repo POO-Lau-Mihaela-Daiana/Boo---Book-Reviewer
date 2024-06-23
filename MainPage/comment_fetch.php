@@ -19,6 +19,7 @@ if ($conn->connect_error) {
 $sql = "SELECT 
             user.username, 
             user.user_id,
+            user.user_url,
             comment.comment_text, 
             comment.comment_posted_date, 
             comment.comment_posted_hour,
