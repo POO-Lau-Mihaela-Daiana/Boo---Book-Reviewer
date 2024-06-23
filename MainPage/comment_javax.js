@@ -35,7 +35,7 @@ $(document).ready(function() {
                            <p>left a comment on <a href="../book/index.php?book_id=${comment.book_id}"><strong>${comment.book_title}</strong></a>:</p>
                         </div>
                         <p>${comment.comment_text}</p>
-                        <p><small>${comment.comment_posted_date} at ${comment.comment_posted_hour}</small></p>
+                        <p><small>at ${comment.comment_posted_hour}</small></p>
                     </div>
                 </div>
             `;
