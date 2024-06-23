@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Insert the new user into the database
     $sql = "INSERT INTO user (username, user_email, user_password) VALUES ('$username', '$email', '$hashed_password')";
-    
+
     if ($conn->query($sql) === TRUE) {
         echo "New record created successfully. Password hash: $hashed_password"; // Debug output
         header("Location: ../MainPage/landingpage.php");
