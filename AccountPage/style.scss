@@ -42,8 +42,8 @@
         min-height: auto;
 
         .side__photo{
-            max-width: calc(100% - 50px);
-            min-height: auto;
+            max-width: calc(100% - 150px);  /* Further reduced width */
+            max-height: 50%; /* Further adjusted height */
             margin: 1rem 4rem 0rem 4rem;
             border-radius: 1rem;
             border: 2px solid #714E7D;
@@ -106,18 +106,24 @@
 
                 .book{
                     margin-right: 40px;
+                    margin: 10px; 
 
-                    .book__photo{
-                        width: 100px; /* Adjust width as needed */
-                        height: 150px; /* Adjust height as needed */
-                        background-color: #ffffff; /* Set background color for the "pages" of the book */
-                        border: 3px solid #714E7D; /* Add border to resemble book cover */
-                        
+                    .book__title {
+                        display: block; 
+                        margin-bottom: 10px;
+                        color: #714E7D; 
+                        text-decoration: none; 
                     }
-
-                    .book__title{
-                        text-align: center;
-                        margin-top: 20px;
+                    
+                    .book__photo {
+                        max-width: 100px; 
+                        height: auto; 
+                        display: block; 
+                        margin-left: auto;
+                        margin-right: auto;
+                    }
+                    .book__title:hover {
+                        text-decoration: underline; 
                     }
                 }
                

@@ -73,7 +73,7 @@ $user_id = $_SESSION['user_id'];
             <a href="../AccountPage/account.php?user_id=<?php echo $user_id; ?>" class="nav__link_menu">Account</a>
           </li>
           <li class="nav__item">
-            <a href="../Settings/settings.html" class="nav__link_menu">Settings</a>
+            <a href="../Settings/settings.php?user_id=<?php echo $user_id; ?>" class="nav__link_menu">Settings</a>
           </li>
           <li class="nav__item">
             <a href="../AboutPage/aboutpage.html" class="nav__link_menu">About</a>

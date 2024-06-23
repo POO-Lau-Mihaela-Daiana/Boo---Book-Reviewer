@@ -23,8 +23,7 @@ $(document).ready(function() {
                         activityContainer.append(`
                             <div class="friend__container">
                                 <div class="friend__container__profile">
-                                    <img
-                                        src="../BookReviewer/pictures/pfp.jpg"
+                                    <img src=${activity.user_url}
                                         alt="Friend Profile Picture"
                                         class="friend__profile__image"
                                     />

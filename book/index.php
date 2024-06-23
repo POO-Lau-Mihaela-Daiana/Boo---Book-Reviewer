@@ -44,38 +44,44 @@ $book_id = $_GET['book_id']; //HOW ELSE CAN I DO THIS WTF
     <nav class="nav">
       <ul class="nav__list">
         <li class="nav__item">
-          <a href="../Library/index.html" class="nav__link">Library</a>
+          <a href="../Library/index.php?user_id=<?php echo $user_id; ?>" class="nav__link">Librarys</a>
         </li>
         <li class="nav__item">
-          <a href="../LookForGroupPage/lookFor.html" class="nav__link">Groups</a>
+          <a href="../LookForGroupPage/lookFor.php?user_id=<?php echo $user_id; ?>" class="nav__link_menu">Groups</a>
         </li>
         <li class="nav__item">
           <a href="../AccountPage/account.php?user_id=<?php echo $user_id; ?>" class="nav__link_menu">Account</a>
         </li>
         <li class="nav__item">
-          <a href="../Settings/settings.html" class="nav__link_menu">Settings</a>
+          <a href="../Settings/settings.php?user_id=<?php echo $user_id; ?>" class="nav__link_menu">Settings</a>
         </li>
         <li class="nav__item">
           <a href="../AboutPage/aboutpage.html" class="nav__link_menu">About</a>
+        </li>
+        <li class="nav__item">
+          <a href="../BookReviewer/index.html" class="nav__link_menu">LogOut</a>
         </li>
       </ul>
       <div class="nav__item_special">
         <p>Menu</p>
         <ul class="nav_dropdown">
           <li class="nav__item">
-            <a href="../Library/index.html" class="nav__link">Library</a>
+            <a href="../Library/index.php?user_id=<?php echo $user_id; ?>" class="nav__link">Library</a>
           </li>
           <li class="nav__item">
-            <a href="../LookForGroupPage/lookFor.html" class="nav__link_menu">Groups</a>
+            <a href="../LookForGroupPage/lookFor.php?user_id=<?php echo $user_id; ?>" class="nav__link_menu">Groups</a>
           </li>
           <li class="nav__item">
             <a href="../AccountPage/account.php?user_id=<?php echo $user_id; ?>" class="nav__link_menu">Account</a>
           </li>
           <li class="nav__item">
-            <a href="../Settings/settings.html" class="nav__link_menu">Settings</a>
+            <a href="../Settings/settings.php?user_id=<?php echo $user_id; ?>" class="nav__link_menu">Settings</a>
           </li>
           <li class="nav__item">
             <a href="../AboutPage/aboutpage.html" class="nav__link_menu">About</a>
+          </li>
+          <li class="nav__item">
+            <a href="../BookReviewer/index.html" class="nav__link_menu">LogOut</a>
           </li>
         </ul>
       </div>
@@ -119,80 +125,80 @@ $book_id = $_GET['book_id']; //HOW ELSE CAN I DO THIS WTF
     </div>
 
     <div class="side_part">
-    <div class="side_reviews">
-      <div class="rating">
-        <div class="rating__average">
-          <h1 id="average-rating">4.5</h1>
-          <div class="star_outer">
-            <div class="star_inner">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div class="side_reviews">
+        <div class="rating">
+          <div class="rating__average">
+            <h1 id="average-rating">4.5</h1>
+            <div class="star_outer">
+              <div class="star_inner">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            </div>
+            <p id="total-reviews">234</p>
           </div>
-          <p id="total-reviews">234</p>
+
+          <div class="rating__progress">
+            <div class="rating__progress-value">
+              <p>5<span class="star">&#9733;</span></p>
+              <div class="progress">
+                <div class="bar" id="five-star-bar" style="width: 0;"></div>
+              </div>
+              <p id="five-star-count">456</p>
+            </div>
+
+            <div class="rating__progress-value">
+              <p>4<span class="star">&#9733;</span></p>
+              <div class="progress">
+                <div class="bar" id="four-star-bar" style="width: 0;"></div>
+              </div>
+              <p id="four-star-count">456</p>
+            </div>
+
+            <div class="rating__progress-value">
+              <p>3<span class="star">&#9733;</span></p>
+              <div class="progress">
+                <div class="bar" id="three-star-bar" style="width: 0;"></div>
+              </div>
+              <p id="three-star-count">456</p>
+            </div>
+
+            <div class="rating__progress-value">
+              <p>2<span class="star">&#9733;</span></p>
+              <div class="progress">
+                <div class="bar" id="two-star-bar" style="width: 0;"></div>
+              </div>
+              <p id="two-star-count">456</p>
+            </div>
+
+            <div class="rating__progress-value">
+              <p>1<span class="star">&#9733;</span></p>
+              <div class="progress">
+                <div class="bar" id="one-star-bar" style="width: 0;"></div>
+              </div>
+              <p id="one-star-count">456</p>
+            </div>
+          </div>
         </div>
+      </div>
 
-        <div class="rating__progress">
-          <div class="rating__progress-value">
-            <p>5<span class="star">&#9733;</span></p>
-            <div class="progress">
-              <div class="bar" id="five-star-bar" style="width: 0;"></div>
-            </div>
-            <p id="five-star-count">456</p>
-          </div>
+      <div class="side_rating">
+        <div class="review-form">
+          <form method="POST" action="add_review.php" id="reviewForm">
+            <textarea id="ratingText" name="rating" placeholder="Write your rating!" required></textarea>
+            <button type="submit" class="submit-comment-btn">Submit</button>
+          </form>
+        </div>
+      </div>
 
-          <div class="rating__progress-value">
-            <p>4<span class="star">&#9733;</span></p>
-            <div class="progress">
-              <div class="bar" id="four-star-bar" style="width: 0;"></div>
-            </div>
-            <p id="four-star-count">456</p>
-          </div>
-
-          <div class="rating__progress-value">
-            <p>3<span class="star">&#9733;</span></p>
-            <div class="progress">
-              <div class="bar" id="three-star-bar" style="width: 0;"></div>
-            </div>
-            <p id="three-star-count">456</p>
-          </div>
-
-          <div class="rating__progress-value">
-            <p>2<span class="star">&#9733;</span></p>
-            <div class="progress">
-              <div class="bar" id="two-star-bar" style="width: 0;"></div>
-            </div>
-            <p id="two-star-count">456</p>
-          </div>
-
-          <div class="rating__progress-value">
-            <p>1<span class="star">&#9733;</span></p>
-            <div class="progress">
-              <div class="bar" id="one-star-bar" style="width: 0;"></div>
-            </div>
-            <p id="one-star-count">456</p>
-          </div>
+      <div class="side-bar">
+        <h2>Leave a Comment</h2>
+        <div class="comment-form">
+          <form method="POST" action="add_comment.php" id="commentForm">
+            <textarea id="commentText" rows="4" placeholder="Write your comment here..." required></textarea>
+            <button type="submit" class="submit-comment-btn">Submit</button>
+          </form>
         </div>
       </div>
     </div>
 
-    <div class="side_rating">
-      <div class="review-form">
-        <form method="POST" action="add_review.php" id="reviewForm">
-          <textarea id="ratingText" name="rating" placeholder="Write your rating!" required></textarea>
-          <button type="submit" class="submit-comment-btn">Submit</button>
-        </form>
-      </div>
-    </div>
-
-    <div class="side-bar">
-      <h2>Leave a Comment</h2>
-      <div class="comment-form">
-        <form method="POST" action="add_comment.php" id="commentForm">
-          <textarea id="commentText" rows="4" placeholder="Write your comment here..." required></textarea>
-          <button type="submit" class="submit-comment-btn">Submit</button>
-        </form>
-      </div>
-    </div>
-    </div>
-    
   </div>
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

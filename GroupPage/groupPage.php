@@ -60,47 +60,67 @@ $conn->close();
 
     <header class="header_BOO">
         <div class="logo header__logo">
-        <img src="../BookReviewer/pictures/Boo-Logo.png" alt="Logo" class="logo__image"
-        onclick="window.location.href='../MainPage/landingpage.php?user_id=<?php echo $user_id; ?>';" />
+            <img src="../BookReviewer/pictures/Boo-Logo.png" alt="Logo" class="logo__image"
+                onclick="window.location.href='../MainPage/landingpage.php?user_id=<?php echo $user_id; ?>';" />
         </div>
 
         <div class="search">
-      <form action="../SearchPage/searchPage.php" method="POST" id="searchForm">
-        <input type="text" class="search__input" id="search" placeholder="Book Name" />
-        <button type="submit" class="search__button">
-          Search Book Here
-        </button>
-      </form>
-    </div>
+            <form action="../SearchPage/searchPage.php" method="POST" id="searchForm">
+                <input type="text" class="search__input" id="search" placeholder="Book Name" />
+                <button type="submit" class="search__button">
+                    Search Book Here
+                </button>
+            </form>
+        </div>
 
         <nav class="nav">
             <ul class="nav__list">
-            <li class="nav__item">
-          <a href="../Library/index.php?user_id=<?php echo $user_id; ?>" class="nav__link">Librarys</a>
-        </li>
-        <li class="nav__item">
-          <a href="../LookForGroupPage/lookFor.php?user_id=<?php echo $user_id; ?>" class="nav__link_menu">Groups</a>
-        </li>
-        <li class="nav__item">
-          <a href="../AccountPage/account.php?user_id=<?php echo $user_id; ?>" class="nav__link_menu">Account</a>
-        </li>
-                <li class="nav__item"><a href="../Settings/settings.html" class="nav__link_menu">Settings</a></li>
-                <li class="nav__item"><a href="../AboutPage/aboutpage.html" class="nav__link_menu">About</a></li>
+                <li class="nav__item">
+                    <a href="../Library/index.php?user_id=<?php echo $user_id; ?>" class="nav__link">Librarys</a>
+                </li>
+                <li class="nav__item">
+                    <a href="../LookForGroupPage/lookFor.php?user_id=<?php echo $user_id; ?>"
+                        class="nav__link_menu">Groups</a>
+                </li>
+                <li class="nav__item">
+                    <a href="../AccountPage/account.php?user_id=<?php echo $user_id; ?>"
+                        class="nav__link_menu">Account</a>
+                </li>
+                <li class="nav__item">
+                    <a href="../Settings/settings.php?user_id=<?php echo $user_id; ?>"
+                        class="nav__link_menu">Settings</a>
+                </li>
+                <li class="nav__item">
+                    <a href="../AboutPage/aboutpage.html" class="nav__link_menu">About</a>
+                </li>
+                <li class="nav__item">
+                    <a href="../BookReviewer/index.html" class="nav__link_menu">LogOut</a>
+                </li>
             </ul>
             <div class="nav__item_special">
                 <p>Menu</p>
                 <ul class="nav_dropdown">
-                <li class="nav__item">
-            <a href="../Library/index.php?user_id=<?php echo $user_id; ?>" class="nav__link">Library</a>
-          </li>
-          <li class="nav__item">
-            <a href="../LookForGroupPage/lookFor.php?user_id=<?php echo $user_id; ?>" class="nav__link_menu">Groups</a>
-          </li>
-          <li class="nav__item">
-            <a href="../AccountPage/account.php?user_id=<?php echo $user_id; ?>" class="nav__link_menu">Account</a>
-          </li>
-                    <li class="nav__item"><a href="../Settings/settings.html" class="nav__link_menu">Settings</a></li>
-                    <li class="nav__item"><a href="../AboutPage/aboutpage.html" class="nav__link_menu">About</a></li>
+                    <li class="nav__item">
+                        <a href="../Library/index.php?user_id=<?php echo $user_id; ?>" class="nav__link">Library</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../LookForGroupPage/lookFor.php?user_id=<?php echo $user_id; ?>"
+                            class="nav__link_menu">Groups</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../AccountPage/account.php?user_id=<?php echo $user_id; ?>"
+                            class="nav__link_menu">Account</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../Settings/settings.php?user_id=<?php echo $user_id; ?>"
+                            class="nav__link_menu">Settings</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../AboutPage/aboutpage.html" class="nav__link_menu">About</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../BookReviewer/index.html" class="nav__link_menu">LogOut</a>
+                    </li>
                 </ul>
             </div>
         </nav>
