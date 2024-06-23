@@ -51,7 +51,7 @@ $user_id = $_SESSION['user_id'];
           <a href="../AccountPage/account.php?user_id=<?php echo $user_id; ?>" class="nav__link_menu">Account</a>
         </li>
         <li class="nav__item">
-          <a href="../Settings/settings.html" class="nav__link_menu">Settings</a>
+          <a href="../Settings/settings.php?user_id=<?php echo $user_id; ?>" class="nav__link_menu">Settings</a>
         </li>
         <li class="nav__item">
           <a href="../AboutPage/aboutpage.html" class="nav__link_menu">About</a>
@@ -93,7 +93,7 @@ $user_id = $_SESSION['user_id'];
           <div class="profile">
             <img src="../BookReviewer/pictures/pfp.jpg" alt="Profile Picture" class="profile__image" />
             <div class="profile__buttons">
-            <button class="profile__button"
+              <button class="profile__button"
                 onclick="window.location.href='../LookForGroupPage/lookFor.php?user_id=<?php echo $user_id; ?>';">
                 Groups
               </button>
@@ -103,41 +103,40 @@ $user_id = $_SESSION['user_id'];
                 Profile
               </button>
 
-                <button
-                  class="profile__button"
-                  onclick="window.location.href='../Library/index.php?user_id=<?php echo $user_id; ?>';"
-                >
-                  Library
-                </button>
-              </div>
+              <button class="profile__button"
+                onclick="window.location.href='../Library/index.php?user_id=<?php echo $user_id; ?>';">
+                Library
+              </button>
             </div>
           </div>
-          <div class="space_export">
-            <p class="text_part">Wanna know the top 5 books? Export the statistics!</p>
-            <div class="export_buttons">
+        </div>
+        <div class="space_export">
+          <p class="text_part">Wanna know the top 5 books? Export the statistics!</p>
+          <div class="export_buttons">
             <button class="cvs_button" id="minimal_exp" type="submit">Minimal</button>
             <button class="cvs_button" id="csv_exp">CVS</button>
             <button class="cvs_button" id="docbook_exp">DocBook</button>
-            </div>
           </div>
-
         </div>
-        <div class="feed_container_main_feed">
-          <div class="main_feed__title">News</div>
-          <div class="friend__container">
-            <div id="friend__container__profile"></div>
-    
-          </div>
+
+      </div>
+      <div class="feed_container_main_feed">
+        <div class="main_feed__title">News</div>
+        <div class="friend__container">
+          <div id="friend__container__profile"></div>
+
         </div>
       </div>
     </div>
+  </div>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="../MainPage/scrip.js"></script>
-    <script src="../MainPage/comment_javax.js"></script>
-    <script src="../MainPage/export_ajax.js"></script>
-    <script src="../SearchPage/add_to_search.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="../MainPage/scrip.js"></script>
+  <script src="../MainPage/comment_javax.js"></script>
+  <script src="../MainPage/export_ajax.js"></script>
+  <script src="../SearchPage/add_to_search.js"></script>
 
-  </body>
+</body>
+
 </html>
