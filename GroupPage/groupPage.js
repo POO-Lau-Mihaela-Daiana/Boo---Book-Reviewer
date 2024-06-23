@@ -23,15 +23,14 @@ $(document).ready(function() {
                         activityContainer.append(`
                             <div class="friend__container">
                                 <div class="friend__container__profile">
-                                    <img
-                                        src="../BookReviewer/pictures/pfp.jpg"
+                                    <img src=${activity.user_url}
                                         alt="Friend Profile Picture"
                                         class="friend__profile__image"
                                     />
                                     <div class="profile__container">
                                         <div class="profile__name">
                                             <a
-                                                href="../AccountPage/account.php?user_id=${activity.user_id}"
+                                                href="../AccountPage/others_account.php?user_id=${activity.user_id}"
                                                 class="profile__link"
                                             >
                                                 <p class="name">${activity.username}</p>

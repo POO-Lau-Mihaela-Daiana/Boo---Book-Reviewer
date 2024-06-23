@@ -27,7 +27,7 @@ if ($conn->connect_error) {
 }
 
 // Fetch comments by group members
-$sql = "SELECT c.comment_id, c.comment_text, b.book_id, b.book_title, u.user_id, u.username 
+$sql = "SELECT c.comment_id, c.comment_text, b.book_id, b.book_title, u.user_id, u.username, u.user_url 
 FROM comment c 
 JOIN book_comment bc ON c.comment_id = bc.comment_id
 JOIN book b ON bc.book_id = b.book_id 

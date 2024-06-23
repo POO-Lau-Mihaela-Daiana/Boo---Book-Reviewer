@@ -31,7 +31,7 @@ if (isset($_GET['user_id'])) {
         die(json_encode(array('success' => false, 'error' => 'Prepare statement failed: ' . $conn->error)));
     }
 
-    $stmt_user->bind_param("i", $user_id); 
+    $stmt_user->bind_param("i", $user_id);
     $stmt_user->execute();
     $result_user = $stmt_user->get_result();
 
@@ -42,7 +42,7 @@ if (isset($_GET['user_id'])) {
     }
 
     $user = $result_user->fetch_assoc();
-     
+
     $sql_groups = "SELECT groups.name FROM groups JOIN user_group ON groups.group_id = user_group.group_id WHERE user_group.user_id=?";
     $stmt_groups = $conn->prepare($sql_groups);
 
@@ -62,7 +62,7 @@ if (isset($_GET['user_id'])) {
     $stmt_groups->close();
     $stmt_user->close();
     $conn->close();
-    
+
     echo json_encode(array('success' => true, 'user' => $user, 'groups' => $groups));
 } else {
     echo json_encode(array('success' => false, 'error' => 'No user ID provided.'));

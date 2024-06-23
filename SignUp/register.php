@@ -4,10 +4,9 @@ $username = "root";
 $password = "";
 $dbname = "boo";
 
-// Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Check connection
+
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
@@ -26,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Hash the password
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-    // Check if username or email already exists
+
     $check_sql = "SELECT * FROM user WHERE username='$username' OR user_email='$email'";
     $check_result = $conn->query($check_sql);
 
@@ -35,12 +34,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
 
-    // Insert the new user into the database
     $sql = "INSERT INTO user (username, user_email, user_password) VALUES ('$username', '$email', '$hashed_password')";
 
     if ($conn->query($sql) === TRUE) {
-        echo "New record created successfully. Password hash: $hashed_password"; // Debug output
-        header("Location: ../MainPage/landingpage.php");
+        // Get the ID of the newly created user
+        $user_id = $conn->insert_id;
+
+        header("Location: ../LogIn/login.html");
         exit;
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;

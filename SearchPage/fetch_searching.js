@@ -6,10 +6,11 @@ $(document).ready(function() {
     }
 
     var searchQuery = getQueryParam('search') || '';
+    var userId = getQueryParam('user_id') || '';
 
     $('#searchButton').click(function() {
         searchQuery = $('.search__input').val().trim();
-        window.location.href = '../SearchPage/searchPage.php?search=' + encodeURIComponent(searchQuery);
+        window.location.href = `../SearchPage/searchPage.php?user_id=${encodeURIComponent(userId)}&search=${encodeURIComponent(searchQuery)}`;
     });
 
     $('.button_form').click(function(event) {
@@ -22,8 +23,8 @@ $(document).ready(function() {
             return; 
         }
 
-        var encodedSearchQuery = encodeURIComponent(searchQuery); 
-        var redirectUrl = `../SearchPage/searchPage.php?search=${encodedSearchQuery}&genre=${selectedGenre}`;
+        var encodedSearchQuery = encodeURIComponent(searchQuery);
+        var redirectUrl = `../SearchPage/searchPage.php?user_id=${encodeURIComponent(userId)}&search=${encodedSearchQuery}&genre=${selectedGenre}`;
         window.location.href = redirectUrl;
     });
     
