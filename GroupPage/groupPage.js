@@ -30,7 +30,7 @@ $(document).ready(function() {
                                     <div class="profile__container">
                                         <div class="profile__name">
                                             <a
-                                                href="../AccountPage/account.php?user_id=${activity.user_id}"
+                                                href="../AccountPage/others_account.php?user_id=${activity.user_id}"
                                                 class="profile__link"
                                             >
                                                 <p class="name">${activity.username}</p>

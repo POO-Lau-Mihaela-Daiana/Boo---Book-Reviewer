@@ -108,7 +108,8 @@ $user_id = $_SESSION['user_id'];
         <div class="side__books">Want to change the details</div>
         <div class="side__books">for your account?</div>
         <div class="main__settings">
-          <button class="main__settings__button" onclick="window.location.href='../Settings/settings.html';">
+          <button class="main__settings__button"
+            onclick="window.location.href='../Settings/settings.php?user_id=<?php echo $user_id; ?>';">
             Settings
           </button>
         </div>
