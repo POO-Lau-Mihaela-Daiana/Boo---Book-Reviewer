@@ -137,7 +137,7 @@ $conn->close();
                         <ul class="group__list" id="group-users">
                             <?php foreach ($group_users as $user): ?>
                                 <li class="group__item">
-                                    <a href="../AccountPage/account.php?user_id=<?php echo $user['user_id']; ?>"
+                                    <a href="../AccountPage/others_account.php?user_id=<?php echo $user['user_id']; ?>"
                                         class="group__link"><?php echo $user['username']; ?></a>
                                 </li>
                             <?php endforeach; ?>
