@@ -40,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Get the ID of the newly created user
         $user_id = $conn->insert_id;
 
-        header("Location: ../MainPage/landingpage.php?user_id=" . $user_id);
+        header("Location: ../LogIn/login.html");
         exit;
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
