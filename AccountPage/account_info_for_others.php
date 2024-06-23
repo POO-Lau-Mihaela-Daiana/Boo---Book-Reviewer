@@ -24,7 +24,7 @@ if (!isset($_SESSION['user_id'])) {
 if (isset($_GET['user_id'])) {
     $user_id = intval($_GET['user_id']);
 
-    $sql_user = "SELECT username, user_date_of_creation,user_description,user_tips FROM user WHERE user_id=?";
+    $sql_user = "SELECT username, user_url,user_date_of_creation,user_description,user_tips FROM user WHERE user_id=?";
     $stmt_user = $conn->prepare($sql_user);
 
     if ($stmt_user === false) {

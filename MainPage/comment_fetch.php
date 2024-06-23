@@ -19,8 +19,8 @@ if ($conn->connect_error) {
 $sql = "SELECT 
             user.username, 
             user.user_id,
+            user.user_url,
             comment.comment_text, 
-            comment.comment_posted_date, 
             comment.comment_posted_hour,
             book.book_title,
             book.book_id
@@ -34,7 +34,7 @@ $sql = "SELECT
             book ON book_comment.book_id = book.book_id
         ORDER BY 
             comment.comment_id DESC 
-        LIMIT 10";
+       /* LIMIT 10*/";
 
 $result = $conn->query($sql);
 

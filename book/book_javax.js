@@ -57,7 +57,7 @@ $(document).ready(function() {
             var commentHtml = `
                 <div class="comment">
                     <div class="account">
-                        <img src="../BookReviewer/pictures/pfp.jpg" alt="Account Picture" class="account-picture" />
+                        <img src=${comment.user_url} alt="Account Picture" class="account-picture" />
                     </div>
                     <div class="comment-text">
                         <p>${comment.username} left a comment:</p>

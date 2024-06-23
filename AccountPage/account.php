@@ -60,9 +60,7 @@ $user_id = $_SESSION['user_id'];
             <a href="../Library/index.html" class="nav__link">Library</a>
           </li>
           <li class="nav__item">
-            <a href="../LookForGroupPage/lookFor.html" class="nav__link"
-              >Groups</a
-            >
+          <a href="../LookForGroupPage/lookFor.php?user_id=<?php echo $user_id; ?>" class="nav__link_menu">Groups</a>
           </li>
           <li class="nav__item">
             <a href="../AccountPage/account.php?user_id=<?php echo $user_id; ?>" class="nav__link">Account</a>
@@ -85,9 +83,7 @@ $user_id = $_SESSION['user_id'];
               <a href="../Library/index.html" class="nav__link">Library</a>
             </li>
             <li class="nav__item">
-              <a href="../LookForGroupPage/lookFor.html" class="nav__link_menu"
-                >Groups</a
-              >
+            <a href="../LookForGroupPage/lookFor.php?user_id=<?php echo $user_id; ?>" class="nav__link_menu">Groups</a>
             </li>
             <li class="nav__item">
               <a href="../AccountPage/account.php?user_id=<?php echo $user_id; ?>" class="nav__link_menu"
@@ -113,7 +109,7 @@ $user_id = $_SESSION['user_id'];
       <div class="profile__container">
         <div class="container__side">
           <img
-            src="../BookReviewer/pictures/pfp.jpg"
+            id="user_url"
             alt="account photo"
             class="side__photo"
           />
@@ -161,29 +157,22 @@ $user_id = $_SESSION['user_id'];
               </div>
             </div>
           </div>
-          <div class="main__friends">
-            <p class="friend_list_name">Friends</p>
-            <ul class="friend__list">
-              <li class="friend__item">
-                <a
-                  href="../AccountPage/others_account.html"
-                  class="friend__link"
-                  >Account1</a
-                >
-              </li>
-            
-            </ul>
-          </div>
+          <div class="main__groups">
+           <p class="group_list_name">Groups!</p>
+          <ul class="group__list" id="group__list">
+          </ul>
+           </div>
+
           <div class="about__me__section">
             <div class="section">
               <p class="section__type">Interests</p>
-              <p id="user_description">
+              <p class="info" id="user_description">
                Nothing to see here!
               </p>
             </div>
             <div class="section">
               <p class="section__type">About me:</p>
-              <p id="user_tips">
+              <p class="info" id="user_tips">
                 Nothing to see here!
               </p>
             </div>
