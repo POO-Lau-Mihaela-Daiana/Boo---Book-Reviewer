@@ -29,7 +29,7 @@ $user_id = $_SESSION['user_id'];
     </div>
 
     <div class="search">
-      <form action="../SearchPage/searchPage.php" method="POST" id="searchForm">
+      <form action="../SearchPage/searchPage.php?user_id=<?php echo $user_id; ?>" method="POST" id="searchForm">
         <input type="text" class="search__input" id="search" placeholder="Book Name" />
         <button type="submit" class="search__button">
           Search Book Here
@@ -52,10 +52,10 @@ $user_id = $_SESSION['user_id'];
           <a href="../Settings/settings.php?user_id=<?php echo $user_id; ?>" class="nav__link_menu">Settings</a>
         </li>
         <li class="nav__item">
-          <a href="../AboutPage/aboutpage.html" class="nav__link_menu">About</a>
+          <a href="../AboutPage/aboutpage.php?user_id=<?php echo $user_id; ?>" class="nav__link_menu">About</a>
         </li>
         <li class="nav__item">
-          <a href="../BookReviewer/index.html" class="nav__link_menu">LogOut</a>
+          <a href="../BookReviewer/index.php?user_id=<?php echo $user_id; ?>" class="nav__link_menu">LogOut</a>
         </li>
       </ul>
       <div class="nav__item_special">
@@ -74,10 +74,10 @@ $user_id = $_SESSION['user_id'];
             <a href="../Settings/settings.php?user_id=<?php echo $user_id; ?>" class="nav__link_menu">Settings</a>
           </li>
           <li class="nav__item">
-            <a href="../AboutPage/aboutpage.html" class="nav__link_menu">About</a>
+            <a href="../AboutPage/aboutpage.php?user_id=<?php echo $user_id; ?>" class="nav__link_menu">About</a>
           </li>
           <li class="nav__item">
-            <a href="../BookReviewer/index.html" class="nav__link_menu">LogOut</a>
+            <a href="../BookReviewer/index.php?user_id=<?php echo $user_id; ?>" class="nav__link_menu">LogOut</a>
           </li>
         </ul>
       </div>
@@ -89,26 +89,23 @@ $user_id = $_SESSION['user_id'];
         <p class="side__container__text">Want a certain genre?</p>
         <div class="genre__total__list">
           <form id="genreForm">
-          </form>
-
-        </div>
-        <button class="button_form" type="submit" form="genreForm">Check!</button>
-      </div>
-      <div class="main_container">
-        <div class="main_feed__title">Books found:</div>
-        <div class="book__container">
-          <div class="book__container__profile">
-
+            </form>
+          
           </div>
+          <button class="button_form" type="submit" form="genreForm">Check!</button>
+        </div>
+        <div class="main_container">
+          <div class="main_feed__title">Books found:</div>
+          <div class="book__container">
+            <div class="book__container__profile">
+          
         </div>
       </div>
-
-      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-      <script src="../MainPage/scrip.js"></script>
-      <scrip src="../SearchPage/fetch_with_genre_search.js">
-        </script>
-        <script src="fetch_searching.js"></script>
-        <script src="../SearchPage/add_to_search.js"></script>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../MainPage/scrip.js"></script>
+    <script src="fetch_searching.js"></script>
+    <script src="../SearchPage/add_to_search.js"></script>
 
 </body>
 

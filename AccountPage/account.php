@@ -62,7 +62,7 @@ $user_id = $_SESSION['user_id'];
           <a href="../Settings/settings.php?user_id=<?php echo $user_id; ?>" class="nav__link_menu">Settings</a>
         </li>
         <li class="nav__item">
-          <a href="../AboutPage/aboutpage.html" class="nav__link_menu">About</a>
+          <a href="../AboutPage/aboutpage.php?user_id=<?php echo $user_id; ?>" class="nav__link_menu">About</a>
         </li>
         <li class="nav__item">
           <a href="../BookReviewer/index.html" class="nav__link_menu">LogOut</a>
@@ -84,7 +84,7 @@ $user_id = $_SESSION['user_id'];
             <a href="../Settings/settings.php?user_id=<?php echo $user_id; ?>" class="nav__link_menu">Settings</a>
           </li>
           <li class="nav__item">
-            <a href="../AboutPage/aboutpage.html" class="nav__link_menu">About</a>
+            <a href="../AboutPage/aboutpage.php?user_id=<?php echo $user_id; ?>" class="nav__link_menu">About</a>
           </li>
           <li class="nav__item">
             <a href="../BookReviewer/index.html" class="nav__link_menu">LogOut</a>

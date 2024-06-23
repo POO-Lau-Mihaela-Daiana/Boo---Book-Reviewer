@@ -33,11 +33,12 @@ $user_id = $_SESSION['user_id'];
         </div>
 
         <div class="search">
-            <input type="text" class="search__input" placeholder="Book Name" />
-            <button class="search__button"
-                onclick="window.location.href='../SearchPage/searchPage.php?user_id=<?php echo $user_id; ?>';">
-                Search Book
-            </button>
+            <form action="../SearchPage/searchPage.php?user_id=<?php echo $user_id; ?>" method="POST" id="searchForm">
+                <input type="text" class="search__input" id="search" placeholder="Book Name" />
+                <button type="submit" class="search__button">
+                    Search Book Here
+                </button>
+            </form>
         </div>
 
         <nav class="nav">
@@ -58,10 +59,10 @@ $user_id = $_SESSION['user_id'];
                         class="nav__link_menu">Settings</a>
                 </li>
                 <li class="nav__item">
-                    <a href="../AboutPage/aboutpage.html" class="nav__link_menu">About</a>
+                    <a href="../AboutPage/aboutpage.php?user_id=<?php echo $user_id; ?>" class="nav__link_menu">About</a>
                 </li>
                 <li class="nav__item">
-                    <a href="../BookReviewer/index.html" class="nav__link_menu">LogOut</a>
+                <a href="../BookReviewer/index.html" class="nav__link_menu">LogOut</a>
                 </li>
             </ul>
             <div class="nav__item_special">
@@ -83,10 +84,10 @@ $user_id = $_SESSION['user_id'];
                             class="nav__link_menu">Settings</a>
                     </li>
                     <li class="nav__item">
-                        <a href="../AboutPage/aboutpage.html" class="nav__link_menu">About</a>
+                        <a href="../AboutPage/aboutpage.php?user_id=<?php echo $user_id; ?>" class="nav__link_menu">About</a>
                     </li>
                     <li class="nav__item">
-                        <a href="../BookReviewer/index.html" class="nav__link_menu">LogOut</a>
+                    <a href="../BookReviewer/index.html" class="nav__link_menu">LogOut</a>
                     </li>
                 </ul>
             </div>
@@ -136,11 +137,12 @@ $user_id = $_SESSION['user_id'];
                                 Save
                             </button>
                             <button class="btn btn-secondary"
-                                onclick="window.location.href='../AccountPage/account.html';">
+                            
+                                onclick="window.location.href='../AccountPage/account.php?user_id=<?php echo $user_id; ?>';" >
                                 Discard
                             </button>
                         </div>
-                        <div id="message"></div> <!-- This will display the success/error message -->
+                        <div id="message"></div> 
                     </div>
                 </div>
             </div>
