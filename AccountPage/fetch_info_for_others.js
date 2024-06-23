@@ -20,6 +20,7 @@ $(document).ready(function() {
                 
                 if (response.success) {
                     displayUserAccountDetails(response.user);
+                    displayUserGroups(response.groups);
                     console.log('User Info:', response.user);
                     // displayComments(response.comments);
                 } else {
