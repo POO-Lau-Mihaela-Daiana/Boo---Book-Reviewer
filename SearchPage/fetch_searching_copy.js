@@ -1,17 +1,4 @@
 $(document).ready(function() {
-
-    function getQueryParam(param) {
-        var urlParams = new URLSearchParams(window.location.search);
-        return urlParams.get(param);
-    }
-
-    var searchQuery = getQueryParam('search') || '';
-
-    $('#searchButton').click(function() {
-        searchQuery = $('.search__input').val().trim();
-        window.location.href = '../SearchPage/searchPage.php?search=' + encodeURIComponent(searchQuery);
-    });
-
     $('.button_form').click(function(event) {
         event.preventDefault(); 
 

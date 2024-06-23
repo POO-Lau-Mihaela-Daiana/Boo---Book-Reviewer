@@ -43,6 +43,16 @@ $(document).ready(function() {
     
     }
 
+    
+    function displayUserGroups(groups) {
+        var $groupList = $('#group__list');
+        $groupList.empty();
+
+        groups.forEach(function(group) {
+            var $li = $('<li class="group__item"></li>').text(group);
+            $groupList.append($li);
+        });
+    }
 
 
 

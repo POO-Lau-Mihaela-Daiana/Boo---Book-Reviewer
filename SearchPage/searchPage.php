@@ -119,11 +119,10 @@ $user_id = $_SESSION['user_id'];
         </div>
       </div>
     </div>
- 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="../MainPage/scrip.js"></script>
-    <scrip src="../SearchPage/fetch_with_genre_search.js"></script>
     <script src="fetch_searching.js"></script>
+    <script src="fetch_searching_c.js"></script>
     <script src="../SearchPage/add_to_search.js"></script>
 
   </body>
