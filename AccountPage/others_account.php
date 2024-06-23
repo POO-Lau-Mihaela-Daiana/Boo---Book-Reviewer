@@ -297,7 +297,7 @@ $user_id = $_SESSION['user_id'];
           <div class="about__me__section">
             <div class="section">
               <p class="section__type">Interests</p>
-              <p>
+              <p id="user_description">
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                 Quibusdam error eum nihil libero atque est laudantium iste
                 voluptas. Explicabo et voluptatem placeat impedit nisi officia
@@ -307,7 +307,7 @@ $user_id = $_SESSION['user_id'];
             </div>
             <div class="section">
               <p class="section__type">About me:</p>
-              <p>
+              <p  id="user_tips">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Quibusdam optio iste dolorem repellendus dicta magnam possimus
                 quod amet eaque? Possimus reiciendis magnam, magni sed nostrum
