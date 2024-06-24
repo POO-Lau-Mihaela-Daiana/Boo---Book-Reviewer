@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
 .container {
   display: flex;
   overflow: hidden;
@@ -82,15 +83,19 @@
 .header_BOO .nav {
   display: flex;
   position: relative;
+  text-decoration: none;
 }
 .header_BOO .nav .nav__list {
   list-style-type: none;
   display: flex;
+  text-decoration: none;
 }
 .header_BOO .nav .nav__list .nav__item {
   margin-right: 20px;
+  text-decoration: none;
+  color: white;
 }
-.header_BOO .nav .nav__list .nav__item .a {
+.header_BOO .nav .nav__list .nav__item .nav_link_menu {
   padding: 10px 20px;
   font-size: 16px;
   border: none;
@@ -171,6 +176,7 @@
 }
 
 * {
+  font-family: "Nunito Sans", sans-serif;
   box-sizing: border-box;
   margin: 0px;
   padding: 0px;
@@ -206,8 +212,10 @@
   min-height: auto;
 }
 .profile__container .container__side .side__photo {
-  max-width: calc(100% - 50px);
-  min-height: auto;
+  max-width: calc(100% - 150px);
+  /* Further reduced width */
+  max-height: 50%;
+  /* Further adjusted height */
   margin: 1rem 4rem 0rem 4rem;
   border-radius: 1rem;
   border: 2px solid #714E7D;
@@ -240,12 +248,12 @@
   width: 70%;
   flex-direction: column;
   z-index: 461;
-  height: auto;
   background-color: #fff;
-  margin-top: 0px;
-  margin-right: 5%;
+  margin-top: 10px;
+  margin-right: 1%;
   padding-top: 0px;
   border: 3px solid #714E7D;
+  overflow-y: scroll;
 }
 .profile__container .container__main .main__books {
   border: 3px solid #e3cedd;
@@ -260,16 +268,23 @@
 }
 .profile__container .container__main .main__books .books__container .book {
   margin-right: 40px;
-}
-.profile__container .container__main .main__books .books__container .book .book__photo {
-  width: 100px; 
-  height: 150px; 
-  background-color: #ffffff; 
-  border: 3px solid #714E7D; 
+  margin: 10px;
 }
 .profile__container .container__main .main__books .books__container .book .book__title {
-  text-align: center;
-  margin-top: 20px;
+  display: block;
+  margin-bottom: 10px;
+  color: #714E7D;
+  text-decoration: none;
+}
+.profile__container .container__main .main__books .books__container .book .book__photo {
+  max-width: 100px;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.profile__container .container__main .main__books .books__container .book .book__title:hover {
+  text-decoration: underline;
 }
 @media screen and (max-width: 768px) {
   .profile__container .container__main .books__container {
@@ -285,31 +300,32 @@
     margin-top: 10px;
   }
 }
-.profile__container .main__friends::-webkit-scrollbar {
+.profile__container .container__main .main__groups::-webkit-scrollbar {
   width: 0px;
 }
-.profile__container .main__friends {
+.profile__container .container__main .main__groups {
   margin-top: 1rem;
   margin-right: 1rem;
   margin-left: 2rem;
   flex: 1;
-  border: 3px solid #e3cedd;
-  overflow-y: scroll;
+  border: 3px solid #be9cb4;
 }
-.profile__container .main__friends .friend_list_name {
+.profile__container .container__main .main__groups .group_list_name {
   color: #714E7D;
-  font-size: large;
+  font-size: 25px;
+  border-bottom: 3px solid #be9cb4;
+  color: #714E7D;
   font-weight: 400;
 }
-.profile__container .main__friends .friend__list {
+.profile__container .container__main .main__groups .group__list {
   margin-top: 1rem;
 }
-.profile__container .main__friends .friend__list .friend__item {
+.profile__container .container__main .main__groups .group__list .group__item {
   margin-bottom: 10px;
   margin-left: 10px;
   list-style-type: none;
 }
-.profile__container .main__friends .friend__list .friend__item .friend__link {
+.profile__container .container__main .main__groups .group__list .group__item .group__link {
   padding-top: 2px;
   padding-left: 2px;
   padding-right: 2px;
@@ -317,33 +333,104 @@
   text-decoration: none;
   color: #714E7D;
 }
-.profile__container .main__friends .friend__list .friend__item .friend__link:hover {
+.profile__container .container__main .main__groups .group__list .group__item .group__link:hover {
   background-color: #714E7D;
   color: #e3cedd;
   border-radius: 10px;
 }
-.profile__container .about__me__section {
+.profile__container .container__main .main__friends {
+  margin-top: 1rem;
+  margin-right: 1rem;
+  margin-left: 2rem;
+  border: 3px solid #be9cb4;
+  background-color: #e3cedd;
+  padding: 10px;
+}
+.profile__container .container__main .friends_list_name {
   color: #714E7D;
-  flex: 1;
-  overflow: hidden;
+  font-size: 25px;
+  border-bottom: 3px solid #be9cb4;
+  color: #714E7D;
+  font-weight: 400;
+}
+.profile__container .container__main .friends__container {
+  display: flex;
+  overflow-x: auto;
+  padding: 10px;
+  background-color: #fff;
+}
+.profile__container .container__main .friend {
   display: flex;
   flex-direction: column;
-  border-bottom: 1rem;
+  align-items: center;
+  margin-right: 20px;
+  background-color: #e3cedd;
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid #714E7D;
+  min-width: 150px;
+  text-align: center;
 }
-.profile__container .about__me__section .section {
-  height: 20px;
+.profile__container .container__main .friend__photo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+.profile__container .container__main .friend__name {
+  font-size: 1.2em;
+  color: #714E7D;
+  text-decoration: none;
+}
+.profile__container .container__main .friend__name:hover {
+  text-decoration: underline;
+}
+.profile__container .container__main .no-friends {
+  text-align: center;
+  font-size: 1.2em;
+  color: #714E7D;
+  margin-top: 20px;
+}
+.profile__container .container__main .section::-webkit-scrollbar {
+  width: 0px;
+}
+.profile__container .container__main .about__me__section {
+  border-left: 3px solid #be9cb4;
+  border-right: 3px solid #be9cb4;
+  border-bottom: 3px solid #be9cb4;
   flex: 1;
-  overflow-x: scroll;
-  font-size: 14px;
-  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 2rem;
+  margin-right: 1rem;
 }
-.profile__container .about__me__section .section .section__type {
-  font-size: 16px;
+.profile__container .container__main .about__me__section .section {
+  flex: 1;
+  font-size: 14px;
+  margin-bottom: 40px;
+  height: auto;
+}
+.profile__container .container__main .about__me__section .section .section__type {
+  color: #714E7D;
+  font-size: 25px;
+  background-color: #e3cedd;
+  border-bottom: 3px solid #be9cb4;
+}
+.profile__container .container__main .about__me__section .section .info {
+  color: #714E7D;
+  margin-top: 15px;
+  margin-left: 10px;
+  font-size: 25px;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 @media screen and (max-width: 768px) {
-  .profile__container .about__me__section {
+  .profile__container .container__main .about__me__section {
     margin-bottom: 30px;
   }
+}
+.profile__container .container__main::-webkit-scrollbar {
+  width: 0px;
 }
 
 .main__settings__button {
