@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Boo Documentation</title>
+</head>
+
+<body>
+    <h1>Boo, your new book companion</h1>
+    <p>Project done for the Web Technologies course, FII, Year 2</p>
+    <p>By Lau Mihaela Daiana and Blindu Andrada Mihaela</p>
+
+    <h2>Introduction</h2>
+    <h3>Purpose and Product Scope</h3>
+    <p>
+        The purpose of the app is to act like a user-friendly book annotation app and an online library. With user
+        groups, friends, and a visual news section. The user can see when someone leaves a comment on a book, or wants
+        to read something, etc. The inspiration of this app is the well known "Good reads".
+    </p>
+    <h3>Document Conventions</h3>
+    <p>
+        Within the whole web application, we only used a color palette of 5 colors (#3d284f, #57356A, #714E7D, #B790C2,
+        #E3CEDD) and white (#fff). For fonts, we used -Nunito Sans.
+    </p>
+    <h3>Intended Audience and Reading Suggestions</h3>
+    <p>
+        Our app only has two types of users intended, and that is the reader and the admin. The reader can join groups,
+        make friends, add books to their library, leave comments and ratings, and search for new books.
+    </p>
+    <h3>Reference</h3>
+    <p>Our main reference is Good reads, a well-known book annotating app</p>
+    <h2>Overall Description</h2>
+    <p>
+        BOO is a new stand-alone app meant to act as a companion for the reader, as well as allow people to create a
+        community of readers who love the same books.
+    </p>
+    <h3>Product Functions</h3>
+    <ul>
+        <p>The App contains the following functions</p>
+        <li>Register/LogIn/LogOut/Change Account settings</li>
+        <li>Join Groups</li>
+        <li>Search Books/Filter Search by genre</li>
+        <li>Leave comments/Ratings</li>
+        <li>Check the RSS feed</li>
+        <li>Export statistics</li>
+    </ul>
+    <h3>Operating Environment</h3>
+    <p>
+        Our intention is to make the web application easy to use on any device, with it being platform independent, we
+        want it to be responsive.
+    </p>
+    <h3>User Documentation</h3>
+    <p>
+        The user can find the page "About" on the header of the application. Within it, they can find a link to a "Help"
+        Section meant to help them learn how to use the application.
+    </p>
+    <h3>Dependencies</h3>
+    <p>None</p>
+    <h2>System Features</h2>
+    <h3>See book</h3>
+    <p>
+        The user can click on any book and see its description, genres alongside all the comments that have been left
+        and its ratings.
+    </p>
+    <p>Backend: When a user clicks on a book, a PHP script queries the database to fetch the book's details including its
+        description, genres, comments, and ratings. This data is then sent back to the frontend using AJAX and displayed to the user.</p>
+    <h3>Join Groups</h3>
+    <p>
+        Within the app, the user can see the available groups alongside a description of it and can join it if they wish
+        to. Once in a group, they can see the members that are also part of it and their latest comments.
+    </p>
+    <p>Backend: When a user decides to join a group, a PHP script adds an entry into the user-group relationship table in the
+        database. The list of members and their comments are fetched from the database using AJAX and displayed on the group page.</p>
+    <h3>Create Groups</h3>
+    <p>
+        The user is also capable of creating groups on their own. They automatically are part of it.
+    </p>
+    <p>Backend: When a new group is created, the PHP script inserts the new group details into the groups table in the
+        database and adds the creator to the user-group relationship table as a member of that group. The frontend is updated using AJAX.</p>
+    <h3>See your account</h3>
+    <p>
+        The user has the ability to see their own account and change the information shown on it. They can see: since
+        when the account has been created, the name, a button for settings, the current books they are reading, what
+        groups they are part of, and other information.
+    </p>
+    <p>Backend: The account details are fetched from the database using a PHP script that queries the user table based on the
+        session user ID. The information is then displayed on the account page using AJAX for dynamic updates.</p>
+    <h3>See others account</h3>
+    <p>
+        The user can see other people's accounts, from their groups or from the main page. They can see: since when the
+        account has been created, the name, the current books they are reading, what groups they are part of, and other
+        information.
+    </p>
+    <p>Backend: Similar to viewing one's own account, the details of other users are fetched from the database using a PHP
+        script that queries the user table based on the selected user ID. This information is then displayed on the account
+        page using AJAX.</p>
+    <h3>Change account information</h3>
+    <p>
+        The settings make it possible to change the profile photo, the description, the name, and the about me section.
+    </p>
+    <p>Backend: When account information is updated, the PHP script updates the respective fields in the user table in the
+        database. This ensures that the latest information is stored and displayed using AJAX for smooth user experience.</p>
+    <h3>Search Books</h3>
+    <p>
+        The user can search for certain books and choose the genre too. If they click the search button, all books in
+        the database will appear. If they then want a certain genre, they can choose from the one that can be found in
+        the database, which are dynamically shown.
+    </p>
+    <p>Backend: The search functionality is powered by a PHP script that queries the book table in the database based on the
+        search input and selected genres. The results are then returned to the frontend and displayed to the user using AJAX.</p>
+    <h3>Add to Shelves</h3>
+    <p>
+        The user can add any book to their library. It can be to read, reading, or read. This can be changed around as
+        many times as they want.
+    </p>
+    <p>Backend: Adding a book to a shelf involves inserting or updating an entry in the user-library relationship table in
+        the database. This action is performed by a PHP script based on the user's input and the frontend is updated using AJAX.</p>
+    <h3>Leave annotations on books</h3>
+    <p>
+            </p>
+    <p>Backend: Comments are added to the book by inserting a new entry into the comments table in the database. A PHP
+        script handles this operation and ensures the comment is linked to the correct book and user.</p>
+    <h3>Leave ratings</h3>
+    <p>
+        The user can leave one rating per book which will change the overall ratings.
+    </p>
+    <p>Backend: Ratings are added or updated in the ratings table in the database by a PHP script. This script also recalculates
+        the overall rating for the book and updates it accordingly. AJAX is used to dynamically update the displayed rating.</p>
+    <h3>Export statistics</h3>
+    <p>
+        The user can export the statistics of the top 5 books ordered by ratings in minimal form, CSV, or DocBook. The
+        CSV is downloadable.
+    </p>
+    <p>Backend: The export functionality is managed by a PHP script that queries the database for the top 5 books by ratings.
+        It then formats the data into the chosen format (CSV or DocBook) and makes it available for download. AJAX is used to handle the export requests.</p>
+    <h3>Check RSS feed</h3>
+    <p>
+        The user can check the RSS feed which shows the latest 10 books added and the latest 10 comments that have been
+        posted on the app. To ensure they can visualize the RSS feed as best as possible no matter on the web browser
+        they use, the RSS file is flattened into an HTML file when checked in case the web browser cannot read the XML.
+    </p>
+    <p>Backend: The RSS feed is generated by querying the database for the latest 10 books and comments. A PHP script creates
+        the RSS feed in XML format and then flattens it into an HTML file for compatibility. AJAX is used to fetch and display the feed.</p>
+    <h2>System Users</h2>
+    <p>
+        The app currently only has two types of users, the standard user and the admin. The admin has the same
+        capabilities as the normal user, with a few additional functionalities:
+    </p>
+    <h3>Admin</h3>
+    <p>
+        The admin is the only one who can add books, delete users, delete books, delete groups, and see a separate
+        account which has the power to work with the database without having to check it from phpMyAdmin.
+    </p>
+    <h3>Add Books</h3>
+    <p>
+        The admin can add books, by giving the needed information. For photos, URLs are used. For genres, the admin can
+        add as many as they want, using commas to differentiate them. In case one of the genres they added isn't in the
+        database, a new entry will be created for it.
+    </p>
+    <p>Backend: Adding a book involves inserting a new entry into the book table in the database. The genres are parsed and
+        checked against the genres table. If a genre does not exist, a new entry is created. This is handled by a PHP script.</p>
+    <h3>Delete users</h3>
+    <p>
+        The admin can delete users in case there are instances of users being mean, or for bots to be created and used
+        to spam comments/rate.
+    </p>
+    <p>Backend: Deleting a user is managed by a PHP script that removes the user entry from the user table and ensures that all
+        related data (like comments and ratings) are also handled appropriately.</p>
+    <h3>Delete Books</h3>
+    <p>
+        In case the information of a book is wrong, or it wasn't supposed to be posted, the admin can delete it. All
+        comments are deleted, ratings aren't.
+    </p>
+    <p>Backend: A PHP script handles the deletion of a book, removing its entry from the book table and deleting associated
+        comments. Ratings are retained but are flagged as orphaned until reassigned or managed.</p>
+    <h3>Delete Groups</h3>
+    <p>In case a group is used for spam, the admin can delete it.</p>
+    <p>Backend: Deleting a group involves removing the group's entry from the groups table and managing the user-group
+        relationships. This is done by a PHP script that ensures no orphaned data remains.</p>
+    <h2>App Structure</h2>
+    <h3>FrontEnd</h3>
+    <h4>Languages used</h4>
+    <p>
+        In this final state, the web application uses a mix of HTML, SCSS, BEM, and JavaScript to make it as user
+        friendly as possible. The app consists of a number of pages including a main feed, a group page, a search page,
+        and a book and library page.
+    </p>
+    <h4>User Interface</h4>
+    <p>
+        The user interface is simple but friendly and currently contains 13 different pages.
+    </p>
+    <h3>BackEnd</h3>
+    <h4>Languages used</h4>
+    <p>For the backend, we have used a mix of PHP and JavaScript.</p>
+    <h4>PHP</h4>
+    <p>
+        Used as our primary programming language, we used PHP in order to connect to the database and get the necessary
+        information for every page. Every different action has a different PHP file which is then called by a JavaScript
+        file, which fetches the information using AJAX for an asynchronous workaround.
+    </p>
+    <h4>JavaScript</h4>
+    <p>
+        JavaScript has been used primarily for AJAX, so we could fetch the
+        information from the database. With said information, it dynamically
+        showcases the information for pages such as the main page and search, while
+        simply adding the information given by the IDs of the divs in pages such
+        as the account page and book page.
+    </p>
+    <h4>Steps of implementation of the project</h4>
+    <p>The steps of implementation for this project have been:</p>
+    <ul>
+        <li>Finishing up the user interface</li>
+        <li>Creating a database</li>
+        <li>Adding functionalities for each page:</li>
+        <li>Possibility of creating an account</li>
+        <li>Possibility of logging in</li>
+        <li>Landing Page with all the comments that have been posted</li>
+        <li>Account Page for user and other users</li>
+        <li>Book Page</li>
+        <li>Adding ratings and comments to a book</li>
+        <li>Search Page</li>
+        <li>Filter for search Page</li>
+        <li>
+            Library buttons on the book pages and the Pages for the library itself
+            and all the types of shelves we have
+        </li>
+        <li>Group Page, Group view and Group Create</li>
+
+        <li>Creating statistics that can be exported from the main page</li>
+        <li>
+            RSS data flux creation showcased as HTML for easy viewing on any browser
+        </li>
+    </ul>
+    <h2>Other NonFunctional Requirements</h2>
+    <h3>Performance Requirements</h3>
+    <p>None</p>
+    <h3>Safety Requirements</h3>
+    <p>None</p>
+    <h3>Security Requirements</h3>
+    <p>
+        The whole responsibility is on the user when it comes to the password, in
+        case they forget it they can reset it.
+    </p>
+    <h3>Software Quality Attributes</h3>
+    <p>Usability and reusability alongside portability.</p>
+</body>
+
+</html>
