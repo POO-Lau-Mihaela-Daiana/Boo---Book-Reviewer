@@ -242,7 +242,7 @@
   z-index: 450;
   width: 100vw;
   height: 100vh;
-  background-image: url(../BookReviewer/pictures/SignUpPage.jpg);
+  background-image: url(../BookReviewer/pictures/8a5385bab008e4081cc21dcc3cefca0e.jpg);
 }
 
 .block_container .feed_container .feed_container_side {
@@ -315,13 +315,13 @@
   border: 1px solid #ccc;
   border-radius: 8px;
   padding: 20px;
-  box-shadow: 0 0 10px #F4F7F0;
-  background-color: #F4F7F0;
+  box-shadow: 0 0 10px #AD87B6;
+  background-color: #AD87B6;
 }
 
 .block_container .feed_container .feed_container_side .categories {
   padding-bottom: 20px;
-  background-color: #F4F7F0;
+  background-color: #AD87B6;
 }
 
 .block_container .feed_container .feed_container_side .categories h2 {
