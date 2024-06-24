@@ -19,7 +19,7 @@ function deleteGroup() {
             processData: false,
             contentType: false,
             success: function(response) {
-                const resultDiv = $('#deleteResult');
+                const resultDiv = $('#deleteResultGroup');
                 response = JSON.parse(response);
 
                 if (response.success) {
@@ -31,7 +31,7 @@ function deleteGroup() {
             },
             error: function(xhr, status, error) {
                 console.error('Ajax error:' + status + ' ' + error);
-                $('#deleteResult').html('<p style="color: red;">An error occurred during the delete process. Please try again.</p>');
+                $('#deleteResultGroup').html('<p style="color: red;">An error occurred during the delete process. Please try again.</p>');
             }
         });
     } else {

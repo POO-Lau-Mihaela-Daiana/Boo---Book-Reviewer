@@ -18,7 +18,7 @@ function addBook() {
         processData: false,
         contentType: false,
         success: function(response) {
-            const resultDiv = $('#updateResult');
+            const resultDiv = $('#updateResultBook');
             response = JSON.parse(response); 
             if (response.success) {
                 resultDiv.html('<p style="color: green;">' + response.message + '</p>');
@@ -29,7 +29,7 @@ function addBook() {
         },
         error: function(xhr, status, error) {
             console.error('Ajax error:' + status + ' ' + error);
-            $('#deleteResult').html('<p style="color: red;">An error occurred during the delete process. Please try again.</p>');
+            $('#deleteResultBook').html('<p style="color: red;">An error occurred during the delete process. Please try again.</p>');
         }
     });
 

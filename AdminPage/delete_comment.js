@@ -18,7 +18,7 @@ function deleteComment() {
         processData: false,
         contentType: false,
         success: function(response) {
-            const resultDiv = $('#deleteResult');
+            const resultDiv = $('#deleteResultComment');
             try {
                 response = JSON.parse(response);
 
@@ -34,7 +34,7 @@ function deleteComment() {
         },
         error: function(xhr, status, error) {
             console.error('Ajax error:' + status + ' ' + error);
-            $('#deleteResult').html('<p style="color: red;">An error occurred during the delete process. Please try again.</p>');
+            $('#deleteResultComment').html('<p style="color: red;">An error occurred during the delete process. Please try again.</p>');
         }
     });
 }

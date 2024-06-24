@@ -80,7 +80,7 @@ $user_id = $_SESSION['user_id'];
           
             <button type="button" onclick="addBook()">Add Book</button>
           </form>
-          <div id="updateResult"></div>
+          <div id="updateResultBook"></div>
         </div>
 
         <button class="toggle_button" onclick="toggleForm('updateBookForm')">
@@ -137,20 +137,17 @@ $user_id = $_SESSION['user_id'];
           <div id="updateResult"></div>
         </div>
 
-        <!-- <button class="toggle_button" onclick="toggleForm('deleteCommentForm')">Delete Comment</button>
+        <button class="toggle_button" onclick="toggleForm('deleteCommentForm')">Delete Comment</button>
 <div class="form_container" id="deleteCommentForm">
     <h2>Delete Comment</h2>
     <form id="deleteCommentElement">
-        <label for="username">User:</label>
-        <input type="text" id="username" name="username" required /><br />
-        <label for="book_title">Book title:</label>
-        <input type="text" id="book_title" name="book_title" required /><br />
-        <label for="comment_text">Comment Text:</label>
-        <input type="text" id="comment_text" name="comment_text" required /><br />
+        <label for="comment_id">Comment id:</label>
+        <input type="text" id="comment_id" name="comment_id" required /><br />
+  
         <button type="button" onclick="deleteComment()">Delete Comment</button>
     </form>
-    <div id="deleteResult"></div>
-</div> -->
+    <div id="deleteResultComment"></div>
+</div>
 
 
         <button class="toggle_button" onclick="toggleForm('deleteGroupForm')">
@@ -163,7 +160,7 @@ $user_id = $_SESSION['user_id'];
             <input type="text" id="group_id" name="group_id" required /><br />
             <button type="button" onclick="deleteGroup()">Delete Group</button>
           </form>
-          <div id="deleteResult"></div>
+          <div id="deleteResultGroup"></div>
         </div>
 
         <button class="toggle_button" onclick="toggleForm('deleteUserForm')">
@@ -176,7 +173,7 @@ $user_id = $_SESSION['user_id'];
             <input type="text" id="user_id" name="user_id" required /><br />
             <button type="button" onclick="deleteUser()">Delete User</button>
           </form>
-          <div id="deleteResult"></div>
+          <div id="deleteResultUser"></div>
         </div>
 
         <button class="toggle_button" onclick="toggleForm('deleteBookForm')">Delete Book</button>
@@ -187,7 +184,7 @@ $user_id = $_SESSION['user_id'];
         <input type="text" id="book_id" name="book_id" required /><br />
         <button type="button" onclick="deleteBook()">Delete Book</button>
     </form>
-    <div id="deleteResult"></div>
+    <div id="deleteResultBook"></div>
 </div>
       </div>
       <div
