@@ -17,6 +17,7 @@ $(document).ready(function() {
                 if (response.success) {
                     displayUserAccountDetails(response.user);
                     displayUserGroups(response.groups);
+                    displayUserFriends
                     console.log('User Info:', response.user);
                     // displayComments(response.comments);
                 } else {
@@ -51,5 +52,16 @@ $(document).ready(function() {
             $groupList.append($li);
         });
     }
+
+    function displayUserFriends(groups) {
+        var $groupList = $('#friends__list');
+        $groupList.empty();
+
+        groups.forEach(function(group) {
+            var $li = $('<li class="friends__item"></li>').text(group);
+            $groupList.append($li);
+        });
+    }
+
 
 });

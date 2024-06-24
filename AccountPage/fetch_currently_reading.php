@@ -21,10 +21,11 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT b.book_title, b.book_photo_url
+$sql = "SELECT b.book_id, b.book_title, b.book_photo_url
         FROM book b
         JOIN library l ON b.book_id = l.book_id
         WHERE l.user_id = $user_id AND l.list_number = 2";
+
 
 $result = $conn->query($sql);
 $currentlyReadingBooks = [];

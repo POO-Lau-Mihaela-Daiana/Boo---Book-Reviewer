@@ -2,7 +2,7 @@
 session_start();
 
 if (!isset($_SESSION['user_id'])) {
-  header("Location: ../LogIn/login.html"); 
+  header("Location: ../LogIn/login.html");
   exit;
 }
 
@@ -29,6 +29,7 @@ $user_id = $_SESSION['user_id'];
   <script src="../MainPage/scrip.js"></script>
   <script src="../SearchPage/add_to_search.js"></script>
   <script src="account.js"></script>
+  <script src="fetch_friends.js"></script>
 
   <header class="header_BOO">
     <div class="logo header__logo">
@@ -38,7 +39,7 @@ $user_id = $_SESSION['user_id'];
 
 
     <div class="search">
-    <form action="../SearchPage/searchPage.php?user_id=<?php echo $user_id; ?>" method="GET" id="searchForm">
+      <form action="../SearchPage/searchPage.php?user_id=<?php echo $user_id; ?>" method="GET" id="searchForm">
         <input type="text" class="search__input" id="search" placeholder="Book Name" />
         <button type="submit" class="search__button">
           Search Book Here
@@ -64,8 +65,8 @@ $user_id = $_SESSION['user_id'];
           <a href="../AboutPage/aboutpage.php?user_id=<?php echo $user_id; ?>" class="nav__link_menu">About</a>
         </li>
         <li class="nav__item">
-    <a href="../BookReviewer/logout.php" class="nav__link_menu">LogOut</a>
-      </li>
+          <a href="../BookReviewer/logout.php" class="nav__link_menu">LogOut</a>
+        </li>
       </ul>
       <div class="nav__item_special">
         <p>Menu</p>
@@ -86,8 +87,8 @@ $user_id = $_SESSION['user_id'];
             <a href="../AboutPage/aboutpage.php?user_id=<?php echo $user_id; ?>" class="nav__link_menu">About</a>
           </li>
           <li class="nav__item">
-    <a href="../BookReviewer/logout.php" class="nav__link_menu">LogOut</a>
-      </li>
+            <a href="../BookReviewer/logout.php" class="nav__link_menu">LogOut</a>
+          </li>
         </ul>
       </div>
     </nav>
@@ -128,6 +129,11 @@ $user_id = $_SESSION['user_id'];
           <ul class="group__list" id="group__list">
           </ul>
         </div>
+        <div class="main__friends">
+          <p class="friends_list_name">Friends</p>
+          <div class="friends__container" id="friends__container"></div>
+        </div>
+
 
         <div class="about__me__section">
           <div class="section">
