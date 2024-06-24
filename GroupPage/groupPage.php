@@ -2,10 +2,9 @@
 session_start();
 
 if (!isset($_SESSION['user_id'])) {
-    header("Location: ../login.php");
-    exit;
+  header("Location: ../LogIn/login.html"); 
+  exit;
 }
-
 $user_id = $_SESSION['user_id'];
 
 if (!isset($_GET['group_id'])) {
@@ -20,15 +19,15 @@ $username = "root";
 $password = "";
 $dbname = "boo";
 
-// Create connection
+
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Check connection
+
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Fetch users in the group
+
 $sql = "SELECT u.user_id, u.username FROM user_group ug JOIN user u ON ug.user_id = u.user_id WHERE ug.group_id = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("i", $group_id);
@@ -65,13 +64,13 @@ $conn->close();
         </div>
 
         <div class="search">
-            <form action="../SearchPage/searchPage.php?user_id=<?php echo $user_id; ?>" method="POST" id="searchForm">
-                <input type="text" class="search__input" id="search" placeholder="Book Name" />
-                <button type="submit" class="search__button">
-                    Search Book Here
-                </button>
-            </form>
-        </div>
+    <form action="../SearchPage/searchPage.php?user_id=<?php echo $user_id; ?>" method="GET" id="searchForm">
+        <input type="text" class="search__input" id="search" placeholder="Book Name" />
+        <button type="submit" class="search__button">
+          Search Book Here
+        </button>
+      </form>
+    </div>
 
         <nav class="nav">
             <ul class="nav__list">
@@ -94,8 +93,8 @@ $conn->close();
                     <a href="../AboutPage/aboutpage.php?user_id=<?php echo $user_id; ?>" class="nav__link_menu">About</a>
                 </li>
                 <li class="nav__item">
-                    <a href="../BookReviewer/index.php?user_id=<?php echo $user_id; ?>" class="nav__link_menu">LogOut</a>
-                </li>
+    <a href="../BookReviewer/logout.php" class="nav__link_menu">LogOut</a>
+      </li>
             </ul>
             <div class="nav__item_special">
                 <p>Menu</p>
@@ -119,8 +118,8 @@ $conn->close();
                         <a href="../AboutPage/aboutpage.php?user_id=<?php echo $user_id; ?>" class="nav__link_menu">About</a>
                     </li>
                     <li class="nav__item">
-                        <a href="../BookReviewer/index.php?user_id=<?php echo $user_id; ?>" class="nav__link_menu">LogOut</a>
-                    </li>
+    <a href="../BookReviewer/logout.php" class="nav__link_menu">LogOut</a>
+      </li>
                 </ul>
             </div>
         </nav>
@@ -148,7 +147,7 @@ $conn->close();
             <div class="feed_container_main_feed">
                 <div class="main_feed__title">Group Activity</div>
                 <div class="friend__container" id="group-activity">
-                    <!-- Group activity will be dynamically loaded here -->
+            
                 </div>
             </div>
         </div>

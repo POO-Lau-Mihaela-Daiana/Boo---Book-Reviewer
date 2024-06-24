@@ -13,16 +13,14 @@ $username = "root";
 $password = "";
 $dbname = "boo";
 
-// Create connection
+
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Check connection
 if ($conn->connect_error) {
     echo json_encode(['success' => false, 'message' => 'Connection failed: ' . $conn->connect_error]);
     exit;
 }
 
-// Fetch groups the user is in
 $sql = "SELECT g.group_id, g.name, g.description 
         FROM groups g 
         JOIN user_group ug ON g.group_id = ug.group_id 
@@ -33,7 +31,7 @@ $stmt->execute();
 $result = $stmt->get_result();
 $current_groups = $result->fetch_all(MYSQLI_ASSOC);
 
-// Fetch groups the user is not in
+
 $sql = "SELECT g.group_id, g.name, g.description 
         FROM groups g 
         WHERE g.group_id NOT IN (

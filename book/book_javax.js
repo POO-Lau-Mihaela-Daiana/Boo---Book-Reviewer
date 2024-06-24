@@ -157,10 +157,10 @@ $(document).ready(function() {
             }
         });
 });
-     // Add event listeners to the buttons
+    
      $('.want-to-read-btn').on('click', function() {
         var status = $(this).data('status');
-        console.log("Button clicked:", status); // Debugging log
+        console.log("Button clicked:", status); 
         updateBookStatus(status);
     });
 

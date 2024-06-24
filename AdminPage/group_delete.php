@@ -15,31 +15,31 @@ if ($conn->connect_error) {
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
    
-    if (!isset($_POST['user_id']) || empty($_POST['user_id'])) {
-        echo json_encode(['success' => false, 'error' => 'User ID not provided']);
+    if (!isset($_POST['group_id']) || empty($_POST['group_id'])) {
+        echo json_encode(['success' => false, 'error' => 'Group ID not provided']);
         exit; 
     }
 
-    $user_id = $_POST['user_id'];
+    $group_id = $_POST['group_id'];
 
     $conn->begin_transaction();
 
     try {
      
-        $stmt = $conn->prepare("DELETE FROM comment WHERE user_id = ?");
+        $stmt = $conn->prepare("DELETE FROM user_group WHERE group_id = ?");
         if (!$stmt) {
             throw new Exception("Error preparing statement: " . $conn->error);
         }
-        $stmt->bind_param("i", $user_id);
+        $stmt->bind_param("i", $group_id);
         $stmt->execute();
         $stmt->close();
 
       
-        $stmt = $conn->prepare("DELETE FROM user WHERE user_id = ?");
+        $stmt = $conn->prepare("DELETE FROM groups WHERE group_id = ?");
         if (!$stmt) {
             throw new Exception("Error preparing statement: " . $conn->error);
         }
-        $stmt->bind_param("i", $user_id);
+        $stmt->bind_param("i", $group_id);
         $stmt->execute();
         $stmt->close();
 

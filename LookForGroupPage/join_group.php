@@ -23,7 +23,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
 
-    // Insert user into user_group table
     $stmt = $conn->prepare("INSERT INTO user_group (user_id, group_id) VALUES (?, ?)");
     $stmt->bind_param("ii", $user_id, $group_id);
 

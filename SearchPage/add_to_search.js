@@ -2,17 +2,20 @@ $(document).ready(function() {
     $('#searchForm').submit(function(event) {
         event.preventDefault(); 
         
-        var searchTerm = $('#search').val().trim(); 
-        
- 
-        var actionUrl = '../SearchPage/searchPage.php';
+        var searchTerm = $('#search').val().trim();
+        var actionUrl = $(this).attr('action');
+
         if (searchTerm !== '') {
-            actionUrl += '?search=' + encodeURIComponent(searchTerm);
+            if (actionUrl.includes('?')) {
+                actionUrl += '&search=' + encodeURIComponent(searchTerm);
+            } else {
+                actionUrl += '?search=' + encodeURIComponent(searchTerm);
+            }
         }
-        
-        $(this).attr('action', actionUrl);
-        
+
     
-        this.submit();
+        $(this).attr('action', actionUrl);
+
+        window.location.href = actionUrl;
     });
 });
