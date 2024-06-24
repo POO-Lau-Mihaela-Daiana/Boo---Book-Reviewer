@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt->close();
 
         $conn->commit();
-        echo json_encode(['success' => true]);
+        echo json_encode(['success' => true, 'message' => 'Group deleted successfully']);
     } catch (Exception $e) {
         $conn->rollback();
         echo json_encode(['success' => false, 'error' => $e->getMessage()]);

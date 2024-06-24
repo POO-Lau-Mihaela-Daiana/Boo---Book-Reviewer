@@ -7,7 +7,7 @@ function toggleForm(formId) {
     }
 }
 
-function deleteBook() {
+function deleteUser() {
     const form = document.getElementById('deleteUserFormElement').value;
     const formData = new FormData(form);
    
@@ -19,16 +19,19 @@ function deleteBook() {
         processData: false,
         contentType: false,
         success: function(response) {
+            const resultDiv = $('#deleteResult');
+            response = JSON.parse(response); 
             console.log(response); 
             if (response.success) {
-               alert('User deleted from data base');
+                resultDiv.html('<p style="color: green;">' + response.message + '</p>');
                 form.reset();
             } else {
-                alert('Error:' +response.error);
+                resultDiv.html('<p style="color: red;">' + response.error + '</p>');
             }
         },
         error: function(xhr, status, error) {
-          console.error('Ajax error:'+status+' '+error);
+            console.error('Ajax error:' + status + ' ' + error);
+            $('#deleteResult').html('<p style="color: red;">An error occurred during the delete process. Please try again.</p>');
         }
     });
 

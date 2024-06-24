@@ -7,24 +7,29 @@ function toggleForm(formId) {
     }
 }
 
-function addBook() {
-    const form = document.getElementById('addBookFormElement');
+function deleteComment() {
+    const form = document.getElementById('deleteCommentElement'); 
     const formData = new FormData(form);
 
     $.ajax({
-        url: 'book_add.php',
+        url: 'delete_comment.php',
         method: 'POST',
         data: formData,
         processData: false,
         contentType: false,
         success: function(response) {
-            const resultDiv = $('#updateResult');
-            response = JSON.parse(response); 
-            if (response.success) {
-                resultDiv.html('<p style="color: green;">' + response.message + '</p>');
-                form.reset();
-            } else {
-                resultDiv.html('<p style="color: red;">' + response.error + '</p>');
+            const resultDiv = $('#deleteResult');
+            try {
+                response = JSON.parse(response);
+
+                if (response.success) {
+                    resultDiv.html('<p style="color: green;">' + response.message + '</p>');
+                    form.reset();
+                } else {
+                    resultDiv.html('<p style="color: red;">' + response.error + '</p>');
+                }
+            } catch (e) {
+                resultDiv.html('<p style="color: red;">Invalid server response.</p>');
             }
         },
         error: function(xhr, status, error) {
@@ -32,5 +37,4 @@ function addBook() {
             $('#deleteResult').html('<p style="color: red;">An error occurred during the delete process. Please try again.</p>');
         }
     });
-
 }

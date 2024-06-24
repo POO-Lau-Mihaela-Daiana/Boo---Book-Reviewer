@@ -7,21 +7,20 @@ function toggleForm(formId) {
     }
 }
 
-function deleteGroup() {
-    const form = document.getElementById('deleteGroupFormElement');
+function submitForm() {
+    const form = document.getElementById('updateBookFormElement');
     const formData = new FormData(form);
-
-    if (formData.get('group_id')) {
+   
+    if (formData.get('book_id')) {
         $.ajax({
-            url: 'group_delete.php',
+            url: 'book_update.php',
             method: 'POST',
             data: formData,
             processData: false,
             contentType: false,
             success: function(response) {
-                const resultDiv = $('#deleteResult');
+                const resultDiv = $('#updateResult');
                 response = JSON.parse(response);
-
                 if (response.success) {
                     resultDiv.html('<p style="color: green;">' + response.message + '</p>');
                     form.reset();
@@ -31,10 +30,10 @@ function deleteGroup() {
             },
             error: function(xhr, status, error) {
                 console.error('Ajax error:' + status + ' ' + error);
-                $('#deleteResult').html('<p style="color: red;">An error occurred during the delete process. Please try again.</p>');
+                $('#updateResult').html('<p style="color: red;">An error occurred during the update process. Please try again.</p>');
             }
         });
     } else {
-        alert('Please enter a group ID.');
+        alert('Please enter a book ID.');
     }
 }

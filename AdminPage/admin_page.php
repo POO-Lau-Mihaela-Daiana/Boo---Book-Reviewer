@@ -78,9 +78,80 @@ $user_id = $_SESSION['user_id'];
               required
             /><br />
           
-            <button type="submit">Add Book</button>
+            <button type="button" onclick="addBook()">Add Book</button>
           </form>
+          <div id="updateResult"></div>
         </div>
+
+        <button class="toggle_button" onclick="toggleForm('updateBookForm')">
+          Update book 
+        </button>
+        <div class="form_container" id="updateBookForm">
+          <h2>Update Book</h2>
+          <form id="updateBookFormElement" method="POST" action="book_update.php">
+          <label for="book_id">Book_id:</label>
+          <input type="text" id="book_id" name="book_id"/><br />
+            <label for="bookPhoto">Photo URL:</label>
+            <input type="text" id="bookPhoto" name="bookPhoto" /><br />
+            <label for="bookName">Name:</label>
+            <input type="text" id="bookName" name="bookName"/><br />
+            <label for="bookAuthor">Author:</label>
+            <input
+              type="text"
+              id="bookAuthor"
+              name="bookAuthor"
+            
+            /><br />
+            <label for="bookDescription">Description:</label>
+            <textarea
+              id="bookDescription"
+              name="bookDescription"
+              
+            ></textarea
+            ><br />
+            <label for="bookPages">Pages:</label>
+            <input
+              type="number"
+              id="bookPages"
+              name="bookPages"
+             
+            /><br />
+           <label for="bookGenres">Genres (use commas to separate them):</label>
+             <input type="text" id="bookGenres" name="bookGenres" required /><br /> 
+            <label for="bookPublisher">Publisher:</label>
+            <input
+              type="text"
+              id="bookPublisher"
+              name="bookPublisher"
+            /><br />
+            <label for="bookPublicationDate">Publication Date:</label>
+            <input
+              type="date"
+              id="bookPublicationDate"
+              name="bookPublicationDate"
+            
+            /><br />
+          
+            <button type="button" onclick="submitForm()">Update Book</button>
+          </form>
+          <div id="updateResult"></div>
+        </div>
+
+        <!-- <button class="toggle_button" onclick="toggleForm('deleteCommentForm')">Delete Comment</button>
+<div class="form_container" id="deleteCommentForm">
+    <h2>Delete Comment</h2>
+    <form id="deleteCommentElement">
+        <label for="username">User:</label>
+        <input type="text" id="username" name="username" required /><br />
+        <label for="book_title">Book title:</label>
+        <input type="text" id="book_title" name="book_title" required /><br />
+        <label for="comment_text">Comment Text:</label>
+        <input type="text" id="comment_text" name="comment_text" required /><br />
+        <button type="button" onclick="deleteComment()">Delete Comment</button>
+    </form>
+    <div id="deleteResult"></div>
+</div> -->
+
 
         <button class="toggle_button" onclick="toggleForm('deleteGroupForm')">
           Delete Group
@@ -90,9 +161,9 @@ $user_id = $_SESSION['user_id'];
           <form id="deleteGroupFormElement" method="POST" action="group_delete.php">
             <label for="group_id">Group ID:</label>
             <input type="text" id="group_id" name="group_id" required /><br />
-            <button type="submit">Delete Group</button>
+            <button type="button" onclick="deleteGroup()">Delete Group</button>
           </form>
-          
+          <div id="deleteResult"></div>
         </div>
 
         <button class="toggle_button" onclick="toggleForm('deleteUserForm')">
@@ -103,20 +174,20 @@ $user_id = $_SESSION['user_id'];
           <form id="deleteUserFormElement" method="POST" action="delete_user.php">
             <label for="user_id">User ID:</label>
             <input type="text" id="user_id" name="user_id" required /><br />
-            <button type="submit">Delete User</button>
+            <button type="button" onclick="deleteUser()">Delete User</button>
           </form>
+          <div id="deleteResult"></div>
         </div>
 
-        <button class="toggle_button" onclick="toggleForm('deleteBookForm')">
-          Delete Book
-        </button>
-        <div class="form_container" id="deleteBookForm">
+        <button class="toggle_button" onclick="toggleForm('deleteBookForm')">Delete Book</button>
+<div class="form_container" id="deleteBookForm">
     <h2>Delete Book</h2>
-    <form id="deleteBookFormElement" method="POST" action="book_delete.php">
+    <form id="deleteBookFormElement">
         <label for="book_id">Book ID:</label>
         <input type="text" id="book_id" name="book_id" required /><br />
-        <button type="submit">Delete Book</button>
+        <button type="button" onclick="deleteBook()">Delete Book</button>
     </form>
+    <div id="deleteResult"></div>
 </div>
       </div>
       <div
@@ -134,6 +205,9 @@ $user_id = $_SESSION['user_id'];
     <script src="book_add_ajax.js"></script>
     <script src="book_delete_ajax.js"></script>
     <script src="user_delete_ajax.js"></script>
+    <script src="delete_comment.js"></script>
+    <script src="group_delete.js"></script>
+    <script src="book_update.js"></script>
 
   <script>
     function toggleForm(formId) {
