@@ -43,14 +43,7 @@ $other_user_id = isset($_GET['user_id']) ? $_GET['user_id'] : $current_user_id;
     </div>
 
 
-    <div class="search">
-      <form action="../SearchPage/searchPage.php?user_id=<?php echo $user_id; ?>" method="GET" id="searchForm">
-        <input type="text" class="search__input" id="search" placeholder="Book Name" />
-        <button type="submit" class="search__button">
-          Search Book Here
-        </button>
-      </form>
-    </div>
+
 
     <nav class="nav">
       <ul class="nav__list">
@@ -68,9 +61,7 @@ $other_user_id = isset($_GET['user_id']) ? $_GET['user_id'] : $current_user_id;
         <li class="nav__item">
           <a href="../Settings/settings.php?user_id=<?php echo $current_user_id; ?>" class="nav__link_menu">Settings</a>
         </li>
-        <li class="nav__item">
-          <a href="../AboutPage/aboutpage.php?user_id=<?php echo $user_id; ?>" class="nav__link_menu">About</a>
-        </li>
+      
         <li class="nav__item">
           <a href="../BookReviewer/logout.php" class="nav__link_menu">LogOut</a>
         </li>
@@ -93,9 +84,7 @@ $other_user_id = isset($_GET['user_id']) ? $_GET['user_id'] : $current_user_id;
             <a href="../Settings/settings.php?user_id=<?php echo $current_user_id; ?>"
               class="nav__link_menu">Settings</a>
           </li>
-          <li class="nav__item">
-            <a href="../AboutPage/aboutpage.php?user_id=<?php echo $user_id; ?>" class="nav__link_menu">About</a>
-          </li>
+         
           <li class="nav__item">
             <a href="../BookReviewer/logout.php" class="nav__link_menu">LogOut</a>
           </li>
