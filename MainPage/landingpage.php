@@ -119,8 +119,8 @@ $user_id = $_SESSION['user_id'];
           </div>
         </div>
 
-        <button id="rssButton">View RSS Feed</button>
-    <!-- <div id="rssFeed"></div> -->
+        <button id="rssButton" class="rssButton">View RSS Feed</button>
+    
       </div>
       <div class="feed_container_main_feed">
         <div class="main_feed__title">News</div>
