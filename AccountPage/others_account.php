@@ -1,11 +1,11 @@
 <?php
 session_start();
 
-
 if (!isset($_SESSION['user_id'])) {
-  header("Location: ../login.php");
+  header("Location: ../LogIn/login.html"); 
   exit;
 }
+// $user_id = $_SESSION['user_id'];
 
 $current_user_id = $_SESSION['user_id'];
 $other_user_id = isset($_GET['user_id']) ? $_GET['user_id'] : $current_user_id;
@@ -42,13 +42,13 @@ $other_user_id = isset($_GET['user_id']) ? $_GET['user_id'] : $current_user_id;
 
 
     <div class="search">
-            <form action="../SearchPage/searchPage.php?user_id=<?php echo $user_id; ?>" method="POST" id="searchForm">
-                <input type="text" class="search__input" id="search" placeholder="Book Name" />
-                <button type="submit" class="search__button">
-                    Search Book Here
-                </button>
-            </form>
-        </div>
+    <form action="../SearchPage/searchPage.php?user_id=<?php echo $user_id; ?>" method="GET" id="searchForm">
+        <input type="text" class="search__input" id="search" placeholder="Book Name" />
+        <button type="submit" class="search__button">
+          Search Book Here
+        </button>
+      </form>
+    </div>
 
     <nav class="nav">
       <ul class="nav__list">
@@ -70,8 +70,8 @@ $other_user_id = isset($_GET['user_id']) ? $_GET['user_id'] : $current_user_id;
           <a href="../AboutPage/aboutpage.php?user_id=<?php echo $user_id; ?>" class="nav__link_menu">About</a>
         </li>
         <li class="nav__item">
-          <a href="../BookReviewer/index.php?user_id=<?php echo $user_id; ?>" class="nav__link_menu">LogOut</a>
-        </li>
+    <a href="../BookReviewer/logout.php" class="nav__link_menu">LogOut</a>
+      </li>
       </ul>
       <div class="nav__item_special">
         <p>Menu</p>
@@ -95,8 +95,8 @@ $other_user_id = isset($_GET['user_id']) ? $_GET['user_id'] : $current_user_id;
             <a href="../AboutPage/aboutpage.php?user_id=<?php echo $user_id; ?>" class="nav__link_menu">About</a>
           </li>
           <li class="nav__item">
-            <a href="../BookReviewer/index.php?user_id=<?php echo $user_id; ?>" class="nav__link_menu">LogOut</a>
-          </li>
+    <a href="../BookReviewer/logout.php" class="nav__link_menu">LogOut</a>
+      </li>
         </ul>
       </div>
     </nav>

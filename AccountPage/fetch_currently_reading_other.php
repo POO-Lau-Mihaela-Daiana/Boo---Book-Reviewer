@@ -6,17 +6,15 @@ if (!isset($_SESSION['user_id'])) {
     exit;
 }
 
-$user_id = $_GET['user_id']; // Get the user ID from the query parameters
+$user_id = $_GET['user_id']; 
 
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "boo";
 
-// Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }

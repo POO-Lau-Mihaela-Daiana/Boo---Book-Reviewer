@@ -4,14 +4,13 @@ $username = "root";
 $password = "";
 $dbname = "boo";
 
-// Enable error reporting
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-// Create connection
+
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Check connection
+
 if ($conn->connect_error) {
     die(json_encode(array('success' => false, 'message' => 'Connection failed: ' . $conn->connect_error)));
 }
@@ -48,13 +47,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $bookId = $stmt->insert_id;
         $stmt->close();
 
-        // Split genres by comma and insert them into book_genre table
+       
         if (!empty($bookGenres)) {
             $bookGenresArray = explode(',', $bookGenres);
             foreach ($bookGenresArray as $genre) {
-                $genre = trim($genre); // Remove any surrounding whitespace
+                $genre = trim($genre); 
                 if (!empty($genre)) {
-                    // Check if genre already exists
+                 
                     $stmt = $conn->prepare("SELECT genre_id FROM genre WHERE genre_name = ?");
                     $stmt->bind_param("s", $genre);
                     $stmt->execute();
@@ -62,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                     if ($stmt->num_rows == 0) {
                         $stmt->close();
-                        // Insert new genre
+                       
                         $stmt = $conn->prepare("INSERT INTO genre (genre_name) VALUES (?)");
                         $stmt->bind_param("s", $genre);
                         if ($stmt->execute()) {
@@ -71,13 +70,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             throw new Exception('Execute failed: ' . $stmt->error);
                         }
                     } else {
-                        // Fetch the existing genre_id
+                        
                         $stmt->bind_result($genre_id);
                         $stmt->fetch();
                     }
                     $stmt->close();
 
-                    // Insert into book_genre table
+                   
                     $stmt = $conn->prepare("INSERT INTO book_genre (book_id, genre_id) VALUES (?, ?)");
                     $stmt->bind_param("ii", $bookId, $genre_id);
                     if (!$stmt->execute()) {

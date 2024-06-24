@@ -4,7 +4,6 @@ $(document).ready(function() {
     
     fetchUserInfo(user_id);
    
-   
 
     function fetchUserInfo(user_id) {
         $.ajax({

@@ -16,22 +16,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = "";
     $dbname = "boo";
 
-    // Create connection
+    
     $conn = new mysqli($servername, $username, $password, $dbname);
 
-    // Check connection
+    
     if ($conn->connect_error) {
         echo json_encode(['success' => false, 'message' => 'Connection failed: ' . $conn->connect_error]);
         exit;
     }
 
-    // Insert group into groups table
+   
     $stmt = $conn->prepare("INSERT INTO groups (name, description) VALUES (?, ?)");
     $stmt->bind_param("ss", $name, $description);
     if ($stmt->execute()) {
         $group_id = $stmt->insert_id;
 
-        // Insert user into user_group table
         $stmt = $conn->prepare("INSERT INTO user_group (user_id, group_id) VALUES (?, ?)");
         $stmt->bind_param("ii", $user_id, $group_id);
         if ($stmt->execute()) {

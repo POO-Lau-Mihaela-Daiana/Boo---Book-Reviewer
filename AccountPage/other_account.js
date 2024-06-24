@@ -7,7 +7,7 @@ $(document).ready(function() {
             dataType: 'json',
             success: function(response) {
                 if (response.length > 0) {
-                    $('.books__container').empty(); // Clear previous books
+                    $('.books__container').empty(); 
                     response.forEach(function(book) {
                         $('.books__container').append(`
                             <div class="book">

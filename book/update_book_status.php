@@ -27,7 +27,7 @@ if ($conn->connect_error) {
     exit;
 }
 
-// Check if the entry already exists
+
 $sql = "SELECT * FROM library WHERE user_id = ? AND book_id = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("ii", $user_id, $book_id);
@@ -35,7 +35,7 @@ $stmt->execute();
 $result = $stmt->get_result();
 
 if ($result->num_rows > 0) {
-    // Entry exists, update it
+   
     $sql = "UPDATE library SET list_number = ? WHERE user_id = ? AND book_id = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("iii", $list_number, $user_id, $book_id);
@@ -45,7 +45,7 @@ if ($result->num_rows > 0) {
         echo json_encode(['error' => 'Update failed: ' . $stmt->error]);
     }
 } else {
-    // Entry does not exist, insert it
+    
     $sql = "INSERT INTO library (user_id, book_id, list_number) VALUES (?, ?, ?)";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("iii", $user_id, $book_id, $list_number);

@@ -2,7 +2,7 @@
 session_start();
 
 if (!isset($_SESSION['user_id'])) {
-    header("Location: ../login.php"); // Redirect to login page if not logged in
+    header("Location: ../LogIn/login.html"); 
     exit;
 }
 $user_id = $_SESSION['user_id'];
@@ -87,11 +87,12 @@ $user_id = $_SESSION['user_id'];
         </button>
         <div class="form_container" id="deleteGroupForm">
           <h2>Delete Group</h2>
-          <form>
-            <label for="groupId">Group ID:</label>
-            <input type="text" id="groupId" name="groupId" required /><br />
+          <form id="deleteGroupFormElement" method="POST" action="group_delete.php">
+            <label for="group_id">Group ID:</label>
+            <input type="text" id="group_id" name="group_id" required /><br />
             <button type="submit">Delete Group</button>
           </form>
+          
         </div>
 
         <button class="toggle_button" onclick="toggleForm('deleteUserForm')">
@@ -124,7 +125,7 @@ $user_id = $_SESSION['user_id'];
       <button
             type="submit"
             class="signup-button"
-            onclick="window.location.href='../BookReviewer/index.html';"
+            onclick="window.location.href='../BookReviewer/logout.php';"
           >Sign out</div>
     </div>
   </body>

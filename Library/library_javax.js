@@ -3,9 +3,9 @@ function loadBooks(category) {
         url: 'fetch_books.php',
         type: 'GET',
         data: { category: category },
-        dataType: 'json', // Ensure the response is automatically parsed as JSON
+        dataType: 'json', 
         success: function(data) {
-            console.log("Response from server: ", data); // Log the response for debugging
+            console.log("Response from server: ", data); 
             try {
                 $('#books_container').html('');
                 let books = Array.isArray(data) ? data : [data];
@@ -40,7 +40,7 @@ function loadBooks(category) {
     });
 }
 
-// Load all books on page load
+
 $(document).ready(function() {
     loadBooks('all');
 });
