@@ -4,7 +4,7 @@ Represents a web aplication where you can review books, add them to favorites an
 
 Along the files and folders there is the documentation, called "Documentation proiect session"
 
-We also made a video presenting all of features we have.
+We also made a video presenting all of the features we have.
 
 We made a C4 diagram as well.
 
