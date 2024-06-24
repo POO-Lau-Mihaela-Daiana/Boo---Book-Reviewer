@@ -126,7 +126,7 @@ $user_id = $_SESSION['user_id'];
             engaging discussions. Join our community of bibliophiles and embark
             on an adventure through the endless realms of storytelling.
           </p>
-          <a href="../HelpPage/index.html" class="content__readMore"
+          <a href="../HelpPage/index.php" class="content__readMore"
             >Read more!</a
           >
         </div>
