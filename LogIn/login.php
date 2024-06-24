@@ -4,10 +4,10 @@ $username = "root";
 $password = "";
 $dbname = "boo";
 
-// Create connection
+
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Check connection
+
 if ($conn->connect_error) {
     header('Content-Type: application/json');
     echo json_encode(array('success' => false, 'error' => 'Connection failed: ' . $conn->connect_error));

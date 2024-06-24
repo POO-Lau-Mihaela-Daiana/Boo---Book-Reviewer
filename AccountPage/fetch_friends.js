@@ -1,4 +1,4 @@
-// fetch_friends.js
+
 $(document).ready(function() {
     $.ajax({
         type: 'GET',

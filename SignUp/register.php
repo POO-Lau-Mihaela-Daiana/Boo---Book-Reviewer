@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
 
-    // Hash the password
+  
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
 
@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "INSERT INTO user (username, user_email, user_password) VALUES ('$username', '$email', '$hashed_password')";
 
     if ($conn->query($sql) === TRUE) {
-        // Get the ID of the newly created user
+        
         $user_id = $conn->insert_id;
 
         header("Location: ../LogIn/login.html");
