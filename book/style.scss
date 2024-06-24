@@ -1,11 +1,18 @@
+<<<<<<< HEAD
 @use  '../BookReviewer/global/typography';
+=======
+>>>>>>> e58a7682378053609e06f47ca7e51c519d1ef778
 @import '../BookReviewer/global/boilerplate';
 
 
 
+<<<<<<< HEAD
 
 * {
     font-family: typography.$global-font-family;
+=======
+* {
+>>>>>>> e58a7682378053609e06f47ca7e51c519d1ef778
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -20,13 +27,18 @@ body {
     background-repeat: no-repeat;
     margin: 0;
     padding: 0;
+<<<<<<< HEAD
     min-height: 100vh;
+=======
+    height: 100%;
+>>>>>>> e58a7682378053609e06f47ca7e51c519d1ef778
 }
 body, html {
     height: 100%;
     margin: 0;
 }
 
+<<<<<<< HEAD
 .body_containers{
     display: flex;
     justify-content: center;
@@ -35,6 +47,12 @@ body, html {
 .body_container {
     max-width: 800px;
     margin: 0 auto;
+=======
+
+.body_container {
+    max-width: 800px;
+     margin: 0 auto;
+>>>>>>> e58a7682378053609e06f47ca7e51c519d1ef778
     padding: 20px;
     border: 2px solid #000;
    
@@ -87,7 +105,10 @@ body, html {
     background-color: #4CAF50;
     color: white;
     border: none;
+<<<<<<< HEAD
     width: 90%;
+=======
+>>>>>>> e58a7682378053609e06f47ca7e51c519d1ef778
     cursor: pointer;
     border-radius: 5px;
     margin-bottom: 10px;
@@ -117,7 +138,11 @@ body, html {
   .comment {
     display: flex;
     margin-bottom: 20px;
+<<<<<<< HEAD
     border: 2px solid #B790C2;
+=======
+    border: 2px solid black; 
+>>>>>>> e58a7682378053609e06f47ca7e51c519d1ef778
   padding: 10px; 
   }
   
@@ -172,6 +197,7 @@ body, html {
         flex-direction: column; 
       }
 }
+<<<<<<< HEAD
 
 
 .side_rating{
@@ -256,3 +282,5 @@ body, html {
 }
 
 
+=======
+>>>>>>> e58a7682378053609e06f47ca7e51c519d1ef778

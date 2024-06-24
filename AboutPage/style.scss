@@ -1,9 +1,15 @@
+<<<<<<< HEAD
 @use  '../BookReviewer/global/typography';
 @import '../BookReviewer/global/boilerplate';
 
 *{
     font-family: typography.$global-font-family;
     box-sizing: border-box;
+=======
+@import '../BookReviewer/global/boilerplate';
+
+*{box-sizing: border-box;
+>>>>>>> e58a7682378053609e06f47ca7e51c519d1ef778
 margin: 0px;
 padding: 0px;}
 
