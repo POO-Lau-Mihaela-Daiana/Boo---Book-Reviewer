@@ -62,7 +62,7 @@ $(document).ready(function() {
                     <div class="comment-text">
                         <p>${comment.username} left a comment:</p>
                         <p>${comment.comment_text}</p>
-                        <p><small>${comment.comment_posted_date} at ${comment.comment_posted_hour}</small></p>
+                        <p><small>at ${comment.comment_posted_hour}</small></p>
                     </div>
                 </div>
             `;
